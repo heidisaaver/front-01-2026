@@ -1,0 +1,35 @@
+.pilt {
+    height: 100px;
+/* width: 100px; */
+}
+
+.pilt:hover {
+    cursor: pointer;
+    opacity: 70%;
+}
+
+.pilt:active {
+    transform: scale(98%);
+}
+
+.nupp {
+    background-color: green;
+    color: black;
+    border-radius: 10px;
+    padding: 5px;
+    /* width: 60px; */
+    /* height: 50px; */
+/* width: 100px; */
+}
+
+.nupp:hover {
+   cursor: pointer;
+   background-color: rgb(116, 158, 116);
+
+
+}
+
+.nupp:active {
+    /* font-weight: bold; */
+    text-decoration: underline;
+}
