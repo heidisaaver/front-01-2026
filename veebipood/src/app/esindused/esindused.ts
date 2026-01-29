@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './esindused.css',
 })
 export class Esindused {
-
+ linn = "Tallinn"
 }

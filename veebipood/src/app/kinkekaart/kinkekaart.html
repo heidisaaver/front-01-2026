@@ -1,3 +1,36 @@
-<button>-</button>
-<button>0</button>
-<button>+</button>
+<button (click)="muudaSumma20()">20</button>
+<button (click)="muudaSumma50()">50</button>
+<button (click)="muudaSumma100()">100</button>
+
+@if (true) {
+    <input [(ngModel)]="customSumma" type = "text">
+}
+
+<br/><br/>
+
+@if (customSumma > 0 ) {
+    <div>Kinkekaart {{customSumma}} €</div>
+} @else {
+<div>Kinkekaart {{summa}} €</div>
+}
+
+<br/><br/>
+
+
+<button [disabled]="kogus ===1" (click)="kogus = kogus - 1">-</button>
+<span>{{kogus}}</span>
+<button (click)="kogus = kogus + 1">+</button>
+
+<br/><br/>
+
+@if (customSumma > 0) {
+    <div>Summa kokku: {{customSumma * kogus}}</div>
+} @else {
+<div>Summa kokku: {{summa * kogus}}</div>
+}
+
+<br><br>
+<label>Email</label> <br/>
+<input [(ngModel)]="email" type="text"> <br/>
+<button (click)="lisaEmail()">Lisa</button>
+

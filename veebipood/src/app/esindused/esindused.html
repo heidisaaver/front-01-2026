@@ -1,1 +1,35 @@
-<p>esindused works!</p>
+<button (click)="linn = 'Tallinn'">Tallinn</button>
+<button (click)="linn = 'Tartu'">Tartu</button>
+<button (click)="linn = 'Narva'">Narva</button>
+<button (click)="linn = 'Pärnu'">Pärnu</button>
+
+<div>Hetkel aktiivne linn: {{linn}}</div>
+
+@if (linn === "Tallinn"){
+    <br/>
+    <div>Ülemiste</div>
+    <div>Rocc al Mare</div>
+    <div>Magistrali</div>
+    <div>Vesse</div>
+    <div>Kristiine</div>
+    <div>Järveotsa</div>
+}
+
+@if (linn === "Tartu"){
+    <br/>
+    <div>Raatuse</div>
+    <div>Lõuna Keskus</div>
+   
+}
+
+@if (linn === "Narva"){
+    <br/>
+    <div>Fama</div>
+    
+}
+
+@if (linn === "Pärnu"){
+    <br/>
+    <div>Port Artur 2</div>
+    
+}

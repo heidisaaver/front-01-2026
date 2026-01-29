@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './seaded.css',
 })
 export class Seaded {
-
+keel = "en";
 }

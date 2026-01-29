@@ -1,6 +1,31 @@
-<button>Eesti</button>
-<button>English</button>
-<button>Espanol</button>
-<button>Pycckij</button>
+<button (click)="keel = 'et'">Eesti</button>
+<button (click)='keel = "en"'>English</button>
+<button (click)="keel = 'es'">Espanol</button>
+<button (click)="keel = 'ru'">Pycckij</button>
 
-<div>Lehe keel on: xx</div>
+<div>Lehe keel on: {{keel}}</div>
+
+@if (keel === "et"){
+    <br/>
+    <div>Leht on eesti keelne</div>
+}
+
+@if (keel === "en"){
+    <br/>
+    <div>Page is in English</div>
+}
+
+@if (keel === "es"){
+    <br/>
+    <div>La pagina esta en espanol</div>
+}
+
+@if (keel === "ru"){
+    <br/>
+    <div>Straniza est po Russkom</div>
+}
+
+@if (keel !== "et"){
+    <br/>
+    <div>Other translations than Estonian are not ready yet</div>
+}

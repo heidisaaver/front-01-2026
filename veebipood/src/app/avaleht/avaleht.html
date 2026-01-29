@@ -1,9 +1,21 @@
 
+<!-- @if laigitud === true {-->
+@if (laigitud) {
 <img class="ikoon" src="/laigitud.png" alt="">
-<img class="ikoon" src="/mittelaigitud.png" alt="">
+}
 
-<button>Tagasi nulli</button>
-<button>-</button>
-<button>0</button>
-<button>+</button>
+<!-- @if laigitud === false {-->
+@if (!laigitud) {
+<img class="ikoon" src="/mittelaigitud.png" alt="">
+}
+
+<button (click)="laigitud = !laigitud">Muuda like'i</button>
+
+<div>{{sonum}}</div>
+@if (summa > 0) {
+<button (click)='nulli()'>Tagasi nulli</button>
+}
+<button [disabled]="summa === 0" (click)="vahenda()">-</button>
+<span>{{summa}}</span>
+<button (click)="suurenda()">+</button>
 

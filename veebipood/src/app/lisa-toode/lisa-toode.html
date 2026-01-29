@@ -1,3 +1,6 @@
+
+<div>{{sonum}}</div>
+
 <label>Toote nimi</label> <br/>
-<input type="text"> <br/>
-<button>Sisesta</button> <br/>
+<input [(ngModel)]="nimi" type="text"> <br/>
+<button (click)="lisa()">Sisesta</button> <br/>
