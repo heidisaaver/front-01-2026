@@ -1,0 +1,19 @@
+.nupp {
+    background-color: rgb(194, 127, 188);
+    color: rgb(14, 12, 12);
+    border-radius: 5px;
+    /* width: 100px; */
+    /* height: 100%; */
+
+}
+
+
+.nupp:hover {
+    opacity: 70%;
+}
+
+.nupp:active {
+    /* font-weight: bold; */
+    /* text-decoration: underline; */
+    cursor: grab
+}

@@ -1,0 +1,24 @@
+
+.facebook-button img {
+    height: 30px;
+    padding: 20px 10px;
+}
+
+.facebook-button span {
+    position: relative;
+    top: -30px;
+    height: 30px;
+    color: white;
+}
+
+.facebook-button:hover {
+    color: blue;
+    cursor: pointer;
+}
+
+.facebook-button-list {
+    display: flex;
+    position: absolute;
+    justify-content: space-evenly;
+    bottom: 10px;
+}
