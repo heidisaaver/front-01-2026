@@ -6,6 +6,9 @@ import { Ostukorv } from './ostukorv/ostukorv';
 import { Seaded } from './seaded/seaded';
 import { NotFound } from './not-found/not-found';
 import { Esindused } from './esindused/esindused';
+import { Tavakalkulaator } from './kalkulaator/tavakalkulaator/tavakalkulaator';
+import { Laenukalkulaator } from './kalkulaator/laenukalkulaator/laenukalkulaator';
+import { Maksimaalnekalkulaator } from './kalkulaator/maksimaalnekalkulaator/maksimaalnekalkulaator';
 
 // BASE_URL --> http://localhost:4200
 // BASE_URL --> http//telia.ee/esindused
@@ -23,5 +26,8 @@ export const routes: Routes = [
     {path: "lisa-toode", component:LisaToode},
     {path: "ostukorv", component: Ostukorv},
     {path: "seaded", component: Seaded},
+    {path: "tavakalkulaator", component: Tavakalkulaator},
+    {path: "laenukalkulaator", component: Laenukalkulaator},
+    {path: "maksimaalnekalkulaator", component: Maksimaalnekalkulaator},
     {path: "**", component: NotFound},
 ];

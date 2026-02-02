@@ -1,0 +1,32 @@
+
+<div> {{number1}} {{operaator}}
+    @if (operaator !== "") {
+        {{number2}}
+    }
+     
+    @if(isResult) {
+    = {{result}} 
+    }
+</div>
+
+
+<button (click)="muudaNumbrit(7)">7</button>
+<button (click)="muudaNumbrit(8)">8</button>
+<button (click)="muudaNumbrit(9)">9</button>
+<button (click)="muudaOperatorit('*')" >x</button>
+<br>
+<button (click)="muudaNumbrit(4)">4</button>
+<button (click)="muudaNumbrit(5)">5</button>
+<button (click)="muudaNumbrit(6)">6</button>
+<button (click)="muudaOperatorit('-')">-</button>
+<br>
+<button (click)="muudaNumbrit(1)">1</button>
+<button (click)="muudaNumbrit(2)">2</button>
+<button (click)="muudaNumbrit(3)">3</button>
+<button (click)="muudaOperatorit('+')">+</button>
+<br>
+<button (click)="reset()">C</button>
+<button (click)="muudaNumbrit(0)">0</button>
+<button (click)="muudaOperatorit('/')">/</button>
+<button (click)="showResult()">=</button>
+<br>

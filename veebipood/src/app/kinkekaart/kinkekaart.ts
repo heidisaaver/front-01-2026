@@ -22,23 +22,28 @@ export class Kinkekaart {
 // == väga ei kasutata võrdleb ilma tüübi kontrollita
 //  "7" == 7  võrdne   "7" === 7 ei ole võrdsed
 
-muudaSumma20 () {
-  this.summa = 20;
+// muudaSumma20 () {
+//   this.summa = 20;
+//   this.customSumma = 0;
+// }
+
+// muudaSumma50 () {
+//   this.summa = 50;
+//   this.customSumma = 0;
+// }
+
+
+// muudaSumma100 () {
+//   this.summa = 100;
+//   this.customSumma = 0;
+// }
+
+
+muudaSumma(uusSumma: number) {
+  this.summa = uusSumma;
   this.customSumma = 0;
+
 }
-
-muudaSumma50 () {
-  this.summa = 50;
-  this.customSumma = 0;
-}
-
-
-muudaSumma100 () {
-  this.summa = 100;
-  this.customSumma = 0;
-}
-
-
 
   lisaEmail() {
     if (this.email.trim() === "") {

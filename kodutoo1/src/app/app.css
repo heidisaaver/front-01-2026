@@ -21,8 +21,8 @@
 }
 
 .tekst {
-    color: blue;
-    font-style: italic;
+    color: blue; 
+    /* font-style: italic; */
 }
 
 
@@ -34,7 +34,9 @@
 .rida {
     color: green;
     font-weight: bold;
-    border: red;
+    border: 5px solid red;
+
+    
 }
 
 .rida:hover {

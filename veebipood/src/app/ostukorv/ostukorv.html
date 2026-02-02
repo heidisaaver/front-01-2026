@@ -1,4 +1,13 @@
-<button>Tühjenda<button>
-<div>Toodete koguarv xx tk</div>
 
-<div>Ostukorvi kogusumma: xx €</div>
+@if (toodeteArv === 0) {
+<div>Ostukorv on tühi</div>
+} 
+
+@else {
+
+<button (click)="tyhjenda()">Tühjenda</button>
+
+<div>Toodete koguarv {{toodeteArv}} tk</div>
+
+<div>Ostukorvi kogusumma: {{ostukorviSumma}} €</div>
+}

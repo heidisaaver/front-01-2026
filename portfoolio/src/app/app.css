@@ -19,6 +19,11 @@
 .facebook-button-list {
     display: flex;
     position: absolute;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
     bottom: 10px;
+    left: 40%;
+    /*sõidab väiksemaks ei lähe automaatselt keskele, alumised kaks pigem:*/
+    /* text-align: center; */
+    /* margin: auto; */
+
 }

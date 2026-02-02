@@ -7,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrl: './ostukorv.css',
 })
 export class Ostukorv {
+  toodeteArv = 4;
+  ostukorviSumma = 123;
+
+  tyhjenda() {
+  this.toodeteArv = 0;
+  this.ostukorviSumma = 0;
+}
 
 }
+
+
