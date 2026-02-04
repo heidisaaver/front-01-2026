@@ -1,1 +1,28 @@
-<p>kontakt works!</p>
+
+<div>Võta meiega ühendust:</div>
+<br>
+<div (click)="n2itaKristiineTel = ! n2itaKristiineTel">Kristiine keskus</div>
+
+@if (n2itaKristiineTel) {
+<div>+351231231</div>
+}
+
+<div>Endla 45</div>
+<br>
+<div (click)="n2itaYlemisteTel = ! n2itaYlemisteTel">Ülemiste keskus</div>
+@if (n2itaYlemisteTel) {
+<div>+351231245</div>
+}
+<div>Suur-Sõjamäe 4</div>
+<br>
+<div (click)="n2itaTaskuTel = ! n2itaTaskuTel">Tasku keskus</div>
+@if (n2itaTaskuTel) {
+<div>+351231267</div>
+}
+<div>Turu 2</div>
+
+
+
+
+
+

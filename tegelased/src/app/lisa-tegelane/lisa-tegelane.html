@@ -1,1 +1,35 @@
 <p>lisa-tegelane works!</p>
+
+<label>Eesnimi</label> <br/>
+<input [(ngModel)]="Eesnimi" type="text"> <br/>
+<label>Perenimi</label> <br/>
+<input [(ngModel)]="Perenimi" type="text"> <br/>
+<label>Asukoht</label> <br/>
+<input [(ngModel)]="Asukoht" type="text"> <br/>
+<button [disabled]="Eesnimi=== ''"   [disabled]="Perenimi=== ''"    [disabled]="Asukoht=== ''"  (click)="sisesta()">Sisesta</button>
+
+@if (Eesnimi ==="") {
+    <div disabled="button"></div>
+
+}
+
+<!-- @if (Eesnimi === ""){
+    <br/>
+    <div>Palun sisesta Eesnimi</div>
+}  @else {
+<div>  {{""}} </div>
+}
+
+@if (Perenimi === ""){
+    <br/>
+    <div>Palun sisesta Perenimi</div>
+}  @else {
+<div>  {{""}} </div>
+}
+
+@if (Asukoht === ""){
+    <br/>
+    <div>Palun sisesta Asukoht</div>
+}  @else {
+<div>  {{""}} </div>
+} -->

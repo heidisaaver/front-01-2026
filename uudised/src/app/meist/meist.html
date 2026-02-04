@@ -1,1 +1,31 @@
-<p>meist works!</p>
+
+
+<br><br>
+<div>Meie töötajad</div>
+<br>
+<div>Arvo Pärt</div>
+<!-- <div>+31312312</div> -->
+<button (click)="Kontakt = '+31312312'">Võta ühendust</button>
+<div>Uudisklippide taustamuusika</div>
+<br>
+<div>Kelly Sildaru</div>
+<!-- <div>+31312344</div> -->
+<button (click)="Kontakt = '+31312344'">Võta ühendust</button>
+<div>Püstolreporter</div>
+<br>
+<div>Edward von Lõngus</div>
+<!-- <div>+31312563</div> -->
+<button (click)="Kontakt = '+31312563'">Võta ühendust</button>
+<div>Uudiste kujundamine</div>
+<br>
+<div>Kerli Kõiv</div>
+<!-- <div>+31312598</div> -->
+<button (click)="Kontakt = '31312598'">Võta ühendust</button>
+<div>Välisturgude spetsialist</div>
+
+<br>
+
+@if (Kontakt !== "") {
+    <br><br>
+    <div>Kontakt: {{Kontakt}}</div> 
+} 

@@ -7,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrl: './kontakt.css',
 })
 export class Kontakt {
+  n2itaKristiineTel = false;
+  n2itaYlemisteTel = false;
+  n2itaTaskuTel = false
 
 }

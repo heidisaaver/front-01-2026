@@ -3,10 +3,10 @@ import { RouterLinkWithHref, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet ],
+  imports: [RouterOutlet, RouterLinkWithHref],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('kodutoo1');
+  protected readonly title = signal('laptops');
 }

@@ -7,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './meist.css',
 })
 export class Meist {
+  Kontakt = "";
 
 }
+
