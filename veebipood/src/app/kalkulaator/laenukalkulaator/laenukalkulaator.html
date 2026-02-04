@@ -1,1 +1,36 @@
-<p>laenukalkulaator works!</p>
+
+
+<label>Kinnisvara ostuhind</label>
+<input [(ngModel)]="ostuhind" (ngModelChange)="arvutaKuumakse()" type="number"> <br>
+<label>Sissemakse</label>
+<input [(ngModel)]="sissemakse" (ngModelChange)="arvutaKuumakse()" type="number"> <br>
+<label>Laenusumma</label>
+<input disabled [value]="laenusumma.toFixed(0)" type="number"> <br>
+<label>Periood</label>
+<!-- <input [(ngModel)]="periood" (ngModelChange)="arvutaKuumakse()" type="number"> <br> -->
+<select [(ngModel)]="periood" (ngModelChange)="arvutaKuumakse()">
+    <option>5</option>
+    <option>10</option>
+    <option>15</option>
+    <option>20</option>
+    <option>25</option>
+    <option>30</option>
+    
+</select> <span>aastat</span> <br>
+<label>Marginaal</label>
+<input [(ngModel)]="marginaal" (ngModelChange)="arvutaKuumakse()" type="number"> <br>
+<label>Euribor</label>
+<input [(ngModel)]="euribor" (ngModelChange)="arvutaKuumakse()" type="number"> <br>
+<label>Intress kokku</label>
+<input disabled [value]="intress.toFixed(2)"  type="number"> <br>
+<br>
+@if (laenusumma >= 20000 && laenusumma <= 10000000) {
+<div>Kuumakse {{kuumakse.toFixed(2)}} €</div>
+<div>Juhul, kui laenu intress peaks tõusma 7%-ni, on laenumakse {{kuumakseKorgendatud.toFixed(2)}} €</div>
+} @else {
+    <div>Laenusumma võib olla vahemikus 20 000 - 10 000 000 eurot.</div>
+}
+
+
+
+

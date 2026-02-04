@@ -1,1 +1,46 @@
-<p>maksimaalnekalkulaator works!</p>
+
+<br>
+<label >Laenu soovin võtta</label>
+<br>
+
+<input id="yksi" name="taotleja" type="radio" [(ngModel)]="taotleja" value="1">
+<label for="yksi">Üksi</label>
+<br>
+<input id="koos" name="taotleja" type="radio" [(ngModel)]="taotleja" value="2">
+<label for="koos">Koos kaastaotlejaga</label>
+
+
+
+
+<br>
+<label>Perekonnaseis</label>
+<input [(ngModel)]="perekonnaseis" id="perekonnaseis" type="checkbox"> 
+<label for="perekonnaseis" > <label>abielus või vabaabielus</label>
+<br>
+<label >Ülalpeetavate arv</label>
+<select [(ngModel)]="ylalpeetavad" >
+    <option>0</option>
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+    <option value="6">6 või rohkem</option>
+</select> <br>
+<label>Netosissetulek</label>
+<input [(ngModel)]="netosissetulek" type="number"> <br>
+<label>Igakuised kohustused</label>
+<input [(ngModel)]="kohustused"  type="number"> <br>
+
+
+
+
+
+
+
+
+
+
+
+
+

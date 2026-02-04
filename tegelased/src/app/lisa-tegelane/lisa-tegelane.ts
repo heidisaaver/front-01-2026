@@ -15,8 +15,14 @@ export class LisaTegelane {
   Asukoht = "";
 
   sisesta() {
+    if (this.Eesnimi === "") {
+      alert('Palun sisesta')
+      return
+    } 
+
     alert(`Lisasid: ${this.Eesnimi} ${this.Perenimi}, kes elab: ${this.Asukoht}`);
     // alert("Sisestatud: email:" + this.email + ", aadress:" + this.aadress + ", telefon: " + this.telefon);
 }
+
 }
 

@@ -6,4 +6,4 @@
 <br>
 <label>Arvuti lisamine </label> <br/>
 <input [(ngModel)]="arvuti" type="text"> <br/>
-<button (click)="sisesta()">Sisesta</button>
+<button [disabled]="nupp === true" (click)="sisesta()">Sisesta</button>
