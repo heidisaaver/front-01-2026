@@ -7,11 +7,14 @@ import { Component } from '@angular/core';
   styleUrl: './ostukorv.css',
 })
 export class Ostukorv {
-  toodeteArv = 4;
+  ostukorv = ["Coca", "Fanta", "Sprite"];
+
+  // toodeteArv = 4;
   ostukorviSumma = 123;
 
   tyhjenda() {
-  this.toodeteArv = 0;
+  // this.toodeteArv = 0;
+  this.ostukorv = [];
   this.ostukorviSumma = 0;
 }
 

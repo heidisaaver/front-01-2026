@@ -6,5 +6,6 @@ import { NotFound } from './not-found/not-found';
 export const routes: Routes = [
     {path: "", component: Avaleht},
     {path: "lisa-tegelane", component: LisaTegelane},
-    {path: "not-found", component: NotFound}
+    {path: "**", component: NotFound}
+   
 ];

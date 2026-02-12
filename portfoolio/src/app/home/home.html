@@ -13,6 +13,23 @@
         <p>Kursuste lehele</p>
     </div>
 </div>
+<br>
+
+<!-- @if laigitud === true {-->
+@if (laigitud) {
+<img class="ikoon" src="/like.png" alt="">
+}
+
+<!-- @if laigitud === false {-->
+@if (!laigitud) {
+<img class="ikoon" src="/like (1).png" alt="">
+}
+
+<button (click)="laigitud = !laigitud">Muuda like'i</button>
+
+
+<br>
+
 <div class="rectangle"></div>
 <p class="main-text">Tere tulemast minu lehele</p>
 

@@ -1,0 +1,10 @@
+
+<div>Hindu kokku: {{hinnad.length}} tk</div>
+
+<button (click)="sorteeriVaiksemast()"> Sorteeri alates väiksemast</button>
+<button (click)="sorteeriSuuremast()">Sorteeri alates suuremast</button>
+
+
+@for (hind of hinnad; track $index) {
+    <div>{{hind}}</div>
+}

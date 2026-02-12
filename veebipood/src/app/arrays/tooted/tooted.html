@@ -1,0 +1,18 @@
+<div>Toodete koguarv: {{tooted.length}} tk</div>
+<br>
+
+<button (click)="sorteeriAZ()"> Sorteeri AZ</button>
+<button (click)="sorteeriZA()">Sorteeri ZA</button>
+
+
+
+<button (click)="sorteeriVaiksemastSonast()"> Sorteeri tähed kasvavalt</button>
+
+<button (click)="sorteeriSuuremasttSonast()">Sorteeri tähed kahanevalt</button>
+
+<button (click)="sorteeriKolmasTahtAZ()">Sorteeri kolmas täht AZ</button>
+
+@for (toode of tooted; track $index) {
+    <div>{{toode}}</div>
+}
+

@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "dist/portfoolio-11-02-26-e1b80/browser",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

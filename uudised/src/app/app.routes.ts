@@ -4,6 +4,7 @@ import { Kontakt } from './kontakt/kontakt';
 import { Meist } from './meist/meist';
 import { Uudised } from './uudised/uudised';
 import { LisaUudis } from './lisa-uudis/lisa-uudis';
+import { NotFound } from './not-found/not-found';
 
 
 
@@ -12,5 +13,6 @@ export const routes: Routes = [
    {path: "kontakt", component: Kontakt},
    {path: "meist", component: Meist},
    {path: "uudised", component: Uudised},
-   {path: "lisa-uudis", component: LisaUudis}
+   {path: "lisa-uudis", component: LisaUudis},
+   {path: "**", component: NotFound}
 ];

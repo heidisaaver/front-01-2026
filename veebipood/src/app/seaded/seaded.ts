@@ -13,6 +13,35 @@ export class Seaded {
   aadress = "";
   telefon = "";
 
+  isikukood = "";
+  parool = "";
+
+  sisselogitud = false;
+
+
+  logisisse () {
+
+    if (/^[0-9]+$/.test(this.isikukood) === false) {
+        alert("Isikukood peab sisaldama ainult numbreid!");
+        return
+
+    }
+      
+    if (this.isikukood.length !== 11) {
+        alert("Isikukoodi pikkus pole korrektne!");
+        return;
+    }
+
+    if (this.parool !== "admin") {
+        alert("Parool pole korrektne!");
+        return;
+    }
+
+
+    alert("Edukalt sisselogitud")
+    this.sisselogitud = true;
+
+ }
   sisesta() {
     alert(`Sisestatud: email: ${this.email} , aadress: ${this.aadress} , telefon: ${this.telefon}`);
     // alert("Sisestatud: email:" + this.email + ", aadress:" + this.aadress + ", telefon: " + this.telefon);

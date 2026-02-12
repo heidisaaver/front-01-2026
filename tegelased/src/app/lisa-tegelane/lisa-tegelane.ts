@@ -16,10 +16,18 @@ export class LisaTegelane {
 
   sisesta() {
     if (this.Eesnimi === "") {
-      alert('Palun sisesta')
+      alert('Palun täida kõik väljad')
       return
     } 
 
+    if (this.Perenimi === "") {
+      alert('Palun täida kõik väljad')
+      return
+    }
+    if (this.Asukoht === "") {
+      alert('Palun täida kõik väljad')
+      return
+    }
     alert(`Lisasid: ${this.Eesnimi} ${this.Perenimi}, kes elab: ${this.Asukoht}`);
     // alert("Sisestatud: email:" + this.email + ", aadress:" + this.aadress + ", telefon: " + this.telefon);
 }

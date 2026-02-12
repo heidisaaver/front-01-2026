@@ -1,5 +1,5 @@
 
-@if (toodeteArv === 0) {
+@if (ostukorv.length === 0) {
 <div>Ostukorv on tühi</div>
 } 
 
@@ -7,7 +7,16 @@
 
 <button (click)="tyhjenda()">Tühjenda</button>
 
-<div>Toodete koguarv {{toodeteArv}} tk</div>
+<div>Toodete koguarv {{ostukorv.length}} tk</div>
 
 <div>Ostukorvi kogusumma: {{ostukorviSumma}} €</div>
 }
+
+
+@for(toode of ostukorv; track toode) {
+   <div>{{toode}} <button>x</button></div>
+
+}
+
+
+

@@ -9,6 +9,12 @@ import { Esindused } from './esindused/esindused';
 import { Tavakalkulaator } from './kalkulaator/tavakalkulaator/tavakalkulaator';
 import { Laenukalkulaator } from './kalkulaator/laenukalkulaator/laenukalkulaator';
 import { Maksimaalnekalkulaator } from './kalkulaator/maksimaalnekalkulaator/maksimaalnekalkulaator';
+import { ArrayHome } from './arrays/array-home/array-home';
+import { Autod } from './arrays/autod/autod';
+import { Hinnad } from './arrays/hinnad/hinnad';
+import { Kasutajad } from './arrays/kasutajad/kasutajad';
+import { Tootajad } from './arrays/tootajad/tootajad';
+import { Tooted } from './arrays/tooted/tooted';
 
 // BASE_URL --> http://localhost:4200
 // BASE_URL --> http//telia.ee/esindused
@@ -29,5 +35,14 @@ export const routes: Routes = [
     {path: "tavakalkulaator", component: Tavakalkulaator},
     {path: "laenukalkulaator", component: Laenukalkulaator},
     {path: "maksimaalnekalkulaator", component: Maksimaalnekalkulaator},
+  
+    {path: "arrays", component: ArrayHome},
+    {path: "autod", component: Autod},
+    {path: "hinnad", component: Hinnad},
+    {path: "kasutajad", component: Kasutajad},
+    {path: "tootajad", component: Tootajad},
+    {path: "tooted", component: Tooted},
+
     {path: "**", component: NotFound},
+
 ];

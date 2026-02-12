@@ -10,5 +10,5 @@ export const routes: Routes = [
 {path: "work", component: Work},
 {path: "hobbies", component: Hobbies},
 {path: "courses", component: Courses},
-{path: "not-found", component: NotFound},
+{path: "**", component: NotFound},
 ];

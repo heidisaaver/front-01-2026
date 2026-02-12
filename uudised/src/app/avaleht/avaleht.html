@@ -1,1 +1,15 @@
 <p>avaleht works!</p>
+
+
+<!-- @if laigitud === true {-->
+@if (laigitud) {
+<img class="ikoon" src="/like.png" alt="">
+}
+
+<!-- @if laigitud === false {-->
+@if (!laigitud) {
+<img class="ikoon" src="/like (1).png" alt="">
+}
+
+<button (click)="laigitud = !laigitud">Muuda like'i</button>
+

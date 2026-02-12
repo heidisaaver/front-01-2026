@@ -13,5 +13,12 @@ export class Maksimaalnekalkulaator {
   ylalpeetavad = 1;
   netosissetulek =  900;
   kohustused = 0;
+  maksimaalnelimiit = 55790.16;
+  // maksimaalnelimiit = this.arvutamaksimaalnelimiit()
   
+
+  arvutaMaksimaalnelimiit () {
+    this.maksimaalnelimiit = 30 * (this.netosissetulek - this.kohustused) * (1/(this.ylalpeetavad + 0.8)) / Number(this.taotleja) * ((this.perekonnaseis + 0.5) / 0.8);
+
+  }
 }

@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './avaleht.css',
 })
 export class Avaleht {
-
+  laigitud = true;
 }

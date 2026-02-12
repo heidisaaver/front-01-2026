@@ -6,4 +6,6 @@
 <br>
 <label>Arvuti lisamine </label> <br/>
 <input [(ngModel)]="arvuti" type="text"> <br/>
-<button [disabled]="nupp === true" (click)="sisesta()">Sisesta</button>
+<button [disabled]=" arvuti === '' "     (click)="sisesta ()" >Sisesta</button>
+
+<!-- <button [disabled]="summa === 0" (click)="vahenda()">-</button> -->
