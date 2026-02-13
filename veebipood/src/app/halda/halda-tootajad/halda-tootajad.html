@@ -1,1 +1,24 @@
-<p>halda-tootajad works!</p>
+
+
+<table>
+    <thead>
+        <tr>
+        <th>Järjekorranumber</th>
+        <th>Index</th>
+        <th>Töötaja nimi</th>
+        <th>Kustuta</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (tootaja of tootajad; track $index) {
+            <tr>
+                <td>{{$index + 1}}</td>
+                <td>{{$index}}</td>
+                <td>{{tootaja}}</td>
+                <td> <button (click)="kustuta($index)">x</button> </td>
+            </tr>
+        }
+
+    </tbody>
+
+</table>

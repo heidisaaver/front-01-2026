@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Tootaja } from '../../services/tootaja';
 
 @Component({
   selector: 'app-tootajad',
@@ -7,8 +8,17 @@ import { Component } from '@angular/core';
   styleUrl: './tootajad.css',
 })
 export class Tootajad {
-  tootajad = ["Marten Kask", "Liis Tamm", "Andres Saar", "Katrin Lepp", "Rasmus Põld", "Maarja Mägi", "Kristjan Vaher", "Anu Järv", "Taavi Oja", "Helena Kuusk"];
+  tootajad: string[] = [];
 
+  constructor(private tootajaService: Tootaja) {}
+
+  ngOnInit() {
+    this.tootajad = this.tootajaService.tootajad;
+  }
+
+  reset() {
+    this.tootajad = this.tootajaService.tootajad;
+  }
 
 
 

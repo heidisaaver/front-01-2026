@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Toode } from '../../services/toode';
 
 @Component({
   selector: 'app-halda-tooted',
@@ -6,6 +7,17 @@ import { Component } from '@angular/core';
   templateUrl: './halda-tooted.html',
   styleUrl: './halda-tooted.css',
 })
-export class HaldaTooted {
+export class HaldaTooted implements OnInit {
+  tooted: string[] = [];
+
+  constructor(private toodeService: Toode) {}
+
+  ngOnInit() {
+    this.tooted = this.toodeService.tooted;
+  }
+
+  kustuta(index: number) {
+    this.tooted.splice(index, 1);
+  }
 
 }

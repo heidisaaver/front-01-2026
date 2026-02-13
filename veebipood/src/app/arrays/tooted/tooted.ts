@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Toode } from '../../services/toode';
 
 @Component({
   selector: 'app-tooted',
@@ -8,8 +9,17 @@ import { Component } from '@angular/core';
 })
 export class Tooted {
 
-   tooted = ["Mootoriõli", "Autorehvid", "Piduriklotsid", "Õlifilter", "Akulaadija", "Tuuleklaasipuhastid", "Jahutusvedelik", "Autopesuvaha", "Salongifilter", "Käigukastiõli"];
+   tooted: string[] = [];
 
+   constructor(private toodeService: Toode) {}
+
+   ngOnInit() {
+    this.tooted = this.toodeService.tooted;
+   }
+
+   reset() {
+    this.tooted = this.toodeService.tooted;
+   }
 
 
 

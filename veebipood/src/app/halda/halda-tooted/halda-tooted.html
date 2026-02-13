@@ -1,1 +1,24 @@
-<p>halda-tooted works!</p>
+
+
+<table>
+    <thead>
+        <tr>
+        <th>Järjekorranumber</th>
+        <th>Index</th>
+        <th>Toote nimi</th>
+        <th>Kustuta</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (toode of tooted; track $index) {
+            <tr>
+                <td>{{$index + 1}}</td>
+                <td>{{$index}}</td>
+                <td>{{toode}}</td>
+                <td> <button (click)="kustuta($index)">x</button> </td>
+            </tr>
+        }
+
+    </tbody>
+
+</table>
