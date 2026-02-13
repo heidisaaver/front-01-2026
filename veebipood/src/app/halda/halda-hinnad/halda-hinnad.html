@@ -1,0 +1,32 @@
+
+<button (click)="kustutaEsimene()">Kustuta esimene</button>
+<button (click)="kustutaTeine()">Kustuta teine</button>
+<button (click)="kustutaKolmas()">Kustuta kolmas</button>
+<button (click)="kustuta(3)">Kustuta neljas</button>
+<button (click)="kustuta(4)">Kustuta viies</button>
+<button (click)="kustuta(5)">Kustuta kuues</button>
+
+<br>
+
+<table>
+    <thead>
+        <tr>
+        <th>Järjekorranumber</th>
+        <th>Index</th>
+        <th>Hind</th>
+        <th>Kustuta</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (hind of hinnad; track $index) {
+            <tr>
+                <td>{{$index + 1}}</td>
+                <td>{{$index}}</td>
+                <td>{{hind}}</td>
+                <td> <button (click)="kustuta($index)"> x </button> </td>
+            </tr>
+        }
+
+    </tbody>
+
+</table>

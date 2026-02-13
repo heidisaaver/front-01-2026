@@ -14,6 +14,8 @@ export class Lisamine {
     
     alert(`Arvuti lisatud`);
 
+    this.arvuti = "";
+
 
   }
 }

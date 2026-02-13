@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Hind } from '../../services/hind';
 
 @Component({
   selector: 'app-hinnad',
@@ -7,8 +8,17 @@ import { Component } from '@angular/core';
   styleUrl: './hinnad.css',
 })
 export class Hinnad {
-  hinnad = [312,551,12,8,23,6,541,5,52,76,3,98]
+  hinnad: number[] = [];
 
+  constructor (private hindService: Hind) {}
+
+  ngOnInit() {
+    this.hinnad = this.hindService.hinnad;
+  }
+  
+  reset() {
+    this.hinnad = this.hindService.hinnad;
+  }
 
 
 sorteeriVaiksemast() {
@@ -19,5 +29,17 @@ sorteeriSuuremast() {
   this.hinnad.sort((a, b) => b - a);
 }
  
+
+filtreeriVaiksemadKui10() {
+  this.hinnad = this.hinnad.filter ( hind => hind < 10 );
+
+}
+
+
+filtreeriSuuremadKui100() {
+  this.hinnad = this.hinnad.filter( hind => hind > 100 )
+
+}
+
 
 }

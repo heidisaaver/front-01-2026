@@ -18,6 +18,11 @@ export class Ostukorv {
   this.ostukorviSumma = 0;
 }
 
+
+kustuta(index: number) {
+  this.ostukorv.splice(index, 1);
+}
+
 }
 
 

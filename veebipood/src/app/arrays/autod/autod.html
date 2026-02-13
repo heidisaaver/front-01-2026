@@ -2,6 +2,12 @@
 <div>Autode koguarv: {{autod.length}} tk</div>
 <br>
 
+<button (click)="reset()">Reset</button>
+
+<br>
+<br>
+
+
 <button (click)="sorteeriAZ()"> Sorteeri AZ</button>
 <button (click)="sorteeriZA()">Sorteeri ZA</button>
 
@@ -12,6 +18,15 @@
 <button (click)="sorteeriSuuremasttSonast()">Sorteeri tähed kahanevalt</button>
 
 <button (click)="sorteeriKolmasTahtAZ()">Sorteeri kolmas täht AZ</button>
+
+<br><br>
+
+<button (click)="filtreeri7Tahelised()"> Filtreeri täpselt 7 tähelised</button>
+<button (click)="filtreeriVahemalt6Tahelised()"> Filtreeri vähemalt 6 tähelised</button>
+<button (click)="filtreeriSisaldabLyhenditER()"> Filtreeri sisaldab lühendit ER</button>
+<button (click)="filtreeriLoppebTahegaI()"> Filtreeri kes lõppeb i tähega</button>
+<button (click)="filtreeriTeineTahtonO()"> Filtreeri kellel teine täht on o</button>
+
 
 @for (auto of autod; track $index) {
     <div>{{auto}}</div>

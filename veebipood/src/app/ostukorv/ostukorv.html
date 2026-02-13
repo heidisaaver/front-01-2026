@@ -14,7 +14,7 @@
 
 
 @for(toode of ostukorv; track toode) {
-   <div>{{toode}} <button>x</button></div>
+   <div>{{toode}} <button (click)="kustuta($index)">x</button></div>
 
 }
 
