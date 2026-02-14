@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Toode } from '../../services/toode';
+import { Toode } from '../services/toode';
 
 
 @Component({

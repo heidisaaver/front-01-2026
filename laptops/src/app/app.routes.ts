@@ -4,10 +4,12 @@ import { Component } from '@angular/core';
 import { Arvutid } from './arvutid/arvutid';
 import { Lisamine } from './lisamine/lisamine';
 import { NotFound } from './not-found/not-found';
+import { Paroolikast } from './paroolikast/paroolikast';
 
 export const routes: Routes = [
     {path: "", component: Avaleht },
     {path: "arvutid", component: Arvutid},
     {path: "lisamine", component: Lisamine},
+    {path: "paroolikast", component: Paroolikast},
     {path: "**", component: NotFound }
 ];

@@ -27,7 +27,7 @@ import { LisaEsindused } from './lisa/lisa-esindused/lisa-esindused';
 import { LisaHinnad } from './lisa/lisa-hinnad/lisa-hinnad';
 import { LisaKasutajad } from './lisa/lisa-kasutajad/lisa-kasutajad';
 import { LisaTootajad } from './lisa/lisa-tootajad/lisa-tootajad';
-import { LisaToode } from './lisa/lisa-toode/lisa-toode';
+import { LisaToode } from './lisa-toode/lisa-toode';
 
 
 
