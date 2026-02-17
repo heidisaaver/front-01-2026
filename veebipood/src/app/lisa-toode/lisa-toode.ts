@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Toode } from '../services/toode';
+import { ToodeService } from '../services/toode.service';
 
 
 @Component({
@@ -12,8 +12,11 @@ import { Toode } from '../services/toode';
 export class LisaToode {
   sonum = "Siin saad lisada toote!";
   nimi = "";
+  hind = 0;
+  pilt = "";
+  aktiivne = false;
 
-  constructor(private toodeServive: Toode) {}
+  constructor(private toodeService: ToodeService) {}
 
   lisa() {
     
@@ -33,7 +36,18 @@ export class LisaToode {
   
 
 }
-  this.toodeServive.tooted.push(this.nimi);
-  this.sonum = "Lisatud toode: " + this.nimi
+  this.toodeService.tooted.push({
+    "nimi": this.nimi,
+    "hind": this.hind,
+    "pilt": this.pilt,
+    "aktiivne": this.aktiivne
+  });
+
+  this.nimi = "";
+  this.hind = 0;
+  this.pilt = "";
+  this.aktiivne = false;
+
+  // this.sonum = "Lisatud toode: " + this.nimi
 }
 }

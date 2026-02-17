@@ -15,5 +15,9 @@
 <button (click)="filtreeriSuuremadKui100()">Jäta alles suuremad kui 100 </button>
 
 @for (hind of hinnad; track $index) {
-    <div>{{hind}}</div>
+    <div>{{hind.arv}} - ({{hind.sonana}})</div>
 }
+
+<br>
+
+<div>Kõik hinnad kokku: {{arvutaKokku()}} €</div>

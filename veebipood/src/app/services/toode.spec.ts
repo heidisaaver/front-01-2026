@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { Toode } from './toode';
+import { Toode } from './toode.service';
 
 describe('Toode', () => {
   let service: Toode;

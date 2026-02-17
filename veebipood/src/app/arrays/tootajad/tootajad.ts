@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { Tootaja } from '../../services/tootaja';
+import { TootajaService } from '../../services/tootaja.service';
+import { Tootaja } from '../../models/Tootaja';
+
 
 @Component({
   selector: 'app-tootajad',
@@ -8,9 +10,9 @@ import { Tootaja } from '../../services/tootaja';
   styleUrl: './tootajad.css',
 })
 export class Tootajad {
-  tootajad: string[] = [];
+  tootajad: Tootaja [] = [];
 
-  constructor(private tootajaService: Tootaja) {}
+  constructor(private tootajaService: TootajaService) {}
 
   ngOnInit() {
     this.tootajad = this.tootajaService.tootajad;
@@ -23,25 +25,30 @@ export class Tootajad {
 
 
 sorteeriAZ() {
-  this.tootajad.sort((a, b) => a.localeCompare(b));
+  this.tootajad.sort((a, b) => a.nimi.localeCompare(b.nimi));
 }
 
 sorteeriZA() {
 
-  this.tootajad.sort((a, b) => b.localeCompare(a));
+  this.tootajad.sort((a, b) => b.nimi.localeCompare(a.nimi));
 
 }
 
 sorteeriVaiksemastSonast() {
-  this.tootajad.sort((a, b) => a.length - b.length);
+  this.tootajad.sort((a, b) => a.nimi.length - b.nimi.length);
 }
 
 sorteeriSuuremasttSonast() {
-  this.tootajad.sort((a, b) => b.length - a.length);
+  this.tootajad.sort((a, b) => b.nimi.length - a.nimi.length);
 }
 
 sorteeriKolmasTahtAZ() {
-  this.tootajad.sort((a, b) => a[2].localeCompare(b[2]));
+  this.tootajad.sort((a, b) => a.nimi[2].localeCompare(b.nimi[2]));
 }
+
+calculateAverageAge() {
+  let totalAge = 0;
+  this.tootajad.forEach(tootaja => totalAge += tootaja.vanus);
+  return (totalAge / this.tootajad.length).toFixed(2);}
 }
 

@@ -13,5 +13,9 @@
 <button (click)="sorteeriKolmasTahtAZ()">Sorteeri kolmas täht AZ</button>
 
 @for (tootaja of tootajad; track $index) {
-    <div>{{tootaja}}</div>
+    <div>{{tootaja.nimi}} - {{tootaja.amet}}</div>
 }
+
+<br>
+
+<div>Töötajate keskmine vanus: {{calculateAverageAge()}}</div>

@@ -1,1 +1,21 @@
-<p>lisa-kasutajad works!</p>
+<br>
+
+<div>{{sonum}}</div>
+
+<br>
+
+<label>Kasutaja nimi</label> <br/>
+<input [(ngModel)]="nimi" type="text"> <br/>
+
+<label>Kasutaja e-post</label> <br/>
+<input [(ngModel)]="epost" type="text"> <br/>
+
+<label>Kasutaja parool</label> <br/>
+<input [(ngModel)]="parool" type="text"> <br/>
+
+<label>Kasutaja vanus</label> <br/>
+<input [(ngModel)]="vanus" type="number"> <br/>
+
+<br>
+
+<button (click)="lisaKasutaja()">Sisesta</button> <br/>

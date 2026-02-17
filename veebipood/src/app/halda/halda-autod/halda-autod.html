@@ -6,6 +6,9 @@
         <th>Järjekorranumber</th>
         <th>Index</th>
         <th>Auto nimi</th>
+        <th>Auto hind</th>
+        <th>Auto pilt</th>
+        <th>Auto aktiivne</th>
         <th>Kustuta</th>
         </tr>
     </thead>
@@ -14,7 +17,12 @@
             <tr>
                 <td>{{$index + 1}}</td>
                 <td>{{$index}}</td>
-                <td>{{auto}}</td>
+                <td>{{auto.nimi}}</td>
+                <td>{{auto.hind}} €</td>
+                <td>{{auto.pilt}}</td>
+                <!-- <td><img src="{{auto.pilt}}" alt="Auto pilt" width="100"></td> -->
+                <!-- <td>{{auto.aktiivne ? "Jah" : "Ei"}}</td> -->
+                 <td>{{auto.aktiivne}}</td>
                 <td> <button (click)="kustuta($index)">x</button> </td>
             </tr>
         }

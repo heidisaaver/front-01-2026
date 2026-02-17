@@ -1,1 +1,29 @@
-<p>halda-esindused works!</p>
+
+
+
+<table>
+    <thead>
+        <tr>
+        <th>Järjekorranumber</th>
+        <th>Index</th>
+        <th>Esinduse nimi</th>
+        <th>Esinduse aadress</th>
+        <th>Esinduse telefon</th>
+        <th>Kustuta</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (esindus of esindused; track $index) {
+            <tr>
+                <td>{{$index + 1}}</td>
+                <td>{{$index}}</td>
+                <td>{{esindus.nimi}}</td>
+                <td>{{esindus.aadress}}</td>
+                <td>{{esindus.telefon}}</td>
+                <td> <button (click)="kustuta($index)">x</button> </td>
+            </tr>
+        }
+
+    </tbody>
+
+</table>

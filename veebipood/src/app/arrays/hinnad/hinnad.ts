@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Hind } from '../../services/hind';
+import { HindService } from '../../services/hind';
+import { Hind } from '../../models/Hind';
 
 @Component({
   selector: 'app-hinnad',
@@ -8,9 +9,9 @@ import { Hind } from '../../services/hind';
   styleUrl: './hinnad.css',
 })
 export class Hinnad {
-  hinnad: number[] = [];
+  hinnad:  Hind [] = [];
 
-  constructor (private hindService: Hind) {}
+  constructor (private hindService: HindService) {}
 
   ngOnInit() {
     this.hinnad = this.hindService.hinnad;
@@ -22,22 +23,29 @@ export class Hinnad {
 
 
 sorteeriVaiksemast() {
-  this.hinnad.sort((a, b) => a - b);
+  this.hinnad.sort((a, b) => a.arv - b.arv);
 }
 
 sorteeriSuuremast() {
-  this.hinnad.sort((a, b) => b - a);
+  this.hinnad.sort((a, b) => b.arv - a.arv);
 }
  
 
 filtreeriVaiksemadKui10() {
-  this.hinnad = this.hinnad.filter ( hind => hind < 10 );
+  this.hinnad = this.hinnad.filter ( hind => hind.arv < 10 );
 
 }
 
 
 filtreeriSuuremadKui100() {
-  this.hinnad = this.hinnad.filter( hind => hind > 100 )
+  this.hinnad = this.hinnad.filter( hind => hind.arv > 100 )
+
+}
+
+arvutaKokku() {
+  let summa = 0;
+  this.hinnad.forEach(hind => summa = summa + hind.arv);
+  return summa;
 
 }
 

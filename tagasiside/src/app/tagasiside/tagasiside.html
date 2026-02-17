@@ -1,0 +1,31 @@
+
+<h1>Tagasisided:</h1>
+
+<div>
+    <label for="feedback-input">Lisa uus tagasiside:</label>
+    <input 
+    id="feedback-input" 
+    type="text" 
+    [(ngModel)]="uusTagasiside"
+    placeholder="Kirjuta siia"
+        
+    />
+    <button (click)="lisaTagasiside(uusTagasiside)">Sisesta</button>
+
+
+
+
+</div>
+
+<br><br>
+
+
+
+
+
+<div class="feedback-list">
+    @for (element of tagasisided; track element) {
+        <div>{{element}}</div>
+    }   
+
+</div>

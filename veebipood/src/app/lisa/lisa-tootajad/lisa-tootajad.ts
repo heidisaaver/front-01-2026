@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Tootaja } from '../../services/tootaja';
+import { TootajaService } from '../../services/tootaja.service';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -11,8 +11,11 @@ import { FormsModule } from '@angular/forms';
 export class LisaTootajad {
     sonum = "Lisa uus töötaja";
     nimi = "";
+    amet = "";
+    telefon = "";
+    vanus = 0;
 
-  constructor(private tootajaService: Tootaja) {}
+  constructor(private tootajaService: TootajaService) {}
 
   lisa () {
 
@@ -43,9 +46,20 @@ export class LisaTootajad {
     return;
     }
 
-    this.tootajaService.tootajad.push(this.nimi);
+    this.tootajaService.tootajad.push({
+      nimi: this.nimi,
+      amet: this.amet,
+      telefon: this.telefon,
+      vanus: this.vanus
+    });
     this.sonum = "Lisasid töötaja: "+ this.nimi;
 
-  }
+  
 
+  this.nimi = "";
+  this.amet = "";
+  this.telefon = "";
+  this.vanus = 0;
+
+  }
 }

@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Kasutaja } from '../../models/Kasutaja';
+import { KasutajaService } from '../../services/kasutaja.service';
 
 @Component({
   selector: 'app-halda-kasutajad',
@@ -6,6 +8,19 @@ import { Component } from '@angular/core';
   templateUrl: './halda-kasutajad.html',
   styleUrl: './halda-kasutajad.css',
 })
-export class HaldaKasutajad {
+export class HaldaKasutajad implements OnInit {
+
+  kasutajad: Kasutaja[] = [];
+
+  constructor(private kasutajaService: KasutajaService) {}
+
+
+  ngOnInit() {
+    this.kasutajad = this.kasutajaService.kasutajad;
+  }
+
+  kustuta(index: number) {
+    this.kasutajad.splice(index, 1);
+  }
 
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Tootaja } from '../../services/tootaja';
+import { TootajaService } from '../../services/tootaja.service';
+import { Tootaja } from '../../models/Tootaja';
+
 
 @Component({
   selector: 'app-halda-tootajad',
@@ -8,9 +10,9 @@ import { Tootaja } from '../../services/tootaja';
   styleUrl: './halda-tootajad.css',
 })
 export class HaldaTootajad implements OnInit{
-  tootajad: string[] = []
+  tootajad: Tootaja[] = []
 
-  constructor(private tootajaService: Tootaja) {}
+  constructor(private tootajaService: TootajaService) {}
 
   ngOnInit() {
     this.tootajad = this.tootajaService.tootajad;

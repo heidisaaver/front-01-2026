@@ -9,13 +9,13 @@
 
 <div>Toodete koguarv {{ostukorv.length}} tk</div>
 
-<div>Ostukorvi kogusumma: {{ostukorviSumma}} €</div>
+<div>Ostukorvi kogusumma: {{arvutaKokku()}} €</div>
 }
 
-
+<br>
 @for(toode of ostukorv; track toode) {
-   <div>{{toode}} <button (click)="kustuta($index)">x</button></div>
-
+   <div>{{toode.nimi}} - {{toode.hind}} € <button (click)="kustuta($index)">x</button></div>
+   
 }
 
 

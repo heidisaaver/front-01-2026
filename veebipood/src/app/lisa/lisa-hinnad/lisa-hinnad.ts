@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Hind } from '../../services/hind';
+import { HindService } from '../../services/hind';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -10,19 +10,28 @@ import { FormsModule } from '@angular/forms';
 })
 export class LisaHinnad {
 
-  hind = 0;
+  arv = 0;
+  sonana = "";
 
-  constructor(private hindService: Hind) {}
+  constructor(private hindService: HindService) {}
 
   lisa() {
     
-    if (this.hind <=0) {
+    if (this.arv <=0) {
       alert("Ei saa negatiivset hinda lisada");
       return;
     }
 
 
-    this.hindService.hinnad.push(this.hind);
-  }
+    this.hindService.hinnad.push({
+      "arv": this.arv, 
+      "sonana": this.sonana}
+    );
+  
+
+    this.arv = 0;
+    this.sonana = "";
+    
+}
 
 }

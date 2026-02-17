@@ -1,1 +1,28 @@
 <p>arvutid works!</p>
+
+
+<div> {{sonum}}</div>
+
+
+<br>
+<br>
+@if (sisselogitud === 'ei') {
+ <div>
+    <label>Kasutajanimi</label>
+    <input type="text" [(ngModel)]="kasutajanimi">
+    <br>
+    <label>Parool</label>
+    <input type="password" [(ngModel)]="parool"> 
+    <br>
+ </div>   
+<button (click)="logiSisse()">Logi sisse</button>
+} @else {
+    <div>
+    <p>Oled sisse logitud</p>
+<br> <br>
+
+<button (click)="logiValja()">Logi välja </button>
+</div>
+
+}
+<div></div>

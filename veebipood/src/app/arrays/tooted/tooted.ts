@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { Toode } from '../../services/toode';
+import { ToodeService } from '../../services/toode.service';
+import { Toode } from '../../models/Toode';
+import { OstukorvService } from '../../services/ostukorv.service';
+
 
 @Component({
   selector: 'app-tooted',
@@ -9,9 +12,12 @@ import { Toode } from '../../services/toode';
 })
 export class Tooted {
 
-   tooted: string[] = [];
+   tooted: Toode[] = [];
 
-   constructor(private toodeService: Toode) {}
+   constructor(private toodeService: ToodeService,
+    private ostukorvService: OstukorvService
+
+   ) {}
 
    ngOnInit() {
     this.tooted = this.toodeService.tooted;
@@ -24,24 +30,35 @@ export class Tooted {
 
 
 sorteeriAZ() {
-  this.tooted.sort((a, b) => a.localeCompare(b));
+  this.tooted.sort((a, b) => a.nimi.localeCompare(b.nimi));
 }
 
 sorteeriZA() {
 
-  this.tooted.sort((a, b) => b.localeCompare(a));
+  this.tooted.sort((a, b) => b.nimi.localeCompare(a.nimi));
 
 }
 
 sorteeriVaiksemastSonast() {
-  this.tooted.sort((a, b) => a.length - b.length);
+  this.tooted.sort((a, b) => a.nimi.length - b.nimi.length);
 }
 
 sorteeriSuuremasttSonast() {
-  this.tooted.sort((a, b) => b.length - a.length);
+  this.tooted.sort((a, b) => b.nimi.length - a.nimi.length);
 }
 
 sorteeriKolmasTahtAZ() {
-  this.tooted.sort((a, b) => a[2].localeCompare(b[2]));
+  this.tooted.sort((a, b) => a.nimi[2].localeCompare(b.nimi[2]));
+}
+
+lisaOstukorvi(toode: Toode) {
+  this.ostukorvService.ostukorv.push(toode);
+}
+
+
+arvutaKokku(): number {
+  let sum = 0;
+  this.tooted.forEach(toode => sum = sum + toode.hind);
+  return sum;
 }
 }

@@ -1,0 +1,28 @@
+
+
+
+
+
+<router-outlet />
+
+
+
+<div (click)="onKlikkimisel()">Kliki siia</div>
+<div (mouseenter)="onHiiregaPealeminekul()" (mouseleave)="onHiirega2raMinekul()">Tule hiirega siia</div>
+<input type="text" (blur)="hiiregaV2ljakl6psates()"><br>
+<input type="text" (keypress)="klaviatuurilVajutades()">
+
+<div *ngIf=="n2itaKollast" class="yellow"></div>
+<div *ngIf="n2itaRohelist" class="green"></div>
+<div *ngIf="n2itaSinist" class="blue"></div>
+<div *ngIf="n2itaPunast" class="red"></div>
+
+<br> <br> <br>
+<div>Nimi: {{nimi}}</div> 
+<div>Telefon: {{telefon}}</div>
+
+<div></div>
+
+<button (click)="lisainfo()">Näita lisainfot</button>
+
+

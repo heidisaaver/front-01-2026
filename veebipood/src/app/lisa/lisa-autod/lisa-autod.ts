@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Auto } from '../../services/auto';
+import { AutoService } from '../../services/auto';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -10,8 +10,11 @@ import { FormsModule } from '@angular/forms';
 })
 export class LisaAutod {
     nimi = ""
+    hind = 0;
+    pilt = "";
+    aktiivne = false;
 
-  constructor(private autoService: Auto) {}
+  constructor(private autoService: AutoService) {}
 
   lisa() {
    
@@ -34,10 +37,19 @@ export class LisaAutod {
     }
 
   
-  this.autoService.autod.push(this.nimi);
+  this.autoService.autod.push({
+    "nimi": this.nimi,
+    "hind": this.hind,
+    "pilt": this.pilt,
+    "aktiivne": this.aktiivne
+  });
 
-  }
+  this.nimi = "";
+  this.hind = 0;
+  this.pilt = "";
+  this.aktiivne = false;
 
+}
 }
 
 

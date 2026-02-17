@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Auto } from '../../services/auto';
+import { AutoService } from '../../services/auto';
+import { Auto } from '../../models/Auto';
 
 @Component({
   selector: 'app-halda-autod',
@@ -8,9 +9,9 @@ import { Auto } from '../../services/auto';
   styleUrl: './halda-autod.css',
 })
 export class HaldaAutod implements OnInit {
-  autod: string[] = [];
+  autod: Auto[] = [];
 
-  constructor(private autoService: Auto) {}
+  constructor(private autoService: AutoService) {}
 
   ngOnInit() {
   this.autod = this.autoService.autod;

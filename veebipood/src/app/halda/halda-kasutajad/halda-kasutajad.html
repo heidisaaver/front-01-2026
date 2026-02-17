@@ -1,1 +1,29 @@
-<p>halda-kasutajad works!</p>
+
+<table>
+    <thead>
+        <tr>
+        <th>Järjekorranumber</th>
+        <th>Index</th>
+        <th>Kasutaja nimi</th>
+        <th>Kasutaja epost</th>
+        <th>Kasutaja parool</th>
+        <th>Kasutaja vanus</th>
+        <th>Kustuta</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (kasutaja of kasutajad; track $index) {
+            <tr>
+                <td>{{$index + 1}}</td>
+                <td>{{$index}}</td>
+                <td>{{kasutaja.nimi}}</td>
+                <td>{{kasutaja.epost}}</td>
+                <td>{{kasutaja.parool}}</td>
+                <td>{{kasutaja.vanus}}</td>
+                <td> <button (click)="kustuta($index)">x</button> </td>
+            </tr>
+        }
+
+    </tbody>
+
+</table>

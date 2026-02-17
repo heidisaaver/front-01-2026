@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Toode } from '../../services/toode';
+import { ToodeService } from '../../services/toode.service';
+import { Toode } from '../../models/Toode';
+
 
 @Component({
   selector: 'app-halda-tooted',
@@ -8,9 +10,9 @@ import { Toode } from '../../services/toode';
   styleUrl: './halda-tooted.css',
 })
 export class HaldaTooted implements OnInit {
-  tooted: string[] = [];
+  tooted: Toode[] = [];
 
-  constructor(private toodeService: Toode) {}
+  constructor(private toodeService: ToodeService) {}
 
   ngOnInit() {
     this.tooted = this.toodeService.tooted;

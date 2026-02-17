@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Hind } from '../../services/hind';
+import { HindService } from '../../services/hind';
+import { Hind } from '../../models/Hind';
 
 @Component({
   selector: 'app-halda-hinnad',
@@ -8,9 +9,9 @@ import { Hind } from '../../services/hind';
   styleUrl: './halda-hinnad.css',
 })
 export class HaldaHinnad {
-  hinnad: number[] = [];
+  hinnad: Hind[] = [];
 
-  constructor (private hindService: Hind) {}
+  constructor (private hindService: HindService) {}
 
   ngOnInit() {
     this.hinnad = this.hindService.hinnad;

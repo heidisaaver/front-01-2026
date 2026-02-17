@@ -7,13 +7,23 @@
 
 @if (linn === "Tallinn"){
     <br/>
-    <div>Ülemiste</div>
+    <!-- <div>Ülemiste</div>
     <div>Rocc al Mare</div>
     <div>Magistrali</div>
     <div>Vesse</div>
     <div>Kristiine</div>
-    <div>Järveotsa</div>
+    <div>Järveotsa</div> -->
+
+
+    @for (keskus of keskused; track $index) {
+        <div>{{keskus.nimi}} - {{keskus.aadress}}</div>
+    }
+
+    <br>
+    <div>Kõik tähemärgid kokku: {{arvutaKokku()}}</div>
 }
+
+
 
 @if (linn === "Tartu"){
     <br/>
@@ -33,3 +43,4 @@
     <div>Port Artur 2</div>
     
 }
+

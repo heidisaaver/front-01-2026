@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { EsindusService } from '../../services/esindus';
+import { Esindus } from '../../models/Esindus';
+
 
 @Component({
   selector: 'app-esindused',
@@ -6,6 +9,21 @@ import { Component } from '@angular/core';
   templateUrl: './esindused.html',
   styleUrl: './esindused.css',
 })
-export class Esindused {
- linn = "Tallinn"
+export class Esindused implements OnInit {
+ linn = "Tallinn";
+ keskused: Esindus[] = [];
+
+ constructor(private esindusService: EsindusService) {}
+
+  ngOnInit() {
+  this.keskused = this.esindusService.esindused;
+
+}
+
+arvutaKokku() {
+  let summa = 0;
+  this.keskused.forEach(keskus => summa = summa + keskus.nimi.length);
+  return summa;
+}
+
 }

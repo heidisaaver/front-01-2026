@@ -13,6 +13,11 @@
 <button (click)="sorteeriKolmasTahtAZ()">Sorteeri kolmas täht AZ</button>
 
 @for (toode of tooted; track $index) {
-    <div>{{toode}}</div>
+    <div>{{toode.nimi}} ({{toode.hind}}€)
+    <button (click)="lisaOstukorvi(toode)">Lisa ostukorvi</button>
+    </div>
 }
+
+<br>
+<div>Kõik hinnad kokku: {{arvutaKokku()}} €</div>
 

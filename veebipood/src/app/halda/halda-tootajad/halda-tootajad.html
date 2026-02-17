@@ -6,6 +6,9 @@
         <th>Järjekorranumber</th>
         <th>Index</th>
         <th>Töötaja nimi</th>
+        <th>Töötaja amet</th>
+        <th>Töötaja telefon</th>
+        <th>Töötaja vanus</th>
         <th>Kustuta</th>
         </tr>
     </thead>
@@ -14,7 +17,10 @@
             <tr>
                 <td>{{$index + 1}}</td>
                 <td>{{$index}}</td>
-                <td>{{tootaja}}</td>
+                <td>{{tootaja.nimi}}</td>
+                <td>{{tootaja.amet}}</td>
+                <td>{{tootaja.telefon}}</td>
+                <td>{{tootaja.vanus}}</td>
                 <td> <button (click)="kustuta($index)">x</button> </td>
             </tr>
         }

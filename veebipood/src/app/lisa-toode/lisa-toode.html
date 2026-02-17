@@ -1,6 +1,20 @@
 
+<br>
 <div>{{sonum}}</div>
+<br>
 
 <label>Toote nimi</label> <br/>
 <input [(ngModel)]="nimi" type="text"> <br/>
+
+<label>Toote hind</label> <br/>
+<input [(ngModel)]="hind" type="number"> <br/>
+
+<label>Toote pilt</label> <br/>
+<input [(ngModel)]="pilt" type="text"> <br/>
+
+<label>Toode aktiivne</label> <br/>
+<input [(ngModel)]="aktiivne" type="checkbox"> <br/>
+
+<br>
+
 <button (click)="lisa()">Sisesta</button> <br/>
