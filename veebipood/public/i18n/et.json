@@ -1,0 +1,13 @@
+
+{
+    "menu": {
+        "giftcards": "Kinkekaardid",
+        "cart": "Ostukorv",
+        "settings": "Seaded",
+        "regular-calc.": "Tavakalkulaator",
+        "loan-calc.": "Laenukalkulaator",
+        "max-calc.": "Maksimaalne kalkulaator",
+        "manage": "Halda",
+        "add": "Lisama"
+    }
+}

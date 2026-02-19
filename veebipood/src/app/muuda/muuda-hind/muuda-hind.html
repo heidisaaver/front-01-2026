@@ -1,0 +1,13 @@
+
+
+
+@if (hind) {
+    <label>Hind number</label><br>
+    <input [(ngModel)]="hind.arv" type="number" ><br>
+    <label>Hind sõnana</label><br>
+    <input [(ngModel)]="hind.sonana" type="text" > <br>
+    <button (click)="muuda()">Muuda</button>
+   
+}   @else {
+    <div>Autot ei leitud</div>
+}

@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { EsindusService } from '../../services/esindus';
 import { Esindus } from '../../models/Esindus';
+import { RouterLink } from "@angular/router";
 
 
 @Component({
   selector: 'app-esindused',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './esindused.html',
   styleUrl: './esindused.css',
 })

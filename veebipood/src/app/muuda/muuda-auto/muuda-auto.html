@@ -1,0 +1,16 @@
+
+@if (auto) {
+    <label>Auto nimi</label><br>
+    <input [(ngModel)]="auto.nimi" type="text" >
+    <label>Auto hind</label><br>
+    <input [(ngModel)]="auto.hind" type="number" >
+    <label>Auto pilt</label><br>
+    <input [(ngModel)]="auto.pilt" type="text" >  
+    <label>Auto aktiivne</label><br> 
+    <input [(ngModel)]="auto.aktiivne" type="checkbox" >
+    <button  (click)="muuda()">Muuda</button>
+   
+   
+}   @else {
+    <div>Autot ei leitud</div>
+}

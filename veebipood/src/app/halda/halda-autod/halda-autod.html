@@ -10,6 +10,7 @@
         <th>Auto pilt</th>
         <th>Auto aktiivne</th>
         <th>Kustuta</th>
+        <th>Muuda</th>
         </tr>
     </thead>
     <tbody>
@@ -23,7 +24,9 @@
                 <!-- <td><img src="{{auto.pilt}}" alt="Auto pilt" width="100"></td> -->
                 <!-- <td>{{auto.aktiivne ? "Jah" : "Ei"}}</td> -->
                  <td>{{auto.aktiivne}}</td>
+                 
                 <td> <button (click)="kustuta($index)">x</button> </td>
+                <td><button routerLink="/muuda-auto/{{$index}}">Muuda</button></td>
             </tr>
         }
 

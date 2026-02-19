@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { EsindusService } from '../../services/esindus';
 import { Esindus } from '../../models/Esindus';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-halda-esindused',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './halda-esindused.html',
   styleUrl: './halda-esindused.css',
 })

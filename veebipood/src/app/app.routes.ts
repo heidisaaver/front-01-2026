@@ -27,7 +27,20 @@ import { LisaEsindused } from './lisa/lisa-esindused/lisa-esindused';
 import { LisaHinnad } from './lisa/lisa-hinnad/lisa-hinnad';
 import { LisaKasutajad } from './lisa/lisa-kasutajad/lisa-kasutajad';
 import { LisaTootajad } from './lisa/lisa-tootajad/lisa-tootajad';
-import { LisaToode } from './lisa-toode/lisa-toode';
+import { LisaToode } from './lisa/lisa-toode/lisa-toode';
+import { MuudaAuto } from './muuda/muuda-auto/muuda-auto';
+import { MuudaEsindus } from './muuda/muuda-esindus/muuda-esindus';
+import { MuudaHind } from './muuda/muuda-hind/muuda-hind';
+import { MuudaKasutaja } from './muuda/muuda-kasutaja/muuda-kasutaja';
+import { MuudaTootaja } from './muuda/muuda-tootaja/muuda-tootaja';
+import { MuudaToode } from './muuda/muuda-toode/muuda-toode';
+import { YksAutoComponent } from './yks/yks-auto.component/yks-auto.component';
+import { YksEsindus } from './yks/yks-esindus/yks-esindus';
+import { YksHind } from './yks/yks-hind/yks-hind';
+import { YksKasutaja } from './yks/yks-kasutaja/yks-kasutaja';
+import { YksTootaja } from './yks/yks-tootaja/yks-tootaja';
+import { YksToode } from './yks/yks-toode/yks-toode';
+
 
 
 
@@ -73,6 +86,20 @@ export const routes: Routes = [
     {path: "lisa-kasutajad", component: LisaKasutajad},
     {path: "lisa-tootajad", component: LisaTootajad},
     {path: "lisa-toode", component: LisaToode},
+
+    {path: "muuda-auto/:index", component: MuudaAuto},
+    {path: "muuda-esindus/:index", component: MuudaEsindus},
+    {path: "muuda-hind/:index", component: MuudaHind},
+    {path: "muuda-kasutaja", component: MuudaKasutaja},
+    {path: "muuda-tootaja", component: MuudaTootaja},
+    {path: "muuda-toode", component: MuudaToode},
+
+    {path: "auto/:auto_nimi", component: YksAutoComponent},
+    {path: "esindus/:esinduse_nimi", component: YksEsindus},
+    {path: "hind/:index", component: YksHind},
+    {path: "kasutaja", component: YksKasutaja},
+    {path: "tootaja", component: YksTootaja},
+    {path: "toode", component: YksToode},
 
 
     {path: "**", component: NotFound},

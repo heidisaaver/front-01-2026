@@ -21,6 +21,7 @@
                 <td>{{esindus.aadress}}</td>
                 <td>{{esindus.telefon}}</td>
                 <td> <button (click)="kustuta($index)">x</button> </td>
+                <td><button routerLink="/muuda-esindus/{{$index}}">Muuda</button></td>
             </tr>
         }
 

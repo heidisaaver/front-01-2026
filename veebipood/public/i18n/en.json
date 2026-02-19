@@ -1,0 +1,13 @@
+
+{
+    "menu": {
+        "giftcards": "Gift Cards",
+        "cart": "Cart",
+        "settings": "Settings",
+        "regular-calc.": "Regular Calculator",
+        "loan-calc.": "Loan Calculator",
+        "max-calc.": "Max Calculator",
+        "manage": "Manage",
+        "add": "Add"
+    }
+}

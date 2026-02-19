@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { HindService } from '../../services/hind';
 import { Hind } from '../../models/Hind';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-hinnad',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './hinnad.html',
   styleUrl: './hinnad.css',
 })

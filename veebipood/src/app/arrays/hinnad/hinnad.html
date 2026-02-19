@@ -16,7 +16,16 @@
 
 @for (hind of hinnad; track $index) {
     <div>{{hind.arv}} - ({{hind.sonana}})</div>
+    <button routerLink="/hind/{{$index}}">Vaata lähemalt</button>
 }
+
+<!-- $index: tsükli poolt loodud muutja
+$first - esimene
+$last - viimane
+$even - paaris
+$odd - paaritu
+
+-->
 
 <br>
 

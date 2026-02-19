@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { AutoService } from '../../services/auto';
 import { Auto } from '../../models/Auto';
+import { RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-halda-autod',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './halda-autod.html',
   styleUrl: './halda-autod.css',
 })

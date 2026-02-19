@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { AutoService } from '../../services/auto';
 import { Auto } from '../../models/Auto';
 import { OstukorvService } from '../../services/ostukorv.service';
+import { RouterLink } from "@angular/router";
 
 
 @Component({
   selector: 'app-autod',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './autod.html',
   styleUrl: './autod.css',
 })

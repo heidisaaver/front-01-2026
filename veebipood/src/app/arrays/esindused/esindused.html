@@ -17,6 +17,7 @@
 
     @for (keskus of keskused; track $index) {
         <div>{{keskus.nimi}} - {{keskus.aadress}}</div>
+        <button routerLink="/esindus/{{keskus.nimi}}">Vt kontaktandmeid</button>
     }
 
     <br>
