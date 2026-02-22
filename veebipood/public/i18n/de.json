@@ -1,0 +1,13 @@
+
+{
+    "menu": {
+        "giftcards": "Geschenkgutscheine",
+        "cart": "Einkaufswagen",
+        "settings": "Einstellungen",
+        "regular-calc.": "Regulärer Rechner",
+        "loan-calc.": "Darlehensrechner",
+        "max-calc.": "Maximaler Rechner",
+        "manage": "Verwalten",
+        "add": "Hinzufügen"
+    }
+}

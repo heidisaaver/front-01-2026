@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { TootajaService } from '../../services/tootaja.service';
 import { Tootaja } from '../../models/Tootaja';
+import { RouterLink } from '@angular/router';
 
 
 @Component({
   selector: 'app-halda-tootajad',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './halda-tootajad.html',
   styleUrl: './halda-tootajad.css',
 })

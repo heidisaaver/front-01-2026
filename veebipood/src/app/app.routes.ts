@@ -90,16 +90,16 @@ export const routes: Routes = [
     {path: "muuda-auto/:index", component: MuudaAuto},
     {path: "muuda-esindus/:index", component: MuudaEsindus},
     {path: "muuda-hind/:index", component: MuudaHind},
-    {path: "muuda-kasutaja", component: MuudaKasutaja},
-    {path: "muuda-tootaja", component: MuudaTootaja},
-    {path: "muuda-toode", component: MuudaToode},
+    {path: "muuda-kasutaja/:index", component: MuudaKasutaja},
+    {path: "muuda-tootaja/:index", component: MuudaTootaja},
+    {path: "muuda-toode/:index", component: MuudaToode},
 
     {path: "auto/:auto_nimi", component: YksAutoComponent},
     {path: "esindus/:esinduse_nimi", component: YksEsindus},
     {path: "hind/:index", component: YksHind},
-    {path: "kasutaja", component: YksKasutaja},
-    {path: "tootaja", component: YksTootaja},
-    {path: "toode", component: YksToode},
+    {path: "kasutaja/:kasutaja_nimi", component: YksKasutaja},
+    {path: "tootaja/:tootaja_nimi", component: YksTootaja},
+    {path: "toode/:toode_nimi", component: YksToode},
 
 
     {path: "**", component: NotFound},

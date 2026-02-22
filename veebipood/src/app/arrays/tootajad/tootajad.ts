@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { TootajaService } from '../../services/tootaja.service';
 import { Tootaja } from '../../models/Tootaja';
+import { RouterLink } from '@angular/router';
 
 
 @Component({
   selector: 'app-tootajad',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './tootajad.html',
   styleUrl: './tootajad.css',
 })

@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ToodeService } from '../../services/toode.service';
 import { Toode } from '../../models/Toode';
+import { RouterLink } from '@angular/router';
 
 
 @Component({
   selector: 'app-halda-tooted',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './halda-tooted.html',
   styleUrl: './halda-tooted.css',
 })

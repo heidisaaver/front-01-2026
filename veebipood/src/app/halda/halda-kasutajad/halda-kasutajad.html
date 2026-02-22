@@ -21,6 +21,7 @@
                 <td>{{kasutaja.parool}}</td>
                 <td>{{kasutaja.vanus}}</td>
                 <td> <button (click)="kustuta($index)">x</button> </td>
+                <td><button routerLink="/muuda-kasutaja/{{$index}}">Muuda</button></td>
             </tr>
         }
 

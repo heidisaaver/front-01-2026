@@ -22,6 +22,7 @@
                 <td>{{tootaja.telefon}}</td>
                 <td>{{tootaja.vanus}}</td>
                 <td> <button (click)="kustuta($index)">x</button> </td>
+                <td><button routerLink="/muuda-tootaja/{{$index}}">Muuda</button></td>
             </tr>
         }
 

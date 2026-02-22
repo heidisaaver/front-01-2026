@@ -1,1 +1,23 @@
-<p>muuda-kasutaja works!</p>
+
+@if (kasutaja) {
+    <br>
+    
+    <input [(ngModel)]="kasutaja.nimi" type="text" > 
+    <label>Kasutaja nimi</label><br>
+    
+    <input [(ngModel)]="kasutaja.epost" type="text" >
+    <label>Kasutaja e-post </label><br>
+
+    
+    <input [(ngModel)]="kasutaja.parool" type="text" >  
+    <label>Kasutaja parool</label><br>
+
+ 
+    <input [(ngModel)]="kasutaja.vanus" type="number" > 
+       <label>Kasutaja vanus</label><br>
+    <br>
+    <button (click)="muuda()">Muuda</button>
+   
+}   @else {
+    <div>Kasutajat ei leitud</div>
+}

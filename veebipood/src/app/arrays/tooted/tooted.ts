@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { ToodeService } from '../../services/toode.service';
 import { Toode } from '../../models/Toode';
 import { OstukorvService } from '../../services/ostukorv.service';
+import { RouterLink } from '@angular/router';
 
 
 @Component({
   selector: 'app-tooted',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './tooted.html',
   styleUrl: './tooted.css',
 })

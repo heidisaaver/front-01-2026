@@ -1,1 +1,11 @@
-<p>yks-toode works!</p>
+@if (toode) {
+    <div>{{toode.nimi}}</div>
+    <div>{{toode.hind}}€</div>
+    <div>{{toode.pilt}}</div>
+    <div>{{toode.aktiivne}}</div>
+   
+
+}   @else {
+    <div>Toodet ei leitud</div>
+}
+

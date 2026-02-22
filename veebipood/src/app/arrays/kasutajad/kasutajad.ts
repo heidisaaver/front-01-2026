@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Kasutaja } from '../../models/Kasutaja';
 import { KasutajaService } from '../../services/kasutaja.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-kasutajad',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './kasutajad.html',
   styleUrl: './kasutajad.css',
 })

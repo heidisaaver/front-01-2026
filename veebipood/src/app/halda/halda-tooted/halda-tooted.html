@@ -22,6 +22,7 @@
                 <td>{{toode.pilt}}</td>
                 <td>{{toode.aktiivne}}</td>
                 <td> <button (click)="kustuta($index)">x</button> </td>
+                <td><button routerLink="/muuda-toode/{{$index}}">Muuda</button></td>
             </tr>
         }
 

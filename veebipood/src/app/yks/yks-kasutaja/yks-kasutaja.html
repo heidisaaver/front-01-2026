@@ -1,1 +1,11 @@
-<p>yks-kasutaja works!</p>
+
+
+@if (kasutaja) {
+    <div>{{kasutaja.nimi}}</div>
+    <div>E-post: {{kasutaja.epost}}</div>
+    <div>Parool: {{kasutaja.parool}}</div>
+    <div>Vanus: {{kasutaja.vanus}}</div>
+   
+}   @else {
+    <div>Kasutajat ei leitud</div>
+}

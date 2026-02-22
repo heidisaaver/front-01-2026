@@ -1,0 +1,13 @@
+
+{
+    "menu": {
+        "giftcards": "Tarjetas de regalo",
+        "cart": "Carrito de compras",
+        "settings": "Configuración",
+        "regular-calc.": "Calculadora regular",
+        "loan-calc.": "Calculadora de préstamos",
+        "max-calc.": "Calculadora máxima",
+        "manage": "Administrar",
+        "add": "Añadir"
+    }
+}

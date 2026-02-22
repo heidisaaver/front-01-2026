@@ -14,7 +14,8 @@
 
 @for (toode of tooted; track $index) {
     <div>{{toode.nimi}} ({{toode.hind}}€)
-    <button (click)="lisaOstukorvi(toode)">Lisa ostukorvi</button>
+     <button routerLink="/toode/{{toode.nimi}}">Vt detailsemalt</button>    
+     <button (click)="lisaOstukorvi(toode)">Lisa ostukorvi</button>
     </div>
 }
 

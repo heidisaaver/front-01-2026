@@ -1,1 +1,23 @@
-<p>muuda-toode works!</p>
+@if (toode) {
+    <br>
+   
+    <input [(ngModel)]="toode.nimi" type="text" >
+     <label>Toote nimi</label><br>
+
+    
+    <input [(ngModel)]="toode.hind" type="number" >
+    <label>Toote hind </label><br>
+   
+    <input [(ngModel)]="toode.pilt" type="text" >
+     <label>Toote pilt</label><br>
+      
+  
+    <input [(ngModel)]="toode.aktiivne" type="checkbox" > 
+      <label>Toote aktiivne</label><br>
+    <br>
+    <button (click)="muuda()">Muuda</button>
+   
+}   @else {
+    <div>Toodet ei leitud</div>
+}
+

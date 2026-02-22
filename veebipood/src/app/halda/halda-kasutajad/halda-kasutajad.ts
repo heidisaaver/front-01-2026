@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Kasutaja } from '../../models/Kasutaja';
 import { KasutajaService } from '../../services/kasutaja.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-halda-kasutajad',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './halda-kasutajad.html',
   styleUrl: './halda-kasutajad.css',
 })

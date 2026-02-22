@@ -1,1 +1,30 @@
-<p>muuda-tootaja works!</p>
+@if (tootaja) {
+    <br>
+    <input [(ngModel)]="tootaja.nimi" type="text" >
+    <label>Töötaja nimi</label><br>
+
+
+    
+    <input [(ngModel)]="tootaja.amet" type="text" >
+    <label>Töötaja amet </label><br>
+
+    
+    <input [(ngModel)]="tootaja.telefon" type="text" >  
+    <label>Töötaja telefon</label><br>
+
+ 
+    <input [(ngModel)]="tootaja.vanus" type="number" > 
+       <label>Töötaja vanus</label><br>
+
+
+
+
+
+
+    <br>
+    <button (click)="muuda()">Muuda</button>
+   
+}   @else {
+    <div>Töötajat ei leitud</div>
+}
+

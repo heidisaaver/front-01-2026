@@ -1,1 +1,10 @@
-<p>yks-tootaja works!</p>
+@if (tootaja) {
+    <div>{{tootaja.nimi}}</div>
+    <div>Amet: {{tootaja.amet}}</div>
+    <div>Telefon: {{tootaja.telefon}}</div>
+    <div>Vanus: {{tootaja.vanus}}</div>
+   
+
+}   @else {
+    <div>Töötajat ei leitud</div>
+}

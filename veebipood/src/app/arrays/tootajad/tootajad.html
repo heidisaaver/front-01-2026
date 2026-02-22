@@ -13,7 +13,10 @@
 <button (click)="sorteeriKolmasTahtAZ()">Sorteeri kolmas täht AZ</button>
 
 @for (tootaja of tootajad; track $index) {
-    <div>{{tootaja.nimi}} - {{tootaja.amet}}</div>
+    <div>{{tootaja.nimi}} - {{tootaja.amet}}
+      <button routerLink="/tootaja/{{tootaja.nimi}}">Vt detailsemalt</button>
+    
+    </div>
 }
 
 <br>
