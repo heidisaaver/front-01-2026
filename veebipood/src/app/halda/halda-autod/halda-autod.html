@@ -15,7 +15,8 @@
     </thead>
     <tbody>
         @for (auto of autod; track $index) {
-            <tr>
+            <tr class="{{auto.aktiivne === true ? 'autoaktiivne' : 'mitteaktiivne'}}">
+            
                 <td>{{$index + 1}}</td>
                 <td>{{$index}}</td>
                 <td>{{auto.nimi}}</td>

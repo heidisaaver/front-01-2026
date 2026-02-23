@@ -1,0 +1,39 @@
+
+<button [disabled]="page() === 1" (click)="page.set(page() - 1)">Eelmine leht</button>
+<span>{{page()}}</span>
+<button (click)="page.set(page() + 1)">Järgmine leht</button>
+
+
+
+<table>
+    <thead>
+        <tr>
+        <th>Toote nimi</th>
+        <th>Toote alamnimi</th>
+         <th>Toote ISBN</th>
+        <th>Toote hind</th>
+        <th>Toote pilt</th>
+         <th>Toote URL</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (product of dataResource.value().books; track $index) {
+            <tr>
+               
+                <td>{{product.title}}</td>
+                <td>{{product.subtitle}}</td>
+                 <td>{{product.isbn13}}</td>
+                <td>{{product.price}}</td>
+                <td><img class="pilt" src={{product.image}} alt=""></td>
+               <td>{{product.url}}</td>
+                
+            <td>
+                <a href={{product.url}} target="_blank">Osta toode</a>       
+
+                </td>
+
+        }
+
+    </tbody>
+
+</table>

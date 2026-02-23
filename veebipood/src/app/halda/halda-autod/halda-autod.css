@@ -1,0 +1,13 @@
+tr, td {
+    border: 1px solid;
+}
+
+
+.autoaktiivne {
+   background-color: rgb(202, 245, 202);
+}
+
+
+.mitteaktiivne {
+    background-color: rgb(241, 194, 194);
+}

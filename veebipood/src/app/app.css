@@ -33,3 +33,11 @@
     /* font-weight: bold; */
     text-decoration: underline;
 }
+
+.tume-teema {
+    background-color: black;
+    color: white;
+    min-height: 100vh;
+    ;
+}   
+

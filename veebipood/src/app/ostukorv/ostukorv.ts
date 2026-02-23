@@ -9,27 +9,29 @@ import { Toode } from '../models/Toode';
   templateUrl: './ostukorv.html',
   styleUrl: './ostukorv.css',
 })
-export class Ostukorv implements OnInit {
-  ostukorv: Auto[] | Toode[] = [];
+export class Ostukorv  {
+  ostukorv: Auto[] | Toode[] = JSON.parse(localStorage.getItem("ostukorv") || "[]"  );
 
   // toodeteArv = 4;
   ostukorviSumma = 123;
 
-  constructor(private ostukorvService: OstukorvService) {}
+  // constructor(private ostukorvService: OstukorvService) {}
 
-  ngOnInit() {
-    this.ostukorv = this.ostukorvService.ostukorv;
-  }
+  // ngOnInit() {
+  //   this.ostukorv = this.ostukorvService.ostukorv;
+  // }
 
   tyhjenda() {
   // this.toodeteArv = 0;
   this.ostukorv = [];
   this.ostukorviSumma = 0;
+  localStorage.setItem("ostukorv", "[]");
 }
 
 
 kustuta(index: number) {
   this.ostukorv.splice(index, 1);
+  localStorage.setItem("ostukorv", JSON.stringify(this.ostukorv));
 }
 
 arvutaKokku() {
@@ -42,6 +44,8 @@ arvutaKokku() {
 
 
 }
+
+
 
 
 }

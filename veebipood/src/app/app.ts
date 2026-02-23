@@ -18,11 +18,22 @@ import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 export class App {
   protected readonly title = signal('veebipood');
 
+  tumeTeema = localStorage.getItem("IsDarkTheme") === "true"; //võtab localStorage'ist
+
+
+
    private translate = inject(TranslateService);
 
   useLanguage(language: string): void {
       this.translate.use(language);
+      localStorage.setItem("keel", language);
   }
 
+  tumdedaksTeemaks(kasTume: boolean) {
+
+    this.tumeTeema = kasTume;
+    //paneme localStorage'isse. 
+    localStorage.setItem("IsDarkTheme", JSON.stringify(kasTume));
+}
 }
 

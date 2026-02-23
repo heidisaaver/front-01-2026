@@ -63,3 +63,5 @@ arvutaKokku(): number {
   return sum;
 }
 }
+
+//lisa ostukorvi tooteid localStorage'isse

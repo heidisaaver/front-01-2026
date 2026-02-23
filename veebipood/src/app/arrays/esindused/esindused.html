@@ -1,7 +1,7 @@
-<button (click)="linn = 'Tallinn'">Tallinn</button>
-<button (click)="linn = 'Tartu'">Tartu</button>
-<button (click)="linn = 'Narva'">Narva</button>
-<button (click)="linn = 'Pärnu'">Pärnu</button>
+<button [class.linn-aktiivne]="linn === 'Tallinn'" (click)="linn = 'Tallinn'">Tallinn</button>
+<button [class.linn-aktiivne]="linn === 'Tartu'" (click)="linn = 'Tartu'">Tartu</button>
+<button [class.linn-aktiivne]="linn === 'Narva'" (click)="linn = 'Narva'">Narva</button>
+<button [class.linn-aktiivne]="linn === 'Pärnu'" (click)="linn = 'Pärnu'">Pärnu</button>
 
 <div>Hetkel aktiivne linn: {{linn}}</div>
 

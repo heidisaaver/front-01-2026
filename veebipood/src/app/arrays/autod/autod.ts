@@ -87,9 +87,21 @@ filtreeriTeineTahtonO() {
 
 
 lisaOstukorvi(auto: Auto) {
-  this.ostukorvService.ostukorv.push(auto);
+  // this.ostukorvService.ostukorv.push(auto);
+
+ const ostukorvLS: Auto[] = JSON.parse(localStorage.getItem ("ostukorv") || "[]");
+ ostukorvLS.push(auto);
+
  
+
+  localStorage.setItem("ostukorv", JSON.stringify(ostukorvLS));
+    
+ 
+  
 }
+
+
+
 
 arvutaKokku() {
   let summa = 0;

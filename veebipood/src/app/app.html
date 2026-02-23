@@ -1,3 +1,4 @@
+<div [class.tume-teema]="tumeTeema === true">
 <img routerLink="/" class="pilt" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Adult_male_German_shepherd_dog_standing_at_the_beach.jpg/250px-Adult_male_German_shepherd_dog_standing_at_the_beach.jpg" alt=""/>
 
 <button routerLink="/osta-kinkekaart" class="nupp">{{"menu.giftcards" | translate}}</button>
@@ -9,13 +10,16 @@
 <button routerLink="/arrays" class="nupp">Arrays</button>
 <button routerLink="/halda" class="nupp">{{"menu.manage" | translate}}</button>
 <button routerLink="/lisa" class="nupp">{{"menu.add" | translate}}</button>
+<button routerLink="/api" class="nupp">api</button>
 <br>
     <button (click)="useLanguage('et')">et</button>
     <button (click)="useLanguage('en')">en</button>
     <button (click)="useLanguage('de')">de</button> 
     <button (click)="useLanguage('es')">es</button>
-
+    <br>
+    <button (click)="tumdedaksTeemaks(true)">Dark mode</button>
+    <button (click)="tumdedaksTeemaks(false)">Light mode</button>
 <!-- <img src="" alt=""/> -->
  <br/>
 <router-outlet />
-
+</div>

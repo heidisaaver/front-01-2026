@@ -40,6 +40,14 @@ import { YksHind } from './yks/yks-hind/yks-hind';
 import { YksKasutaja } from './yks/yks-kasutaja/yks-kasutaja';
 import { YksTootaja } from './yks/yks-tootaja/yks-tootaja';
 import { YksToode } from './yks/yks-toode/yks-toode';
+import { ApiHome } from './api/api-home/api-home';
+import { Books } from './api/books/books';
+import { Cars } from './api/cars/cars';
+import { Floods } from './api/floods/floods';
+import { Vocabulary } from './api/vocabulary/vocabulary';
+import { Supplier1 } from './api/supplier1/supplier1';
+import { Supplier2 } from './api/supplier2/supplier2';
+import { Supplier3 } from './api/supplier3/supplier3';
 
 
 
@@ -100,6 +108,17 @@ export const routes: Routes = [
     {path: "kasutaja/:kasutaja_nimi", component: YksKasutaja},
     {path: "tootaja/:tootaja_nimi", component: YksTootaja},
     {path: "toode/:toode_nimi", component: YksToode},
+
+
+    {path: "api", component: ApiHome},
+    {path: "books", component: Books},
+    {path: "cars", component: Cars},
+    {path: "floods", component: Floods},
+    {path: "vocabulary", component: Vocabulary},
+    {path: "supplier1", component: Supplier1},
+    {path: "supplier2", component: Supplier2},
+    {path: "supplier3", component: Supplier3},
+
 
 
     {path: "**", component: NotFound},

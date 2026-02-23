@@ -31,7 +31,7 @@
 
 @for (auto of autod; track $index) {
     <div>{{auto.nimi}}  ({{auto.hind}} €)
-    <button (click)="lisaOstukorvi(auto)">Lisa ostukorvi</button>
+    <button [disabled]="auto.aktiivne === false" (click)="lisaOstukorvi(auto)">Lisa ostukorvi</button>
     <button routerLink="/auto/{{auto.nimi}}">Vt detailsemalt</button>
 </div>
 }
