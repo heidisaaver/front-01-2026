@@ -1,0 +1,27 @@
+@if (product) {
+    <br>
+   
+    <input [(ngModel)]="product.title" type="text" >
+     <label>Procut title</label><br>
+
+    
+    <input [(ngModel)]="product.price" type="number" >
+    <label>Product price </label><br>
+
+    <input [(ngModel)]="product.description" type="text" >
+    <label>Product description </label><br>
+   
+    <input [(ngModel)]="product.category" type="text" >
+    <label>Product category</label><br>
+
+    <!-- <input [(ngModel)]="product.image" type="image" >
+    <label>Product image</label><br>
+   -->
+  
+    <br>
+    <button (click)="change()">Change</button>
+   
+}   @else {
+    <div>Product not found</div>
+}
+

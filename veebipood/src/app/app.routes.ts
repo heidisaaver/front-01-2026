@@ -48,6 +48,8 @@ import { Vocabulary } from './api/vocabulary/vocabulary';
 import { Supplier1 } from './api/supplier1/supplier1';
 import { Supplier2 } from './api/supplier2/supplier2';
 import { Supplier3 } from './api/supplier3/supplier3';
+import { Map } from './map/map';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 
 
@@ -119,6 +121,8 @@ export const routes: Routes = [
     {path: "supplier2", component: Supplier2},
     {path: "supplier3", component: Supplier3},
 
+    {path: "kontakteeru", component: ContactUsComponent},
+    {path: "kaart", component: Map},
 
 
     {path: "**", component: NotFound},

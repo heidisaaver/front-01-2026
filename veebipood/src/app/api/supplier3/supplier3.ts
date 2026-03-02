@@ -8,8 +8,10 @@ import { Component, resource } from '@angular/core';
 })
 export class Supplier3 {
   dataResource = resource ({
-    loader: () => fetch("").then(res => res.json())
+    loader: () => fetch("https://api.escuelajs.co/api/v1/products").then(res => res.json())
   });
+
+
 
 
 }

@@ -1,1 +1,40 @@
-<p>supplier3 works!</p>
+<table>
+    <thead>
+        <tr>
+        <th>Toote id</th>
+        <th>Toote nimi</th>
+        <th>Toote lühinimi</th>
+         <th>Toote hind</th>
+        <th>Toote kirjeldus</th> 
+        <th>Toote kategooria</th> 
+        <th>Toote pilt</th> 
+       
+        
+         
+       
+        </tr>
+    </thead>
+    <tbody>
+        @for (product of dataResource.value(); track $index) {
+            <tr>
+                <td>{{product.id}}</td>
+                <td>{{product.title}}</td>
+                <td>{{product.slug}}</td>
+                <td>{{product.price}}</td>
+                <td>{{product.description}}</td>
+                <td>{{product.category.id}} / {{product.category.name}}</td>
+             
+                <td><img class="pilt" src={{product.images}} alt=""></td>
+               
+
+                               
+                
+                
+                
+            </tr>
+        }
+
+    </tbody>
+
+</table>
+

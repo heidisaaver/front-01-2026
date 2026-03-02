@@ -1,1 +1,26 @@
-<p>cars works!</p>
+
+<table>
+    <thead>
+        <tr>
+        <th>Auto id</th>
+        <th>Auto nimi</th>
+        <th>Auto mudeli kood</th>
+         <th>Mudeli nimi</th>
+        
+        </tr>
+    </thead>
+    <tbody>
+        @for (product of dataResource.value().Results; track $index) {
+            <tr>
+                <td>{{product.Make_ID}}</td>
+                <td>{{product.Make_Name}}</td>
+                <td>{{product.Model_ID}}</td>
+                <td>{{product.Model_Name}}</td>
+                
+                
+            </tr>
+        }
+
+    </tbody>
+
+</table>

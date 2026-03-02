@@ -1,0 +1,13 @@
+
+
+{
+    "menu": {
+        "cart": "Ostukorv",
+        "shops": "Poed",
+        "map": "Kaart",
+        "contact-us": "Kontakteeru",
+        "product-details": "Toodete detailid",
+        "admin": "Halda"
+        
+    }
+}

@@ -19,4 +19,24 @@
 }
 
 
+<button (click)="country = 'EE'">Eesti</button>
+<button (click)="country = 'LV'">Läti</button>
+<button (click)="country = 'LT'">Leedu</button><br>
+
+<select>
+@for (paikautomaat of dataResource.value(); track $index) {
+
+   @if (paikautomaat.A0_NAME === country ) {
+
+   <option>{{paikautomaat.NAME}}</option>
+}
+}
+</select>
+
+@if (arvutaKokku() > 7000) {
+   <div>Üle 7000 euro ei saa online maksega maksta, võta ostmiseks meiega ühendust!</div>
+
+} @else {
+<button (click)="pay()">Maksa</button>
+}
 

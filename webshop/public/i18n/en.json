@@ -1,0 +1,14 @@
+
+
+
+{
+    "menu": {
+        "cart": "Cart",
+        "shops": "Shops",
+        "map": "Map",
+        "contact-us": "Contact us",
+        "product-details": "Product details",
+        "admin": "Admin"
+        
+    }
+}

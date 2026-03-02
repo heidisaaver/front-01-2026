@@ -1,0 +1,70 @@
+
+
+
+@if (cart.length === 0) {
+<div>Cart is empty</div>
+} 
+
+@else {
+
+
+
+<div>Amount of products {{cart.length}} pcs</div>
+
+<div>Total sum of cart: {{calculateTotal()}} €</div>
+<br>
+<button (click)="empty()">Empty</button>
+
+}
+<br>
+<br>
+@for(product of cart; track product) {
+   <div>{{product.title}} - {{product.price}} € <button (click)="delete($index)">x</button></div>
+   
+}
+
+<br>
+<button (click)="country = 'EE'">Estonia</button>
+<button (click)="country = 'LV'">Latvia</button>
+<button (click)="country = 'LT'">Lithuania</button><br>
+
+<select>
+@for (paikautomaat of dataResource.value(); track $index) {
+
+   @if (paikautomaat.A0_NAME === country ) {
+
+   <option>{{paikautomaat.NAME}}</option>
+}
+}
+</select>
+
+@if (calculateTotal() > 7000) {
+   <div>Not possible to pay here amount over 7000 EUR, please contact us!</div>
+
+} @else {
+    <br><br>
+<button (click)="pay()">Pay</button>
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- @if (calculateTotal() > 7000) {
+   <div>Not possible to pay amount over 7000 eur, please contact us!</div>
+
+} @else {
+<button (click)="pay()">Pay</button>
+} -->

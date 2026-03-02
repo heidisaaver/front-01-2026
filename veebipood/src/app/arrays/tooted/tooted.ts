@@ -53,7 +53,16 @@ sorteeriKolmasTahtAZ() {
 }
 
 lisaOstukorvi(toode: Toode) {
-  this.ostukorvService.ostukorv.push(toode);
+  // this.ostukorvService.ostukorv.push(toode);
+
+  const ostukorvLS: Toode [] = JSON.parse(localStorage.getItem ("ostukorv") || "[]"  );
+  ostukorvLS.push(toode);
+
+  localStorage.setItem("ostukorv", JSON.stringify(ostukorvLS));
+
+
+
+
 }
 
 

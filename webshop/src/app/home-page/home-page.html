@@ -1,0 +1,51 @@
+<br>
+
+<button routerLink="/product-details">Go to product details</button>
+<br>
+
+
+<div>Total of items: {{products.length}} tk</div>
+<br>
+
+<button (click)="reset()">Reset</button>
+
+<br>
+<br>
+
+
+<button (click)="sortAZ()"> Sort from AZ</button>
+<button (click)="sortZA()">Sort from ZA</button>
+
+
+
+<button (click)="sortShorterWord()">Sort letters increasing</button>
+
+<button (click)="sortLongerWord()">Sort letters decreasing</button>
+
+<button (click)="sortThirdLetterAZ()">Sort from third letter AZ</button>
+
+<br><br>
+
+<button (click)="filterCategory()">Filter category men's clothing</button>
+<br>
+
+<!-- <button (click)="filtreeri7Tahelised()"> Filtreeri täpselt 7 tähelised</button>
+<button (click)="filtreeriVahemalt6Tahelised()"> Filtreeri vähemalt 6 tähelised</button>
+<button (click)="filtreeriSisaldabLyhenditER()"> Filtreeri sisaldab lühendit ER</button>
+<button (click)="filtreeriLoppebTahegaI()"> Filtreeri kes lõppeb i tähega</button>
+<button (click)="filtreeriTeineTahtonO()"> Filtreeri kellel teine täht on o</button> -->
+<br>
+
+
+@for (product of products; track $index) {
+    <div>{{product.title}}  ({{product.price}} €)
+    <button (click)="addToCart(product)">Add to cart</button>
+    <button routerLink="/product/{{product.id}}">See details</button>
+</div>
+}
+
+<br>
+<div>Prices in total: {{calculateTotal()}} €</div>
+
+
+<!-- "/auto/{{auto.nimi}}" -->
