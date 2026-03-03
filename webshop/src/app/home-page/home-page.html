@@ -16,18 +16,43 @@
 <button (click)="sortAZ()"> Sort from AZ</button>
 <button (click)="sortZA()">Sort from ZA</button>
 
+<button (click)=" sortRatingAsc()"> Sort rating increasing</button>
 
-
-<button (click)="sortShorterWord()">Sort letters increasing</button>
-
-<button (click)="sortLongerWord()">Sort letters decreasing</button>
-
-<button (click)="sortThirdLetterAZ()">Sort from third letter AZ</button>
+<button (click)=" sortRatingDes()"> Sort rating decreasing</button>
 
 <br><br>
 
-<button (click)="filterCategory()">Filter category men's clothing</button>
+<button (click)="filterCategoryMensCl()">Men's clothing</button>
+<button (click)="filterCategoryWomensCl()">Women's clothing</button>
+<button (click)="filterCategoryJewelery()">Jewelery</button>
+<button (click)="filterCategoryElectronics()">Electronics</button>
+
 <br>
+
+
+  <!-- <select [(ngModel)]="category">
+  <option value="">Choose category</option>
+  @for(c of categories; track c.id) {
+    <option [value]="c.name">{{c.name}}</option>
+  }
+</select>
+
+<button (click)="filterCategory()">Filter by product category</button>
+
+<hr> -->
+
+<!-- <div class="product-list">
+ @for(p of filteredProducts; track p.id) {
+  <div style="margin-bottom: 10px;">
+    {{p.title}} ({{p.price}} €) 
+    <button (click)="addToCart(p)">Add to cart</button>
+    <button>See details</button>
+  </div>
+} @empty {
+  <p>No products found</p>
+}
+</div> -->
+
 
 <!-- <button (click)="filtreeri7Tahelised()"> Filtreeri täpselt 7 tähelised</button>
 <button (click)="filtreeriVahemalt6Tahelised()"> Filtreeri vähemalt 6 tähelised</button>

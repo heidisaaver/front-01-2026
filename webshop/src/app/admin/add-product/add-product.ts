@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component, inject, OnInit } from '@angular/core';
 import { ProductService } from '../../services/product.service';
 import { FormsModule } from '@angular/forms';
+import { Category } from '../../models/category';
 
 @Component({
   selector: 'app-add-product',
@@ -8,7 +9,7 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './add-product.html',
   styleUrl: './add-product.css',
 })
-export class AddProduct {
+export class AddProduct implements OnInit {
 
 
   message = "You can add products here:";
@@ -18,9 +19,21 @@ export class AddProduct {
   description = "";
   category = "";
   image = "";
-  
+  categories: Category [] = [];
+  private url = "https://69a54208885dcb6bd6a7ca89.mockapi.io/categories";
+  private cdr = inject(ChangeDetectorRef);
 
   constructor(private productService: ProductService) {}
+
+  ngOnInit() {
+  fetch(this.url)
+    .then(res => res.json())
+    .then(json => {
+        this.categories = json;
+         this.cdr.detectChanges();
+    });
+
+ }
 
   add() {
     
@@ -48,6 +61,12 @@ export class AddProduct {
     "description": this.description,
     "category": this.category,
     "image": this.image,
+     "rating": {
+      "rate": 0,
+      "count": 0
+    }
+
+
   });
 
   this.id = 0;
@@ -55,8 +74,8 @@ export class AddProduct {
   this.price = 0;
   this.description = "";
   this.category = "";
-  this.image = "";;
+  this.image = "";
 
-  // this.sonum = "Lisatud toode: " + this.nimi
+
 }
 }

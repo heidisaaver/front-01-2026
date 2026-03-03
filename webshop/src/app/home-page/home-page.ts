@@ -1,91 +1,111 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Product } from '../models/product';
 import { ProductService } from '../services/product.service';
 import { CartService } from '../services/cart.service';
+import { Category } from '../models/category';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-home-page',
-  imports: [RouterLink],
+  imports: [RouterLink, FormsModule],
   templateUrl: './home-page.html',
   styleUrl: './home-page.css',
 })
 export class HomePage {
+  filteredProducts: any[] = [];
+  products: Product[] = [];
+  category = "";
 
+  categories: Category [] = [];
+  private url = "https://69a54208885dcb6bd6a7ca89.mockapi.io/categories";
+  private cdr = inject(ChangeDetectorRef);
 
+  constructor(private productService: ProductService,
+      private cartService: CartService
+    ) {}
   
 
-   products: Product[] = [];
+  ngOnInit() {
+  // Võtame tooted teenusest ja algseisus näitame kõiki
+  this.products = this.productService.products;
+  this.filteredProducts = [...this.products]; 
 
-   constructor(private productService: ProductService,
-    private cartService: CartService
-
-   ) {}
-
-   ngOnInit() {
-    this.products = this.productService.products;
-   }
-
-   reset() {
-    this.products = this.productService.products;
-   }
-
-
-
-sortAZ() {
-  this.products.sort((a, b) => a.title.localeCompare(b.title));
+  fetch(this.url)
+    .then(res => res.json())
+    .then(json => {
+      this.categories = json;
+      this.cdr.detectChanges();
+    });
 }
 
-sortZA() {
-
-  this.products.sort((a, b) => b.title.localeCompare(a.title));
-
-}
-
-sortShorterWord() {
-  this.products.sort((a, b) => a.title.length - b.title.length);
-}
-
-sortLongerWord() {
-  this.products.sort((a, b) => b.title.length - a.title.length);
-}
-
-sortThirdLetterAZ() {
-  this.products.sort((a, b) => a.title[2].localeCompare(b.title[2]));
-}
-
-
-filterCategory() {
-
-  this.products = this.products.filter(product => product.category === "men's clothing" )
-}
-
-
-// filtreeriTeineTahtonO() {
-
-//  this.autod = this.autod.filter(auto => auto.nimi[1] === "o");
+// filterCategory() {
+//   if (this.category === "") {
+//     this.filteredProducts = [...this.products]; // Kui valikut pole, näita kõiki
+//   } else {
+//     // Filtreerime tooteid, mitte kategooriaid!
+//     this.filteredProducts = this.products.filter(p => p.category === this.category);
+//   }
 // }
 
+  reset() {
+      this.products = this.productService.products;
+    }
+
+  sortAZ() {
+    this.products.sort((a, b) => a.title.localeCompare(b.title));
+  }
+
+  sortZA() {
+    this.products.sort((a, b) => b.title.localeCompare(a.title));
+  }
+
+  sortPriceAsc() {}
+
+  sortPriceDesc() {}
+
+  sortRatingAsc() {
+    this.products.sort((a,b) => a.rating.rate - b.rating.rate);
+  }
+
+
+  sortRatingDes() {
+    this.products.sort((a,b) => b.rating.rate - a.rating.rate);
+  }
+
+
+  filterCategoryMensCl() {
+    this.products = this.products.filter(product => product.category === "men's clothing" )
+  }
+
+
+  filterCategoryJewelery() {
+    this.products = this.products.filter(product => product.category === "jewelery" )
+  }
+
+
+  filterCategoryElectronics() {
+    this.products = this.products.filter(product => product.category === "electronics" )
+  }
+
+  filterCategoryWomensCl() {
+    this.products = this.products.filter(product => product.category === "women's clothing" )
+  }
 
 
 
-addToCart(products: Product) {
-  // this.ostukorvService.ostukorv.push(toode);
+   addToCart(products: Product) {
+    const cartLS: Product [] = JSON.parse(localStorage.getItem ("cart") || "[]"  );
+    cartLS.push(products);
 
-  const cartLS: Product [] = JSON.parse(localStorage.getItem ("cart") || "[]"  );
-  cartLS.push(products);
+    localStorage.setItem("cart", JSON.stringify(cartLS));
+  }
 
-  localStorage.setItem("cart", JSON.stringify(cartLS));
-
-
-}
-
-
-calculateTotal(): number {
-  let sum = 0;
-  this.products.forEach(product => sum = sum + product.price);
-  return sum;
-}
+  calculateTotal(): number {
+    let sum = 0;
+    this.products.forEach(product => sum = sum + product.price);
+    return sum;
+  }
 }
 
 

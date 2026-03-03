@@ -16,8 +16,17 @@
     <input [(ngModel)]="description" type="text" >
     <label>Product description </label><br>
    
-    <input [(ngModel)]="category" type="text" >
+    <select [(ngModel)]="category">
+        <option disable value="">Choose category</option>
+        @for(c of categories; track $index) {
+            <option>{{c.name}}</option>
+        }
+    </select>
     <label>Product category</label><br>
+
+
+    <!-- <input [(ngModel)]="category" type="text" >
+    <label>Product category</label><br> -->
 
     <!-- <input [(ngModel)]="product.image" type="image" >
     <label>Product image</label><br>
