@@ -1,46 +1,33 @@
 <!-- <div [class.tume-teema]="tumeTeema === true"> -->
+<mat-toolbar color="primary">
+  <span>
+    <img routerLink="/home-page" class="picture" src="assets/webshop.png" alt=""/>
+  </span>
+  
+  <span class="example-spacer"></span>
+  
+  <button mat-button routerLink="/cart" class="button">{{"menu.cart" | translate}}</button>
+  <button mat-button routerLink="/shops" class="button">{{"menu.shops" | translate}}</button>
+  <button mat-button routerLink="/map" class="button">{{"menu.map" | translate}}</button>
+  <button mat-button routerLink="/contact-us" class="button">{{"menu.contact-us" | translate}}</button>
+  <button mat-button routerLink="/admin-home" class="button">{{"menu.admin" | translate}}</button>
+  <br>
+
+  <img class="icon" src="/i18n/eng.png" alt="" (click)="useLanguage('en')">
+   <img class="icon" src="/i18n/est.png" alt="" (click)="useLanguage('et')">
+
+  
+  <button mat-icon-button>
+    <mat-icon>login</mat-icon>
+  </button>
+
+    <button mat-icon-button>
+    <mat-icon>how_to_reg</mat-icon>
+  </button>
+</mat-toolbar>
+
+
 <br>
-
-
-<img routerLink="/home-page" class="picture" src="assets/webshop.png" alt=""/>
-
-
-
-<button routerLink="/cart" class="button">{{"menu.cart" | translate}}</button>
-<button routerLink="/shops" class="button">{{"menu.shops" | translate}}</button>
-<button routerLink="/map" class="button">{{"menu.map" | translate}}</button>
-<button routerLink="/contact-us" class="button">{{"menu.contact-us" | translate}}</button>
-
-<!-- <button routerLink="/product-details" class="button">{{"menu.product-details" | translate}}</button> -->
-
-<button routerLink="/admin-home" class="button">{{"menu.admin" | translate}}</button>
-<br>
-
- <button (click)="useLanguage('et')">et</button>
- <button (click)="useLanguage('en')">en</button>
-
-
-<!-- <button routerLink="/osta-kinkekaart" class="nupp">{{"menu.giftcards" | translate}}</button>
-<button routerLink="/ostukorv" class="nupp">{{"menu.cart" | translate}}</button>
-<button routerLink="/seaded" class="nupp">{{"menu.settings" | translate}}</button>
-<button routerLink="/tavakalkulaator" class="nupp">{{"menu.regular-calc." | translate}}</button>
-<button routerLink="/laenukalkulaator" class="nupp">{{"menu.loan-calc." | translate}}</button>
-<button routerLink="/maksimaalnekalkulaator" class="nupp">{{"menu.max-calc." | translate}}</button>
-<button routerLink="/arrays" class="nupp">Arrays</button>
-<button routerLink="/halda" class="nupp">{{"menu.manage" | translate}}</button>
-<button routerLink="/lisa" class="nupp">{{"menu.add" | translate}}</button>
-<button routerLink="/api" class="nupp">api</button>
-<button routerLink="/kontakteeru" class="nupp">Kontakteeru</button>
-<button routerLink="/kaart" class="nupp">Kaart</button> -->
-<br>
-    <!-- <button (click)="useLanguage('et')">et</button>
-    <button (click)="useLanguage('en')">en</button>
-    <button (click)="useLanguage('de')">de</button> 
-    <button (click)="useLanguage('es')">es</button>
-    <br>
-    <button (click)="tumdedaksTeemaks(true)">Dark mode</button>
-    <button (click)="tumdedaksTeemaks(false)">Light mode</button> -->
-<!-- <img src="" alt=""/> -->
- <br/>
+<br/>
 <router-outlet />
 

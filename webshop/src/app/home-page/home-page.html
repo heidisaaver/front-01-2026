@@ -7,7 +7,7 @@
 <div>Total of items: {{products.length}} tk</div>
 <br>
 
-<button (click)="reset()">Reset</button>
+<!-- <button (click)="reset()">Reset</button> -->
 
 <br>
 <br>
@@ -22,10 +22,18 @@
 
 <br><br>
 
-<button (click)="filterCategoryMensCl()">Men's clothing</button>
-<button (click)="filterCategoryWomensCl()">Women's clothing</button>
+@for (category of categories; track $index) {
+    <button (click)="filterCategory(category.name)">{{category.name}}</button>
+
+}
+
+
+
+
+<!-- <button (click)="filterCategory(categoryName)">Category</button> -->
+<!-- <button (click)="filterCategoryWomensCl()">Women's clothing</button>
 <button (click)="filterCategoryJewelery()">Jewelery</button>
-<button (click)="filterCategoryElectronics()">Electronics</button>
+<button (click)="filterCategoryElectronics()">Electronics</button> -->
 
 <br>
 

@@ -18,7 +18,7 @@ export const routes: Routes = [
     {path: "", component: HomePage},
     {path: "add-product", component: AddProduct},
     {path: "admin-home", component: AdminHome},
-    {path: "edit-product/:index", component: EditProduct},
+    {path: "edit-product/:id", component: EditProduct},
     {path: "manage-categories", component: ManageCategories},
     {path: "manage-products", component: ManageProducts},
     {path: "cart", component: Cart},

@@ -5,9 +5,16 @@
 <div>{{message}}</div>
 <br>
 
-
+<!-- 
     <input [(ngModel)]="title" type="text" >
-     <label>Procut title</label><br>
+     <label>Procut title</label><br> -->
+
+    <mat-form-field class="example-full-width">
+    <mat-label>Title</mat-label>
+    <input [(ngModel)]="title" matInput placeholder="iPhone" value="">
+  </mat-form-field>
+
+  <br>
 
     
     <input [(ngModel)]="price" type="number" >
@@ -25,6 +32,10 @@
     <label>Product category</label><br>
 
 
+    <mat-slide-toggle [(ngModel)]="active">Product active</mat-slide-toggle>
+    <!-- <div>Ajutine: {{active}}</div> -->
+
+
     <!-- <input [(ngModel)]="category" type="text" >
     <label>Product category</label><br> -->
 
@@ -33,4 +44,9 @@
    -->
   
     <br>
-    <button (click)="add()">Add</button>
+    <button matButton="filled" (click)="add()">Add</button>
+
+    <br><br>
+
+
+  

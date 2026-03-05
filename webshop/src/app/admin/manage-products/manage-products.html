@@ -2,19 +2,18 @@
 
 <br>
 
- <input [(ngModel)]="searchTerm" type="text" >
-    <button>
+ <input [(ngModel)]="searchTerm" (ngModelChange)="search()"  type="text" >
+    <!-- <button>
     <label (click)="search()">Search from product title</label><br>
-        </button>
+        </button> -->
 <br>
 
 
 <table>
     <thead>
         <tr>
-        <th>Number</th>
-        <th>Index</th>
         <th>ID</th>
+        <th>Category</th>
         <th>Product title</th>
         <th>Price</th>
         <th>Product description</th>
@@ -26,16 +25,15 @@
     <tbody>
         @for (product of products; track $index) {
             <tr>
-                <td>{{$index + 1}}</td>
-                <td>{{$index}}</td>
                 <td>{{product.id}}</td>
+                <td>{{product.category}}</td>
                 <td>{{product.title}}</td>
                 <td>{{product.price}}</td>
                 <td>{{product.description}}</td>
                 <td>{{product.image}}</td>
 
-                <td> <button (click)="delete($index)">x</button> </td>
-                <td><button routerLink="/edit-product/{{$index}}">Change</button></td>
+                <td> <button (click)="deleteProduct($index, product.id)">x</button> </td>
+                <td><button routerLink="/edit-product/{{product.id}}">Change</button></td>
             </tr>
         }
 

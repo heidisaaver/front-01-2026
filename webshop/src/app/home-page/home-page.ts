@@ -1,8 +1,8 @@
 import { ChangeDetectorRef, Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Product } from '../models/product';
-import { ProductService } from '../services/product.service';
-import { CartService } from '../services/cart.service';
+// import { ProductService } from '../services/product.service';
+
 import { Category } from '../models/category';
 import { FormsModule } from '@angular/forms';
 
@@ -13,30 +13,40 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './home-page.css',
 })
 export class HomePage {
-  filteredProducts: any[] = [];
-  products: Product[] = [];
-  category = "";
-
+  // filteredProducts: any[] = [];
+  products: Product [] = [];
+  dbproducts: Product[] = [];
+  // category = "";
   categories: Category [] = [];
-  private url = "https://69a54208885dcb6bd6a7ca89.mockapi.io/categories";
+  private categoryUrl = "https://69a54208885dcb6bd6a7ca89.mockapi.io/categories";
   private cdr = inject(ChangeDetectorRef);
+  private productUrl = "https://69a54208885dcb6bd6a7ca89.mockapi.io/Products"
 
-  constructor(private productService: ProductService,
-      private cartService: CartService
-    ) {}
+
+  // constructor(private productService: ProductService,
+      
+  //   ) {}
   
 
   ngOnInit() {
   // Võtame tooted teenusest ja algseisus näitame kõiki
-  this.products = this.productService.products;
-  this.filteredProducts = [...this.products]; 
+  // this.products = this.productService.products;
+  // this.filteredProducts = [...this.products]; 
 
-  fetch(this.url)
-    .then(res => res.json())
-    .then(json => {
-      this.categories = json;
-      this.cdr.detectChanges();
-    });
+    fetch(this.productUrl)
+      .then(res => res.json())
+      .then(json => {
+        this.products = json;
+        this.dbproducts = json;
+        this.cdr.detectChanges();
+      })
+
+    fetch(this.categoryUrl)
+      .then(res => res.json())
+      .then(json => {
+        this.categories = json;
+        this.cdr.detectChanges();
+      })
 }
 
 // filterCategory() {
@@ -48,9 +58,9 @@ export class HomePage {
 //   }
 // }
 
-  reset() {
-      this.products = this.productService.products;
-    }
+  // reset() {
+  //     this.products = this.productService.products;
+  //   }
 
   sortAZ() {
     this.products.sort((a, b) => a.title.localeCompare(b.title));
@@ -65,32 +75,34 @@ export class HomePage {
   sortPriceDesc() {}
 
   sortRatingAsc() {
-    this.products.sort((a,b) => a.rating.rate - b.rating.rate);
+    this.products.sort((a,b) => a.rating - b.rating);
   }
 
 
   sortRatingDes() {
-    this.products.sort((a,b) => b.rating.rate - a.rating.rate);
+    this.products.sort((a,b) => b.rating - a.rating);
   }
 
 
-  filterCategoryMensCl() {
-    this.products = this.products.filter(product => product.category === "men's clothing" )
+  
+  
+  filterCategory(categoryName: string) {
+    this.products = this.dbproducts.filter(product => product.category === categoryName)
   }
 
 
-  filterCategoryJewelery() {
-    this.products = this.products.filter(product => product.category === "jewelery" )
-  }
+  // filterCategoryJewelery() {
+  //   this.products = this.dbproducts.filter(product => product.category === "jewelery" )
+  // }
 
 
-  filterCategoryElectronics() {
-    this.products = this.products.filter(product => product.category === "electronics" )
-  }
+  // filterCategoryElectronics() {
+  //   this.products = this.dbproducts.filter(product => product.category === "electronics" )
+  // }
 
-  filterCategoryWomensCl() {
-    this.products = this.products.filter(product => product.category === "women's clothing" )
-  }
+  // filterCategoryWomensCl() {
+  //   this.products = this.dbproducts.filter(product => product.category === "women's clothing" )
+  // }
 
 
 

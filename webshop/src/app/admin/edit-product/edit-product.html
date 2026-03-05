@@ -1,23 +1,39 @@
-@if (product) {
+@if (product && categories.length > 0) { 
     <br>
+
+    <input [(ngModel)]="product.id" disabled type="text" >
+    <label>Procut id</label><br>
    
     <input [(ngModel)]="product.title" type="text" >
-     <label>Procut title</label><br>
+    <label>Procut title</label><br>
 
-    
     <input [(ngModel)]="product.price" type="number" >
-    <label>Product price </label><br>
+    <label>Procut price</label><br>
 
     <input [(ngModel)]="product.description" type="text" >
     <label>Product description </label><br>
-   
-    <input [(ngModel)]="product.category" type="text" >
-    <label>Product category</label><br>
 
-    <!-- <input [(ngModel)]="product.image" type="image" >
-    <label>Product image</label><br>
-   -->
-  
+    <select [(ngModel)]="product.category">
+        <option disable value="">Choose category</option>
+        @for(c of categories; track $index) {
+            <option>{{c.name}}</option>
+        }
+    </select> 
+    <label>Product category </label><br>
+
+    <input [(ngModel)]="product.image" type="text" >
+    <label>Product image </label><br>
+
+    <input [(ngModel)]="product.rating" disabled type="number" >
+    <label>Product rating </label><br>
+
+    <input [(ngModel)]="product.count" disabled type="number" >
+    <label>Product rating count </label><br>
+
+    <input [(ngModel)]="product.active" type="checkbox" >
+    <label>Product active </label><br>
+   
+
     <br>
     <button (click)="change()">Change</button>
    
