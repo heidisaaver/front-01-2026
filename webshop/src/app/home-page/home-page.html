@@ -23,6 +23,7 @@
 <br><br>
 
 @for (category of categories; track $index) {
+  
     <button (click)="filterCategory(category.name)">{{category.name}}</button>
 
 }
@@ -69,13 +70,18 @@
 <button (click)="filtreeriTeineTahtonO()"> Filtreeri kellel teine täht on o</button> -->
 <br>
 
-
+<div class="products">
 @for (product of products; track $index) {
-    <div>{{product.title}}  ({{product.price}} €)
-    <button (click)="addToCart(product)">Add to cart</button>
-    <button routerLink="/product/{{product.id}}">See details</button>
-</div>
+    
+    <div class="product" > 
+        <img class="image" src="{{product.image}}" alt="">
+        <div>{{product.title}}  </div>
+        <div>{{product.price}} €</div> 
+        <button (click)="addToCart(product)">Add to cart</button>
+        <button routerLink="/product/{{product.id}}">See details</button>
+    </div>
 }
+</div>
 
 <br>
 <div>Prices in total: {{calculateTotal()}} €</div>

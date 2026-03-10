@@ -5,6 +5,7 @@ import { Product } from '../models/product';
 
 import { Category } from '../models/category';
 import { FormsModule } from '@angular/forms';
+import { CartProduct } from '../models/cartProduct';
 
 @Component({
   selector: 'app-home-page',
@@ -106,9 +107,15 @@ export class HomePage {
 
 
 
-   addToCart(products: Product) {
-    const cartLS: Product [] = JSON.parse(localStorage.getItem ("cart") || "[]"  );
-    cartLS.push(products);
+   addToCart(clickedProduct: Product) {
+    const cartLS: CartProduct [] = JSON.parse(localStorage.getItem ("cart") || "[]"  );
+    const found = cartLS.find(cartProduct => cartProduct.product.id === clickedProduct.id); 
+    if (found !== undefined) {
+      //kui on korvis olemas siis suurenda kogust
+      found.quantity++; //found.quantity +=1; või found.quantity = found.quantity + 1; kõik on samaväärsed
+    } else {
+    cartLS.push({product: clickedProduct, quantity: 1});
+    }
 
     localStorage.setItem("cart", JSON.stringify(cartLS));
   }

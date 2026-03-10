@@ -10,20 +10,29 @@
   <button mat-button routerLink="/shops" class="button">{{"menu.shops" | translate}}</button>
   <button mat-button routerLink="/map" class="button">{{"menu.map" | translate}}</button>
   <button mat-button routerLink="/contact-us" class="button">{{"menu.contact-us" | translate}}</button>
-  <button mat-button routerLink="/admin-home" class="button">{{"menu.admin" | translate}}</button>
+  @if (isLoggedIn) {
+      <button mat-button routerLink="/admin-home" class="button">{{"menu.admin" | translate}}</button>
+   }
   <br>
 
   <img class="icon" src="/i18n/eng.png" alt="" (click)="useLanguage('en')">
    <img class="icon" src="/i18n/est.png" alt="" (click)="useLanguage('et')">
 
   
-  <button mat-icon-button>
+  @if (isLoggedIn) {
+    <button (click)="logout()">
+    <mat-icon>logout</mat-icon>
+    </button>
+    }@else {
+    <button routerLink="/login" mat-icon-button>
     <mat-icon>login</mat-icon>
   </button>
-
-    <button mat-icon-button>
+  <button routerLink="/signup" mat-icon-button>
     <mat-icon>how_to_reg</mat-icon>
   </button>
+    } 
+  
+
 </mat-toolbar>
 
 

@@ -18,9 +18,20 @@
 }
 <br>
 <br>
-@for(product of cart; track product) {
-   <div>{{product.title}} - {{product.price}} € <button (click)="delete($index)">x</button></div>
-   
+@for(cp of cart; track cp) {
+   <div class="product">
+      <img class="image" src="{{cp.product.image}}" alt="">
+      <div class="title">{{cp.product.title}}</div>
+      <div class="price">{{cp.product.price}} €</div>
+      <img class="icon" src="/assets/minus.png" alt="" (click)="decreaseQuantity($index)">
+      <!-- <button (click)="decreaseQuantity($index)">-</button> -->
+      <div class="quantity">{{cp.quantity}} pcs</div>  
+      <img class="icon" src="/assets/add.png" alt="" (click)="increaseQuantity($index)"> 
+      <!-- <button (click)="increaseQuantity($index)">+</button> -->
+      <div class="total">{{cp.product.price * cp.quantity}} €</div>
+      <img class="icon" src="/assets/remove.png" alt="" (click)="delete($index)"> 
+      <!-- <button (click)="delete($index)">x</button> -->
+   </div>
 }
 
 <br>

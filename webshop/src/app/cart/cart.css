@@ -1,0 +1,30 @@
+ 
+
+.product {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 5%;
+    border-bottom: 1px solid lightgrey;
+    padding: 10px 0;
+}
+
+.image {
+    width: 30px;
+    height: 30px;
+}  
+
+.title {
+    width: 300px;
+}
+
+.price {
+    width: 70px;
+}
+
+.quantity {
+    width: 80px;
+}
+
+.total {
+    width: 80px;
+}
