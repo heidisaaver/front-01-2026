@@ -25,7 +25,8 @@ export class Autod {
   ngOnInit() {
     this.autod = this.autoService.autod;
   }
-  
+
+ 
 
   reset(){
     this.autod = this.autoService.autod;
