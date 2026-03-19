@@ -1,0 +1,37 @@
+@if (loading === true) {
+    <div>Loading...</div>
+} @else {
+<br>
+<label>Name</label><br>
+<input [(ngModel)]="name" type="text"><br>
+<label>Image</label><br>
+<input [(ngModel)]="avatar" type="file"><br>
+<button (click)="addCategory()">Add</button>
+
+
+<table>
+    <thead>
+        <tr>
+        <th>#</th>
+        <th>ID</th>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Ceation date</th>
+        <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @for(category of categories; track $index) {
+        <tr>
+            <td>{{$index + 1}}</td>
+            <td>{{category.id}}</td>
+            <td> <img class="image" src="{{category.avatar}}" alt=""></td>
+            <td>{{category.name}}</td>
+            <td>{{category.createdAt}}</td>
+            <td><button (click)="deleteCategory(category.id, $index)">x</button></td>
+            </tr> 
+         }
+</tbody>
+</table>
+}

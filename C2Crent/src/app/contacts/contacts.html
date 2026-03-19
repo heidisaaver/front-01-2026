@@ -1,0 +1,46 @@
+
+
+
+
+
+
+
+<h1>Oleme teie jaoks olemas järgmistes asukohtades</h1>
+
+
+<h2>Tallinn</h2>
+<h2>Pärnu</h2>
+<h2>Tartu</h2>
+
+
+
+<div class="map-container">
+  <div class="map-frame">
+    <div id="map"></div>
+  </div>
+</div>
+
+
+
+
+
+<div>  
+    <h3>Võta meiega ühendust:</h3>
+</div>
+
+<div>
+<form class="contact-form" (submit)="sendEmail($event)">
+  <label>Nimi</label><br>
+  <input type="text" name="from_name"><br>
+  <label>Email</label><br>
+  <input type="email" name="from_email"><br>
+  <label>Kiri</label><br>
+  <textarea name="message"></textarea><br>
+ 
+    <label>Hinnang</label>
+    <input type="range" min="1" max="5" name="rating"> <br>
+<br>
+ <input type="submit" value="Saada">
+ 
+</form>
+</div>

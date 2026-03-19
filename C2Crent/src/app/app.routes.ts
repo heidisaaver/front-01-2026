@@ -1,21 +1,28 @@
 import { Routes } from '@angular/router';
-import { Rendiseadmed } from './rendiseadmed/rendiseadmed';
-import { LisaSeade } from './lisa-seade/lisa-seade';
-import { Logisisse } from './logisisse/logisisse';
-import { HaldaSeadmed } from './halda/halda-seadmed/halda-seadmed';
-import { HaldaKasutajad } from './halda/halda-kasutajad/halda-kasutajad';
-import { Rendikorv } from './rendikorv/rendikorv';
+import { AddProduct } from './add-product/add-product';
+import { Login } from './auth/login/login';
+import { Cart } from './cart/cart';
 import { NotFound } from './not-found/not-found';
+import { AdminUsers } from './admin/admin-users/admin-users';
+import { AdminProducts } from './admin/admin-products/admin-products';
+import { Rentalproducts } from './rentalproducts/rentalproducts';
+import { AdminProductlist } from './admin/admin-productlist/admin-productlist';
+import { AdminCategories } from './admin/admin-categories/admin-categories';
+import { Contacts } from './contacts/contacts';
+import { authGuard } from './guards/auth-guards';
 
 export const routes: Routes = [
 
-    {path: "", component: Rendiseadmed},
-    {path: "rendiseadmed", component: Rendiseadmed},
-    {path: "lisa-seade", component: LisaSeade},
-    {path: "logisisse", component: Logisisse},
-    {path: "halda-seadmeid", component: HaldaSeadmed},
-    {path: "halda-kasutajaid", component: HaldaKasutajad},
-    {path: "rendikorv", component: Rendikorv},
+    {path: "", component:  Rentalproducts},
+    {path: "rendiseadmed", component: Rentalproducts},
+    {path: "lisa-seade", component: AddProduct},
+    {path: "kontakt", component: Contacts},
+    {path: "logisisse", component: Login},
+    {path: "seadmete-nimekiri", component: AdminProductlist, canActivate: [authGuard]},
+    {path: "halda-seadmeid", component: AdminProducts, canActivate: [authGuard]},
+    {path: "halda-kategooriaid", component: AdminCategories, canActivate: [authGuard]},
+    {path: "halda-kasutajaid", component: AdminUsers, canActivate: [authGuard]},
+    {path: "rendikorv", component: Cart},
     {path: "**", component: NotFound},
 
 

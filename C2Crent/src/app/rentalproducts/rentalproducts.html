@@ -1,0 +1,81 @@
+<br>
+<br>
+<br>
+<!-- <div class="categories">
+    <div><img routerLink="/home-page" class="picture" src="assets/aed.jpg" alt=""/></div>
+    <div><img routerLink="/home-page" class="picture" src="assets/ehitus.jpg" alt=""/></div>
+    <div><img routerLink="/home-page" class="picture" src="assets/elektritööriistad.jpg" alt=""/></div>
+    <div><img routerLink="/home-page" class="picture" src="assets/käsitööriistad.jpg" alt=""/></div>
+    <div><img routerLink="/home-page" class="picture" src="assets/puhastus.jpg" alt=""/></div>
+ </div> -->
+
+<div class="categories">
+  <button class="category-btn" routerLink="/home-page">
+    <img class="picture" src="assets/aed.jpg" alt="Aed"/>
+    <span>Aed</span>
+  </button>
+
+  <button class="category-btn" routerLink="/home-page">
+    <img class="picture" src="assets/ehitus.jpg" alt="Ehitus"/>
+    <span>Ehitus</span>
+  </button>
+
+  <button class="category-btn" routerLink="/home-page">
+    <img class="picture" src="assets/elektritööriistad.jpg" alt="Elekter"/>
+    <span>Elekter</span>
+  </button>
+
+  <button class="category-btn" routerLink="/home-page">
+    <img class="picture" src="assets/käsitööriistad.jpg" alt="Käsitöö"/>
+    <span>Käsitöö</span>
+  </button>
+
+  <button class="category-btn" routerLink="/home-page">
+    <img class="picture" src="assets/puhastus.jpg" alt="Puhastus"/>
+    <span>Puhastus</span>
+  </button>
+</div>
+
+<div>Kokku seadmeid valitud kategoorias: {{products.length}} tk</div>
+<br>
+
+<br>
+<br>
+
+<button (click)="sortAZ()"> Sorteeri AZ</button>
+<button (click)="sortZA()"> Sorteeri ZA</button>
+
+<button (click)=" sortRatingAsc()"> Sorteeri hind kasvavalt</button>
+
+<button (click)=" sortRatingDes()"> Sorteeri hind kahanevalt</button>
+
+<br><br>
+
+@for (category of categories; track $index) {
+  
+    <button (click)="filterCategory(category.name)">{{category.name}}</button>
+
+}
+
+
+<br>
+
+
+<br>
+
+<div class="products">
+@for (product of products; track $index) {
+    
+    <div class="product" > 
+        <img class="image" src="{{product.image}}" alt="">
+        <div>{{product.title}}  </div>
+        <div>{{product.price}} €</div> 
+        <button (click)="addToCart(product)">Lisa rendikorvi</button>
+        <button routerLink="/product/{{product.id}}">Vaata detaile</button>
+    </div>
+}
+</div>
+
+<br>
+<div>Hind kokku: {{calculateTotal()}} €</div>
+

@@ -104,7 +104,5 @@ export class AddProduct implements OnInit {
   this.description = "";
   this.category = "";
   this.image = "";
-
-
 }
 }

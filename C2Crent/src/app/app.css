@@ -1,0 +1,74 @@
+
+.picture {
+    height: 60px;
+/* width: 100px; */
+}
+
+.picture:hover {
+    cursor: pointer;
+    opacity: 70%;
+}
+
+.picture:active {
+    transform: scale(90%);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Lükkab lingid vasakule ja sisselogimise paremale */
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #1a1a1a; /* Tume must taust */
+    border-bottom: 3px solid #ffb400; /* Kollane joon all servas */
+    margin-bottom: 20px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 0.5px;
+}
+
+/* Kõik nupud, mis ei ole 'primary' (ehk tekstipõhised nupud) */
+.navbar button {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Tavaline tekstinupp tumehallil taustal */
+.navbar button[mat-flat-button][color="primary"] {
+    background-color: #FFEB3B; /* Taust läheb kollaseks */
+    color: #000000;    
+}
+
+.navbar button[mat-button] {
+    color: #ffffff; /* Tavaline tekst on valge */
+}
+
+.navbar button[mat-flat-button][color="primary"]:hover {
+   opacity: 0.5;       
+}
+
+/* Logi välja nupp (stroked-button) */
+.navbar button[mat-stroked-button] {
+    background-color: #FFEB3B; /* Taust läheb kollaseks */
+    color: #000000;   
+}
+
+.navbar button[mat-stroked-button]:hover {
+    background-color: #FFEB3B;
+    color: #000000;
+}
+
+/* Mobiili sõbralikkus: kui ekraan on kitsas, laseb nupud ritta */
+@media (max-width: 900px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,88 @@
+.categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px; /* Jätab nuppude vahele ruumi */
+    padding: 20px;
+}
+
+.category-btn {
+    display: flex;
+    flex-direction: column; /* Pilt ülal, tekst all */
+    align-items: center;
+    justify-content: center;
+    
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out; /* Sujuv efekt hiirega peale minnes */
+}
+
+/* See teeb nupust nupu! */
+.category-btn:hover {
+    background-color: #ffb400; /* Sinu valitud kollane! */
+    border-color: #1a1a1a;
+    transform: translateY(-5px); /* Nupp kerkib veidi üles */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.picture {
+    width: 60px; /* Muuda vastavalt vajadusele */
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.category-btn span {
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #1a1a1a;
+}
+
+/* .categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    border: 1px solid lightgray;
+    text-align: center;
+    padding: 10px; 
+    justify-items: center; /* Joondab elemendid horisontaalselt kasti keskele */
+    /* align-items: center;   /* Määrab maksimaalse laiuse, muidu on grid 100% lai */
+    /* grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); */
+/* } */ */
+
+/* .picture {
+    width: 100px;
+    height: 100px;
+    transition: 1s;
+} */ */
+
+.categories:hover .picture {
+    transform: scale(105%);
+    transition: 1s;
+    cursor: pointer;
+    opacity: 70%;}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+}
+
+
+.product {
+    border: 1px solid lightgray;
+    text-align: center;
+    padding: 10px; 
+}
+
+.product:hover .image {
+    transform: scale(105%);
+    transition: 1s;
+    }
+.image {
+    width: 100px;
+    height: 100px;
+}
+
+

@@ -1,9 +1,51 @@
-<button routerLink="rendiseadmed">Rendiseadmed</button>
+<!-- <button button mat-flat-button color="primary" routerLink="rendiseadmed">Rendiseadmed</button>
 <button routerLink="lisa-seade">Lisa oma seade renti</button>
 <button routerLink="rendikorv">Rendikorv</button>
+<button routerLink="kontakt">Kontakt</button>
 <button routerLink="logisisse">Logi sisse</button>
+
+@if (isLoggedIn) {
+<button routerLink="seadmete-nimekiri">Kõik seadmed</button>
 <button routerLink="halda-seadmeid">Halda seadmeid</button>
-<button routerLink="halda-kasutajaid">Halda kasutajaid</button>
+<button routerLink="halda-kategooriaid">Halda kategooriaid</button>
+<button routerLink="halda-kasutajaid">Halda kasutajaid</button> -->
+<!-- } -->
+
+
+<!-- @if (isLoggedIn) {
+    <button (click)="logout()">
+    Logi välja
+    </button>
+    } @else {
+    <button routerLink="logisisse">
+    Logi sisse
+  </button>} -->
+
+
+
+  <nav class="navbar">
+  <div class="nav-links">
+    <button mat-flat-button color="primary" routerLink="rendiseadmed">Rendiseadmed</button>
+    <button mat-flat-button color="primary" routerLink="lisa-seade">Lisa oma seade renti</button>
+    <button mat-flat-button color="primary" routerLink="rendikorv">Rendikorv</button>
+    <button mat-flat-button color="primary" routerLink="kontakt">Kontakt</button>
+
+    @if (isLoggedIn) {
+      <button mat-flat-button color="primary" routerLink="seadmete-nimekiri">Kõik seadmed</button>
+      <button mat-flat-button color="primary" routerLink="halda-seadmeid">Halda seadmeid</button>
+      <button mat-flat-button color="primary" routerLink="halda-kategooriaid">Halda kategooriaid</button>
+      <button mat-flat-button color="primary" routerLink="halda-kasutajaid">Halda kasutajaid</button>
+    }
+  </div>
+
+  <div class="nav-auth">
+    @if (isLoggedIn) {
+      <button mat-stroked-button color="primary" (click)="logout()">Logi välja</button>
+    } @else {
+      <button mat-flat-button color="primary" routerLink="logisisse">Logi sisse</button>
+    }
+  </div>
+</nav>
 
 <router-outlet />
 

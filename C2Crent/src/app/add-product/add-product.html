@@ -1,0 +1,34 @@
+<br>
+<br>
+
+<br>
+<div>{{message}}</div>
+<br>
+
+<input [(ngModel)]="image" type="file" >
+<label>Seadme foto </label><br>
+
+<input [(ngModel)]="title" type="text" >
+<label>Seadme nimi </label><br>
+
+<!-- <input [(ngModel)]="category">
+<option disable value="">Vali kategooria</option> -->
+<select [(ngModel)]="category">
+    <option disable value="">Vali kategooria</option>
+    @for(c of categories; track $index) {
+        <option>{{c.name}}</option>
+    }
+</select>
+<label>Seadme kategooria </label><br>
+
+
+<input [(ngModel)]="price" type="number" >
+<label>Päeva hind </label><br>
+
+<input [(ngModel)]="description" type="text" >
+<label>Seadme info </label><br>
+
+<input [(ngModel)]="active" type="checkbox" >
+<label>Aktiivne</label><br>
+
+<button (click)="add()">Add</button>

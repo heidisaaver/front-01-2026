@@ -1,0 +1,60 @@
+
+
+
+@if (cart.length === 0) {
+<div>Ühtegi seadet ei ole valitud</div>
+   } 
+
+   @else {
+
+
+
+<div>Seadmeid valitud {{cart.length}} tükki</div>
+
+<div>Maksumus kokku: {{calculateTotal()}} €</div>
+<br>
+<button (click)="empty()">Tühjenda ostukorv</button>
+
+
+   }
+<br>
+<br>
+@for(cp of cart; track cp) {
+   <div class="product">
+      <img class="image" src="{{cp.product.image}}" alt="">
+      <div class="title">{{cp.product.title}}</div>
+      <div class="price">{{cp.product.price}} €</div>
+      <img class="icon" src="/assets/minus.png" alt="" (click)="decreaseQuantity($index)">
+      <!-- <button (click)="decreaseQuantity($index)">-</button> -->
+      <div class="quantity">{{cp.quantity}} tk</div>  
+      <img class="icon" src="/assets/add.png" alt="" (click)="increaseQuantity($index)"> 
+      <!-- <button (click)="increaseQuantity($index)">+</button> -->
+      <div class="total">{{cp.product.price * cp.quantity}} €</div>
+      <img class="icon" src="/assets/remove.png" alt="" (click)="delete($index)"> 
+      <!-- <button (click)="delete($index)">x</button> -->
+   </div>
+}
+
+<br>
+<button mat-flat-button class="btn-soft" (click)="country = 'EE'">Eesti</button>
+<!-- <button (click)="country = 'LV'">Läti</button>
+<button (click)="country = 'LT'">Leedu</button><br> -->
+
+<select>
+@for (paikautomaat of dataResource.value(); track $index) {
+
+   @if (paikautomaat.A0_NAME === country ) {
+
+   <option>{{paikautomaat.NAME}}</option>
+   }
+}
+</select>
+
+@if (calculateTotal() > 7000) {
+   <div>Maksed üle 7000 eur ei ole kahjuks võimalikud, võta ühendust klienditoega!</div>
+
+   } @else {
+    <br><br>
+   <button mat-flat-button class="btn-soft" (click)="pay()">Maksma</button>
+}
+
