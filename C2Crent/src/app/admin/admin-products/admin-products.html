@@ -20,43 +20,43 @@
     <br>
 
     <input [(ngModel)]="product.id" disabled type="text" >
-    <label>Procut id</label><br>
+    <label>Seadme id</label><br>
    
     <input [(ngModel)]="product.title" type="text" >
-    <label>Procut title</label><br>
+    <label>Seadme nimi</label><br>
 
     <input [(ngModel)]="product.price" type="number" >
-    <label>Procut price</label><br>
+    <label>Seadme hind</label><br>
 
     <input [(ngModel)]="product.description" type="text" >
-    <label>Product description </label><br>
+    <label>Seadme kirjeldus</label><br>
 
     <select [(ngModel)]="product.category">
-        <option disable value="">Choose category</option>
+        <option disable value="">Vali kategooria</option>
         @for(c of categories; track $index) {
             <option>{{c.name}}</option>
         }
     </select> 
-    <label>Product category </label><br>
+    <label>Seadme kategooria </label><br>
 
     <input [(ngModel)]="product.image" type="text" >
-    <label>Product image </label><br>
+    <label>Seadme pilt </label><br>
 
     <input [(ngModel)]="product.rating" disabled type="number" >
-    <label>Product rating </label><br>
+    <label>Seadme hinnang </label><br>
 
     <input [(ngModel)]="product.count" disabled type="number" >
-    <label>Product rating count </label><br>
+    <label>Seadme hinnangu arv </label><br>
 
     <input [(ngModel)]="product.active" type="checkbox" >
-    <label>Product active </label><br>
+    <label>Seadme aktiivne </label><br>
    
 
     <br>
-    <button (click)="change()">Change</button>
+    <button (click)="change()">Muuda</button>
    
 }   @else {
-    <div>Product not found</div>
+    <div>Seadet ei leitud</div>
 }
 
 

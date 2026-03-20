@@ -2,6 +2,7 @@ import { Component, AfterViewInit } from '@angular/core';
 import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
 import { HttpClient } from '@angular/common/http';
 import * as L from 'leaflet';
+import { FormsModule } from '@angular/forms';
 
 const iconRetinaUrl = 'assets/marker-icon-2x.png';
 const iconUrl = 'assets/marker-icon.png';
@@ -20,11 +21,15 @@ L.Marker.prototype.options.icon = iconDefault;
 
 @Component({
   selector: 'app-contacts',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './contacts.html',
   styleUrl: './contacts.css',
 })
 export class Contacts implements AfterViewInit {
+
+  summa = 5;
+  kogus = 1;
+  customSumma = 0;
 
   private map: any;
     private shops= [
@@ -92,5 +97,35 @@ export class Contacts implements AfterViewInit {
         },
       );       
     }
+
+  muudaSumma(uusSumma: number) {
+  this.summa = uusSumma;
+  this.customSumma = 0;
+
+  }
+
+  pay() {
+    const url = "https://igw-demo.every-pay.com/api/v4/payments/oneoff"
+    const payload =  {
+        "account_name": "EUR3D1",
+        "nonce": crypto.randomUUID(), // Better to generate a real unique string
+        "timestamp": new Date().toISOString(),
+        "amount": this.customSumma > 0 ? this.customSumma : this.summa * this.kogus,
+       "order_reference": "order-" + Math.floor(Math.random() * 10000),
+       "customer_url": "https://webshop-5698.web.app/",
+       "api_username": "e36eb40f5ec87fa2"
+    }
+
+    fetch (url, {
+
+    method: "POST",
+    body: JSON.stringify(payload),
+    headers: {
+      'Content-Type':'application/json',
+      'Authorization': 'Basic ' + btoa('e36eb40f5ec87fa2:7b91a3b9e1b74524c2e9fc282f8ac8cd')
+    } 
+  }) .then(res => res.json())
+     .then(json => window.location.href = json.payment_link);
+  }
 
   }

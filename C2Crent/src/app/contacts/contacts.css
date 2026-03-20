@@ -17,3 +17,38 @@
   height: 100%;
   /* filter: grayscale(60%) brightness(90%); */
 }
+
+.summa-aktiivne {
+    
+    color: #2c2807;
+    background-color: #FFEB3B
+}
+
+.btn-soft {
+    font-family: 'Roboto', sans-serif; /* Pehmem font kui Oswald */
+    font-weight: 500;
+    text-transform: none; /* Ei ole suurte tähtedega, mõjub sõbralikumalt */
+    font-size: 13px !important;
+    background-color: #f1e9a6 !important; /* Väga hele, "pastellne" kollane */
+    color: #1a1a1a !important;
+    min-width: auto !important;
+    border: 1px solid #8e8419; /* Veidi tumedam kollane äär selguse huvides */
+    /* border-radius: 25px !important; Ümarad "pill" kujuga nupud on pehmemad */
+    line-height: 1.2 !important;
+    padding: 4px 12px !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Vaevaltmärgatav vari */
+}
+
+/* Efekt peale liikudes */
+.btn-soft:hover {
+    background-color: #FFEB3B !important; /* Muutub veidi kirkamaks kollaseks */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Vari läheb sügavamaks */
+    transform: translateY(-1px); /* Tõuseb õrnalt kõrgemale */
+}
+
+/* Aktiivne olek (vajutamise hetk) */
+.btn-soft:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}

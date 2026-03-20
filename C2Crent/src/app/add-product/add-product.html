@@ -5,8 +5,19 @@
 <div>{{message}}</div>
 <br>
 
-<input [(ngModel)]="image" type="file" >
+<input  [(ngModel)]="image" type="text" placeholder="Kleebi pildi URL siia">
 <label>Seadme foto </label><br>
+
+
+<!-- <div class="file-upload-container">
+  <label>Seadme foto </label><br>
+  
+  <label for="file-upload" class="mat-flat-button btn-soft custom-file-upload">
+    Vali fail
+  </label>
+  
+  <input id="file-upload" [(ngModel)]="image" type="file" (change)="onFileSelected($event)">
+</div> -->
 
 <input [(ngModel)]="title" type="text" >
 <label>Seadme nimi </label><br>
@@ -31,4 +42,4 @@
 <input [(ngModel)]="active" type="checkbox" >
 <label>Aktiivne</label><br>
 
-<button (click)="add()">Add</button>
+<button mat-flat-button class="btn-soft" (click)="add()">Lisa</button>

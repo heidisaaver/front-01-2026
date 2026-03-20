@@ -64,7 +64,7 @@ export class AdminProducts {
           "Content-Type": "application/json"
          }
        }).then (() => {
-        this.router.navigateByUrl("/manage-products"); //suunamine tagasi
+        this.router.navigateByUrl("/seadmete-nimekiri"); //suunamine tagasi
        })    
 
       }

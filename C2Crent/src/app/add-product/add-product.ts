@@ -23,6 +23,7 @@ export class AddProduct {
   private categoryUrl = "https://69a54208885dcb6bd6a7ca89.mockapi.io/categories";
   private cdr = inject(ChangeDetectorRef);
   private productUrl = "https://69a54208885dcb6bd6a7ca89.mockapi.io/Products"
+  selectedFile: File | null = null;
 
 
   ngOnInit() {
@@ -35,47 +36,69 @@ export class AddProduct {
 
   }
 
-  add() {
-    
-    if (this.title.length < 3) {
-      alert("Product title too short!");
-      return;
-    } 
-  
-    
-    if (this.title.trim() === "") {
-      alert( "Can't enter with emty name!");
-      return;
 
-    }
-  
-    const newProduct = {
-      "title": this.title,
-      "image": this.image,
-      "price": this.price,  
-      "description": this.description,
-      "category": this.category,
-      "rating": 0,
-      "active": this.active,
-      "count": 0,
-      "id": this.id,
-   
-    }
 
-    fetch(this.productUrl, {
-        method: "POST",
-        body: JSON.stringify(newProduct),
-        headers: {
-          "Content-Type": "application/json"
-        }
-    })
-
-    this.id = 0;
-    this.title = "";
-    this.price = 0;
-    this.description = "";
-    this.category = "";
-    this.image = "";
-
+  onFileSelected(event: any) {
+  const file = event.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = () => {
+      // See muudab pildi väga pikaks tekstijadaks
+      this.image = reader.result as string; 
+      console.log("Pilt konverteeritud tekstiks");
+    };
+    reader.readAsDataURL(file);
   }
+  }
+
+  add() {
+  // Kontrollid
+  if (this.title.length < 3 || this.title.trim() === "") {
+    alert("Toote nimi on liiga lühike või tühi!");
+    return;
+  }
+
+  const newProduct = {
+    "title": this.title,
+    "image": this.image,      // Siia läheb nüüd pikk pildi tekstikood
+    "price": this.price,  
+    "description": this.description,
+    "category": this.category,
+    "rating": 0,
+    "active": this.active,
+    "count": 0,
+    
+  };
+
+  fetch(this.productUrl, {
+    method: "POST",
+    body: JSON.stringify(newProduct),
+    headers: {
+      "Content-Type": "application/json"
+    }
+  })
+  .then(res => {
+    if (res.ok) {
+      
+      
+      
+    } else {
+      alert("Midagi läks valesti!");
+    }
+  });
+  
+      this.id = 0;
+      this.title = "";
+      this.price = 0;
+      this.description = "";
+      this.category = "";
+      this.image = "";
+      this.active = false;
+      this.selectedFile = null;
+      
+      alert("Seade on edukalt lisatud!");
+  }
+   
+
+
 }

@@ -5,8 +5,8 @@
 <label>Name</label><br>
 <input [(ngModel)]="name" type="text"><br>
 <label>Image</label><br>
-<input [(ngModel)]="avatar" type="file"><br>
-<button (click)="addCategory()">Add</button>
+<input mat-flat-button class="btn-soft" [(ngModel)]="avatar" type="file"><br>
+<button mat-flat-button class="btn-soft" (click)="addCategory()">Add</button>
 
 
 <table>
@@ -29,7 +29,7 @@
             <td> <img class="image" src="{{category.avatar}}" alt=""></td>
             <td>{{category.name}}</td>
             <td>{{category.createdAt}}</td>
-            <td><button (click)="deleteCategory(category.id, $index)">x</button></td>
+            <td><button mat-flat-button class="btn-soft" (click)="deleteCategory(category.id, $index)">x</button></td>
             </tr> 
          }
 </tbody>

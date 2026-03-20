@@ -40,7 +40,42 @@
     <label>Hinnang</label>
     <input type="range" min="1" max="5" name="rating"> <br>
 <br>
- <input type="submit" value="Saada">
+ <input mat-flat-button class="btn-soft" type="submit" value="Saada">
  
 </form>
 </div>
+<br><br><br>
+
+<div>Et saaksime olla veel paremad, tee meile annetus:</div>
+<button [class.summa-aktiivne]="summa === 5" (click)="muudaSumma(5)">5</button>
+<button [class.summa-aktiivne]="summa === 10" (click)="muudaSumma(10)">10</button>
+<button [class.summa-aktiivne]="summa === 15" (click)="muudaSumma(15)">15</button>
+
+<div>Vali ise summa</div>
+@if (true) {
+    <input [(ngModel)]="customSumma" type = "text"> 
+}
+
+<br/>
+
+@if (customSumma > 0 ) {
+    <div>Annetuse summa {{customSumma}} €</div>
+} @else {
+<div>Annetuse summa {{summa}} €</div>
+}
+
+
+<button mat-flat-button class="btn-soft" [disabled]="kogus ===1" (click)="kogus = kogus - 1">-</button>
+<span>{{kogus}}</span>
+<button mat-flat-button class="btn-soft" (click)="kogus = kogus + 1">+</button>
+
+
+
+@if (customSumma > 0) {
+    <div>Annetuse summa kokku: {{customSumma * kogus}}</div>
+} @else {
+<div>Annetuse summa kokku: {{summa * kogus}}</div>
+}
+
+<button mat-flat-button class="btn-soft" (click)="pay()">Maksma</button>
+<br><br>

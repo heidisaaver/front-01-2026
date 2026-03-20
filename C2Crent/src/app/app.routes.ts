@@ -19,7 +19,7 @@ export const routes: Routes = [
     {path: "kontakt", component: Contacts},
     {path: "logisisse", component: Login},
     {path: "seadmete-nimekiri", component: AdminProductlist, canActivate: [authGuard]},
-    {path: "halda-seadmeid", component: AdminProducts, canActivate: [authGuard]},
+    {path: "halda-seadmeid/:id", component: AdminProducts, canActivate: [authGuard]},
     {path: "halda-kategooriaid", component: AdminCategories, canActivate: [authGuard]},
     {path: "halda-kasutajaid", component: AdminUsers, canActivate: [authGuard]},
     {path: "rendikorv", component: Cart},

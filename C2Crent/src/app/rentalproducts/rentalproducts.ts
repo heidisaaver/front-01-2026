@@ -15,7 +15,7 @@ import { CartProduct } from '../models/cartProduct';
 export class Rentalproducts {
 
 
- products: Product [] = [];
+  products: Product [] = [];
   dbproducts: Product[] = [];
   categories: Category [] = [];
   private categoryUrl = "https://69a54208885dcb6bd6a7ca89.mockapi.io/categories";
@@ -88,5 +88,23 @@ export class Rentalproducts {
     let sum = 0;
     this.products.forEach(product => sum = sum + product.price);
     return sum;
+  }
+
+  filterCategoryAed() {
+    this.products = this.dbproducts.filter(product => product.category === 'Aed') 
+  }
+
+   filterCategoryEhitus() {
+    this.products = this.dbproducts.filter(product => product.category === 'Ehitus') 
+  }
+    filterCategoryElekter() {
+    this.products = this.dbproducts.filter(product => product.category === 'Elektritööriistad') 
+  }
+  filterCategoryKasitoo() {
+    this.products = this.dbproducts.filter(product => product.category === 'Käsitööriistad')
+  }
+
+  filterCategoryPuhastus() {
+    this.products = this.dbproducts.filter(product => product.category === 'Puhastus')
   }
   }

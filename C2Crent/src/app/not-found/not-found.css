@@ -1,0 +1,19 @@
+
+.not-found-image {
+    width: 300px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
+
+.not-found-image:hover {
+    cursor: pointer;
+    opacity: 70%;
+}
+
+.not-found-text {
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    color: #1a1a1a;
+}
