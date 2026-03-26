@@ -1,26 +1,46 @@
-import { Component, ChangeDetectorRef, inject } from '@angular/core';
+import { Component, ChangeDetectorRef, inject, NgModule, ViewChild, ApplicationConfig } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Product } from '../models/product';
 import { Category } from '../models/category';
 import { FormsModule } from '@angular/forms';
 import { CartProduct } from '../models/cartProduct';
+import { MatDatepicker, MatDatepickerModule } from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @Component({
+
   selector: 'app-rentalproducts',
-  imports: [RouterLink, FormsModule],
+  standalone: true,
+  imports: [RouterLink, 
+          FormsModule, 
+          MatDatepickerModule, 
+          MatNativeDateModule, 
+          MatInputModule, 
+          MatFormFieldModule, 
+          MatButtonModule,
+          MatIconModule
+          ],
   templateUrl: './rentalproducts.html',
   styleUrl: './rentalproducts.css',
+
+  
 })
+
 export class Rentalproducts {
 
-
+  
   products: Product [] = [];
   dbproducts: Product[] = [];
   categories: Category [] = [];
   private categoryUrl = "https://69a54208885dcb6bd6a7ca89.mockapi.io/categories";
   private cdr = inject(ChangeDetectorRef);
   private productUrl = "https://69a54208885dcb6bd6a7ca89.mockapi.io/Products"
+
 
 
   ngOnInit() {
@@ -107,4 +127,7 @@ export class Rentalproducts {
   filterCategoryPuhastus() {
     this.products = this.dbproducts.filter(product => product.category === 'Puhastus')
   }
-  }
+
+
+ 
+}

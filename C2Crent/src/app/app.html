@@ -1,30 +1,11 @@
-<!-- <button button mat-flat-button color="primary" routerLink="rendiseadmed">Rendiseadmed</button>
-<button routerLink="lisa-seade">Lisa oma seade renti</button>
-<button routerLink="rendikorv">Rendikorv</button>
-<button routerLink="kontakt">Kontakt</button>
-<button routerLink="logisisse">Logi sisse</button>
-
-@if (isLoggedIn) {
-<button routerLink="seadmete-nimekiri">Kõik seadmed</button>
-<button routerLink="halda-seadmeid">Halda seadmeid</button>
-<button routerLink="halda-kategooriaid">Halda kategooriaid</button>
-<button routerLink="halda-kasutajaid">Halda kasutajaid</button> -->
-<!-- } -->
-
-
-<!-- @if (isLoggedIn) {
-    <button (click)="logout()">
-    Logi välja
-    </button>
-    } @else {
-    <button routerLink="logisisse">
-    Logi sisse
-  </button>} -->
-
 
 
   <nav class="navbar">
   <div class="nav-links">
+    
+    <span>
+    <img routerLink="/rendiseadmed" class="icon" src="assets/home.png" alt=""/>
+  </span>
     <button mat-flat-button color="primary" routerLink="rendiseadmed">Rendiseadmed</button>
     <button mat-flat-button color="primary" routerLink="lisa-seade">Lisa oma seade renti</button>
     <button mat-flat-button color="primary" routerLink="rendikorv">Rendikorv</button>
@@ -33,11 +14,11 @@
     @if (isLoggedIn) {
       <button mat-flat-button color="primary" routerLink="seadmete-nimekiri">Kõik seadmed</button>
       <button mat-flat-button color="primary" routerLink="halda-kategooriaid">Halda kategooriaid</button>
-      <button mat-flat-button color="primary" routerLink="halda-kasutajaid">Halda kasutajaid</button>
+      <!-- <button mat-flat-button color="primary" routerLink="halda-kasutajaid">Halda kasutajaid</button> -->
     }
   </div>
 
-  <div class="nav-auth">
+   <div class="nav-auth">
     @if (isLoggedIn) {
       <button mat-stroked-button color="primary" (click)="logout()">Logi välja</button>
     } @else {
@@ -47,5 +28,29 @@
 </nav>
 
 <router-outlet />
+
+<footer class="footer">
+  <div class="footer-columns">
+    <div class="footer-col">
+      <h4>Ettevõte</h4>
+      <a routerLink="/kontakt">Kontakt</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Info</h4>
+       <a href="assets/renditingimused.pdf" target="_blank" rel="noopener">Tingimused</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <div>info@c2crent.ee</div>
+      <div>+372 5555 5555</div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 C2C Rent
+  </div>
+</footer>
 
 

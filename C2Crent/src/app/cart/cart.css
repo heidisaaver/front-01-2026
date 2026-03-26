@@ -26,3 +26,49 @@
     transform: translateY(0);
     box-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
+
+
+.product {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 5%;
+    border-bottom: 1px solid lightgrey;
+    padding: 10px 0;
+}
+
+.image {
+    width: 30px;
+    height: 30px;
+}  
+
+.title {
+    width: 300px;
+}
+
+.price {
+    width: 70px;
+}
+
+.quantity {
+    width: 80px;
+}
+
+.total {
+    width: 80px;
+}
+.warning {
+  margin-top: 8px;
+  color: #c62828;      
+  font-weight: 600;
+}
+
+:host ::ng-deep .yellow-field .mdc-text-field--filled {
+  background-color: #f1e9a6 !important; /* kollane */
+}
+
+
+:host ::ng-deep .date-field .mdc-text-field {
+  height: 45px;   
+  width: 160px;       /* standard ~56px, tee väiksem */
+}
+

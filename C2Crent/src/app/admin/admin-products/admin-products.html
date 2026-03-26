@@ -1,20 +1,6 @@
 
-
-
-
-
-
-
-
-
-
-
-
-
-<br>
-<br>
-<br>
-<br>
+<div class="page-center">
+  <div class="form-card">
 
 @if (product && categories.length > 0) { 
     <br>
@@ -53,10 +39,12 @@
    
 
     <br>
-    <button (click)="change()">Muuda</button>
+    <button mat-flat-button class="btn-soft" (click)="change()">Muuda</button>
    
 }   @else {
     <div>Seadet ei leitud</div>
 }
+    </div>
+</div>  
 
 

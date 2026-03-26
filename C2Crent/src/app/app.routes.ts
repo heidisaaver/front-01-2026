@@ -10,6 +10,7 @@ import { AdminProductlist } from './admin/admin-productlist/admin-productlist';
 import { AdminCategories } from './admin/admin-categories/admin-categories';
 import { Contacts } from './contacts/contacts';
 import { authGuard } from './guards/auth-guards';
+import { Rendiseade } from './rendiseade/rendiseade';
 
 export const routes: Routes = [
 
@@ -18,6 +19,7 @@ export const routes: Routes = [
     {path: "lisa-seade", component: AddProduct},
     {path: "kontakt", component: Contacts},
     {path: "logisisse", component: Login},
+    {path: "rendiseade/:product_id", component: Rendiseade},
     {path: "seadmete-nimekiri", component: AdminProductlist, canActivate: [authGuard]},
     {path: "halda-seadmeid/:id", component: AdminProducts, canActivate: [authGuard]},
     {path: "halda-kategooriaid", component: AdminCategories, canActivate: [authGuard]},

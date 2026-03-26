@@ -50,13 +50,13 @@
     justify-items: center; /* Joondab elemendid horisontaalselt kasti keskele */
     /* align-items: center;   /* Määrab maksimaalse laiuse, muidu on grid 100% lai */
     /* grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); */
-/* } */ */
+/* } */ 
 
 /* .picture {
     width: 100px;
     height: 100px;
     transition: 1s;
-} */ */
+} */ 
 
 .categories:hover .picture {
     transform: scale(105%);
@@ -94,7 +94,7 @@
     color: #1a1a1a !important;
     min-width: auto !important;
     border: 1px solid #8e8419; /* Veidi tumedam kollane äär selguse huvides */
-    /* border-radius: 25px !important; Ümarad "pill" kujuga nupud on pehmemad */
+    border-radius: 1px !important; /* Ümarad "pill" kujuga nupud on pehmemad */
     line-height: 1.2 !important;
     padding: 4px 12px !important;
     transition: all 0.3s ease !important;
@@ -114,3 +114,52 @@
     box-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
 
+
+.sort-buttons{
+  display: flex;
+  justify-content: center; /* horisontaalne keskjoondus */
+  gap: 12px;
+  flex-wrap: wrap;         /* kui kitsas ekraan, lähevad järgmisele reale */
+  margin: 16px 0;
+}
+
+/* kui tahad ka vertikaalselt keskele (nt mingi kõrguse sees) */
+.sort-buttons{
+  align-items: center;
+}
+
+.btn-soft.btn-soft-sm {
+  font-size: 12px !important;
+  padding: 2% 2% !important;
+  line-height: 0.5 !important;
+  border-radius: 1px !important;
+  box-shadow: none; /* vähem “peamine” */
+}
+
+/* Hover ka veidi rahulikumaks */
+.btn-soft.btn-soft-sm:hover {
+  background-color: #ffe86a !important; /* vähem kirkaks kui primary */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+  transform: translateY(-0.5px);
+}
+
+/* (Optional) kui tahad veel kitsamat vahet */
+.sort-buttons.sort-buttons-tight {
+  gap: 4px;
+}
+.cart-icon-btn mat-icon{
+  color: #ffb400; /* kollane */
+}
+
+.cart-icon-btn:hover mat-icon{
+  opacity: 0.70;
+}
+
+.details-icon-btn{
+  color: #ffb400;
+}
+
+.details-icon-btn mat-icon{
+  color: #ffb400;
+  font-size: 25px;
+}

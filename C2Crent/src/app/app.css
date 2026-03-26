@@ -1,4 +1,10 @@
 
+.icon {
+    height: 20px;
+    width: 20px;
+    margin-right: 15px;
+}
+
 .picture {
     height: 60px;
 /* width: 100px; */
@@ -71,4 +77,59 @@
         flex-wrap: wrap;
         justify-content: center;
     }
+}
+
+
+
+
+.footer {
+  background-color: #1a1a1a;         /* sama mis navbar */
+  border-top: 3px solid #ffb400;      /* kollane joon (footeril üleval) */
+  padding: 20px 30px;
+  color: #ffb400;                     /* kollane tekst */
+  margin-top: 20px;
+  font-family: 'Oswald', sans-serif;  /* sama font */
+}
+
+.footer-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.footer-col h4 {
+  margin: 0 0 12px 0;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #ffb400;
+}
+
+.footer-col a {
+  display: block;
+  margin: 6px 0;
+  color: #ffb400;
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.footer-col a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 180, 0, 0.35);
+  color: #ffb400;     /* soovi korral alumine rida valge (nagu navbar button[mat-button]) */
+  opacity: 0.9;
+}
+
+/* Mobiilis 1 tulp (sarnaselt navbarile) */
+@media (max-width: 900px) {
+  .footer-columns {
+    grid-template-columns: 1fr;
+  }
 }

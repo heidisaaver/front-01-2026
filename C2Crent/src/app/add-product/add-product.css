@@ -49,3 +49,14 @@ input[type="file"] {
     filter: brightness(0.95);
     transform: translateY(-1px);
 }
+
+.page-center {
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+}
+
+.form-card {
+  width: 100%;
+  max-width: 420px;
+}

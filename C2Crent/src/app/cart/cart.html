@@ -7,13 +7,33 @@
 
    @else {
 
+      <mat-form-field appearance="fill" class="date-field yellow-field">
+    <mat-label>Rendiperiood</mat-label>
+
+    <mat-date-range-input [rangePicker]="picker">
+      <input matStartDate placeholder="Algus" [(ngModel)]="rentStart">
+      <input matEndDate placeholder="Lõpp" [(ngModel)]="rentEnd">
+    </mat-date-range-input>
+
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-date-range-picker #picker></mat-date-range-picker>
+  </mat-form-field>
+
+  @if (rentStart && rentEnd) {
+    <div>Rendipäevi: {{ rentalDays }}</div>
+  } @else {
+    <div>Vali algus- ja lõppkuupäev</div>
+  }
 
 
-<div>Seadmeid valitud {{cart.length}} tükki</div>
 
-<div>Maksumus kokku: {{calculateTotal()}} €</div>
-<br>
-<button (click)="empty()">Tühjenda ostukorv</button>
+
+
+      <div>Seadmeid valitud {{cart.length}} tükki</div>
+
+      <div>Maksumus kokku: {{calculateTotal()}} €</div>
+      <br>
+      <button mat-flat-button class="btn-soft" (click)="empty()">Tühjenda ostukorv</button>
 
 
    }
@@ -37,8 +57,7 @@
 
 <br>
 <button mat-flat-button class="btn-soft" (click)="country = 'EE'">Eesti</button>
-<!-- <button (click)="country = 'LV'">Läti</button>
-<button (click)="country = 'LT'">Leedu</button><br> -->
+
 
 <select>
 @for (paikautomaat of dataResource.value(); track $index) {
@@ -55,6 +74,11 @@
 
    } @else {
     <br><br>
-   <button mat-flat-button class="btn-soft" (click)="pay()">Maksma</button>
+   <button mat-flat-button class="btn-soft" [disabled]="!rentStart || !rentEnd || rentalDays <= 0" (click)="pay()">Maksma</button>
+       @if (!rentStart || !rentEnd) {
+      <div class="warning">Palun vali enne periood</div>
+      } @else if (rentalDays <= 0) {
+      <div class="warning">Lõppkuupäev peab olema alguskuupäevast hiljem.</div>
+}
 }
 

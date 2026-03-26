@@ -35,6 +35,7 @@
 
 <br>
 <br>
+<div class="sort-buttons">
 
 <button mat-flat-button class="btn-soft" (click)="sortAZ()"> Sorteeri AZ</button>
 <button mat-flat-button class="btn-soft" (click)="sortZA()"> Sorteeri ZA</button>
@@ -42,14 +43,15 @@
 <button mat-flat-button class="btn-soft" (click)=" sortRatingAsc()"> Sorteeri hind kasvavalt</button>
 
 <button mat-flat-button class="btn-soft" (click)=" sortRatingDes()"> Sorteeri hind kahanevalt</button>
+</div>
 
 <br><br>
 
-@for (category of categories; track $index) {
+<!-- @for (category of categories; track $index) {
   
     <button mat-flat-button class="btn-soft" (click)="filterCategory(category.name)">{{category.name}}</button>
 
-}
+} -->
 
 
 <br>
@@ -60,16 +62,21 @@
 <div class="products">
 @for (product of products; track $index) {
     
-    <div class="product" > 
+    <div class="product"> 
         <img class="image" src="{{product.image}}" alt="">
         <div>{{product.title}}  </div>
         <div>{{product.price}} €</div> 
-        <button mat-flat-button class="btn-soft" (click)="addToCart(product)">Lisa rendikorvi</button>
-        <button mat-flat-button class="btn-soft" routerLink="/product/{{product.id}}">Vaata detaile</button>
+        <button mat-icon-button class="cart-icon-btn" (click)="addToCart(product)" aria-label="Lisa rendikorvi">
+        <mat-icon>shopping_cart</mat-icon>
+        </button>
+        <button mat-icon-button class="details-icon-btn"  routerLink="/rendiseade/{{product.id}}" aria-label="Vaata detaile"><mat-icon>info</mat-icon></button>
+
+       
     </div>
 }
 </div>
 
-<br>
-<div>Hind kokku: {{calculateTotal()}} €</div>
+<!-- <br>
+<div>Hind kokku: {{calculateTotal()}} €</div> -->
 
+ 
