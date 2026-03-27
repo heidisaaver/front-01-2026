@@ -25,7 +25,6 @@ categories: Category[] = [];
         this.loading = false;
         this.cdr.detectChanges();
     });
-
  }
   
  addCategory() {
@@ -42,8 +41,7 @@ categories: Category[] = [];
       this.avatar = "";
       this.cdr.detectChanges();
     })
-
-  }
+ }
     
  deleteCategory(categoryId: string, index: number) {
     fetch(this.url + "/" + categoryId, {

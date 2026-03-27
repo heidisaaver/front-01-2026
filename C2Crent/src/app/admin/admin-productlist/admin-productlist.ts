@@ -20,7 +20,7 @@ export class AdminProductlist {
   private categoryUrl = "https://69a54208885dcb6bd6a7ca89.mockapi.io/categories";
 
 
-    ngOnInit() {
+  ngOnInit() {
     // this.products = this.productService.products;
     //  this.products = this.allProducts;
     fetch(this.productUrl)
@@ -37,24 +37,24 @@ export class AdminProductlist {
         this.categories = json;
         this.cdr.detectChanges();
       })
-
   }
 
   //index on htmlis kustutamiseks, productid andmebaasist kustutamiseks
   deleteProduct(index: number, productId: number) {
     fetch(this.productUrl + "/" + productId, {method: "DELETE"})
     this.products.splice(index, 1);
+    this.cdr.detectChanges();
   }
-
 
   search() {
   this.products = this.dbproducts.filter(products =>
     products.title.toLowerCase().includes(this.searchTerm.toLowerCase())
-  );
-}
+    );
+  }
 
  filterCategory(categoryName: string) {
     this.products = this.dbproducts.filter(product => product.category === categoryName)
+    this.cdr.detectChanges();
   }
 
 }

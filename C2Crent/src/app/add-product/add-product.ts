@@ -25,7 +25,6 @@ export class AddProduct {
   private productUrl = "https://69a54208885dcb6bd6a7ca89.mockapi.io/Products"
   selectedFile: File | null = null;
 
-
   ngOnInit() {
     fetch(this.categoryUrl)
     .then(res => res.json())
@@ -33,10 +32,7 @@ export class AddProduct {
       this.categories = json;
       this.cdr.detectChanges();
     });
-
   }
-
-
 
   onFileSelected(event: any) {
   const file = event.target.files[0];
@@ -48,7 +44,7 @@ export class AddProduct {
       console.log("Pilt konverteeritud tekstiks");
     };
     reader.readAsDataURL(file);
-  }
+    }
   }
 
   add() {
@@ -56,36 +52,33 @@ export class AddProduct {
   if (this.title.length < 3 || this.title.trim() === "") {
     alert("Toote nimi on liiga lühike või tühi!");
     return;
-  }
+    }
 
-  const newProduct = {
+    const newProduct = {
     "title": this.title,
-    "image": this.image,      // Siia läheb nüüd pikk pildi tekstikood
+    "image": this.image,     
     "price": this.price,  
     "description": this.description,
     "category": this.category,
     "rating": 0,
     "active": this.active,
     "count": 0,
-    
-  };
+    };
 
-  fetch(this.productUrl, {
+    fetch(this.productUrl, {
     method: "POST",
     body: JSON.stringify(newProduct),
     headers: {
       "Content-Type": "application/json"
-    }
-  })
-  .then(res => {
+      }
+    })
+    .then(res => {
     if (res.ok) {
-      
-      
       
     } else {
       alert("Midagi läks valesti!");
-    }
-  });
+      }
+      });
   
       this.id = 0;
       this.title = "";
@@ -98,7 +91,4 @@ export class AddProduct {
       
       alert("Seade on edukalt lisatud!");
   }
-   
-
-
 }
