@@ -10,6 +10,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -23,7 +24,7 @@ import { MatIconModule } from '@angular/material/icon';
           MatInputModule, 
           MatFormFieldModule, 
           MatButtonModule,
-          MatIconModule
+          MatIconModule,
           ],
   templateUrl: './rentalproducts.html',
   styleUrl: './rentalproducts.css',
@@ -37,6 +38,12 @@ export class Rentalproducts {
   products: Product [] = [];
   dbproducts: Product[] = [];
   categories: Category [] = [];
+  selectedCategory = '';
+  searchTerm: string = '';
+  rotatingCartIds = new Set<number | string>();
+
+  
+  private toastr = inject(ToastrService)
   private categoryUrl = "https://69a54208885dcb6bd6a7ca89.mockapi.io/categories";
   private cdr = inject(ChangeDetectorRef);
   private productUrl = "https://69a54208885dcb6bd6a7ca89.mockapi.io/Products"
@@ -44,9 +51,6 @@ export class Rentalproducts {
 
 
   ngOnInit() {
-  // Võtame tooted teenusest ja algseisus näitame kõiki
-  // this.products = this.productService.products;
-  // this.filteredProducts = [...this.products]; 
 
     fetch(this.productUrl)
       .then(res => res.json())
@@ -73,17 +77,12 @@ export class Rentalproducts {
     this.products.sort((a, b) => b.title.localeCompare(a.title));
   }
 
-  sortPriceAsc() {}
-
-  sortPriceDesc() {}
-
-  sortRatingAsc() {
-    this.products.sort((a,b) => a.rating - b.rating);
+  sortPriceAsc() {
+    this.products.sort((a, b) => a.price - b.price);
   }
 
-
-  sortRatingDes() {
-    this.products.sort((a,b) => b.rating - a.rating);
+  sortPriceDesc() {
+    this.products.sort((a, b) => b.price - a.price);
   }
 
   
@@ -91,7 +90,11 @@ export class Rentalproducts {
     this.products = this.dbproducts.filter(product => product.category === categoryName)
   }
 
-   addToCart(clickedProduct: Product) {
+  showAll() {
+  this.products = [...this.dbproducts];
+  }
+
+  addToCart(clickedProduct: Product) {
     const cartLS: CartProduct [] = JSON.parse(localStorage.getItem ("cart") || "[]"  );
     const found = cartLS.find(cartProduct => cartProduct.product.id === clickedProduct.id); 
     if (found !== undefined) {
@@ -102,6 +105,11 @@ export class Rentalproducts {
     }
 
     localStorage.setItem("cart", JSON.stringify(cartLS));
+    this.rotatingCartIds.add(clickedProduct.id);
+    setTimeout(() => {
+      this.rotatingCartIds.delete(clickedProduct.id);
+    }, 500);
+    this.toastr.info('Toode lisati ostukorvi!');
   }
 
   calculateTotal(): number {
@@ -110,24 +118,14 @@ export class Rentalproducts {
     return sum;
   }
 
-  filterCategoryAed() {
-    this.products = this.dbproducts.filter(product => product.category === 'Aed') 
-  }
-
-   filterCategoryEhitus() {
-    this.products = this.dbproducts.filter(product => product.category === 'Ehitus') 
-  }
-    filterCategoryElekter() {
-    this.products = this.dbproducts.filter(product => product.category === 'Elektritööriistad') 
-  }
-  filterCategoryKasitoo() {
-    this.products = this.dbproducts.filter(product => product.category === 'Käsitööriistad')
-  }
-
-  filterCategoryPuhastus() {
-    this.products = this.dbproducts.filter(product => product.category === 'Puhastus')
-  }
 
 
- 
+  setCategory(name: string) {
+  this.selectedCategory = name;
+  }
+
+  clearCategory() {
+  this.selectedCategory = '';
+  }
+
 }

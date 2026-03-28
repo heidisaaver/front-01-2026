@@ -1,6 +1,9 @@
 import { Component, inject, signal } from '@angular/core';
 import { RouterOutlet, RouterLinkWithHref, Router } from '@angular/router';
 import { AuthService } from './services/auth.service';
+import { CartService } from './services/cart.service';
+
+
 
 @Component({
   selector: 'app-root',
@@ -11,6 +14,7 @@ import { AuthService } from './services/auth.service';
 export class App {
   protected readonly title = signal('C2Crent');
 
+  cartService = inject(CartService);
   isLoggedIn!: boolean;
   // constructor(private authService: AuthService) {}
 
@@ -27,6 +31,10 @@ export class App {
     this.authService.isLoggedIn.next(false);
     this.router.navigateByUrl("/");
     sessionStorage.removeItem("token");
+  }
+  get cartTotal(): number {
+  const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+  return cart.reduce((sum: number, cp: any) => sum + (cp.product.price * cp.quantity), 0);
   }
 
 }

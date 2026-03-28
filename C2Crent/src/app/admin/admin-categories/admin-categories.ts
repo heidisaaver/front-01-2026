@@ -13,6 +13,7 @@ categories: Category[] = [];
   loading = true;
   name = "";
   avatar = "";
+  image = "";
 
   private url = "https://69a54208885dcb6bd6a7ca89.mockapi.io/categories"
   private cdr = inject(ChangeDetectorRef);
@@ -30,7 +31,7 @@ categories: Category[] = [];
  addCategory() {
   fetch(this.url, {
     method: "POST",
-    body: JSON.stringify({"name": this.name, "avatar": this.avatar}),
+    body: JSON.stringify({ name: this.name, avatar: this.image }),
     headers: {
       "Content-Type": "application/json"
     }
@@ -38,7 +39,7 @@ categories: Category[] = [];
     .then(json => {
       this.categories.push(json);
       this.name = "";
-      this.avatar = "";
+      this.image = "";
       this.cdr.detectChanges();
     })
  }

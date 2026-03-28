@@ -4,30 +4,16 @@
 
 
 <div class="categories">
-  <button class="category-btn" clicked (click)="filterCategoryAed()">
-    <img class="picture" src="assets/aed.jpg" alt="Aed"/>
-    <span>Aed</span>
+  <button class="category-btn" (click)="showAll()">
+    <span>Kõik</span>
   </button>
 
-  <button class="category-btn" (click)="filterCategoryEhitus()">
-    <img class="picture" src="assets/ehitus.jpg" alt="Ehitus"/>
-    <span>Ehitus</span>
-  </button>
-
-  <button class="category-btn" (click)="filterCategoryElekter()">
-    <img class="picture" src="assets/elektritööriistad.jpg" alt="Elekter"/>
-    <span>Elektritööriistad</span>
-  </button>
-
-  <button class="category-btn" (click)="filterCategoryKasitoo()">
-    <img class="picture" src="assets/käsitööriistad.jpg" alt="Käsitöö"/>
-    <span>Käsitööriistad</span>
-  </button>
-
-  <button class="category-btn" (click)="filterCategoryPuhastus()">
-    <img class="picture" src="assets/puhastus.jpg" alt="Puhastus"/>
-    <span>Puhastus</span>
-  </button>
+  @for (cat of categories; track cat.id) {
+    <button class="category-btn" (click)="filterCategory(cat.name)">
+      <img class="picture" [src]="cat.avatar || cat.avatar" [alt]="cat.name" />
+      <span>{{ cat.name }}</span>
+    </button>
+  }
 </div>
 
 <div>Kokku seadmeid valitud kategoorias: {{products.length}} tk</div>
@@ -40,18 +26,12 @@
 <button mat-flat-button class="btn-soft" (click)="sortAZ()"> Sorteeri AZ</button>
 <button mat-flat-button class="btn-soft" (click)="sortZA()"> Sorteeri ZA</button>
 
-<button mat-flat-button class="btn-soft" (click)=" sortRatingAsc()"> Sorteeri hind kasvavalt</button>
+<button mat-flat-button class="btn-soft" (click)=" sortPriceAsc()"> Sorteeri hind kasvavalt</button>
 
-<button mat-flat-button class="btn-soft" (click)=" sortRatingDes()"> Sorteeri hind kahanevalt</button>
+<button mat-flat-button class="btn-soft" (click)=" sortPriceDesc()"> Sorteeri hind kahanevalt</button>
 </div>
 
 <br><br>
-
-<!-- @for (category of categories; track $index) {
-  
-    <button mat-flat-button class="btn-soft" (click)="filterCategory(category.name)">{{category.name}}</button>
-
-} -->
 
 
 <br>
@@ -67,7 +47,7 @@
         <div>{{product.title}}  </div>
         <div>{{product.price}} €</div> 
         <button mat-icon-button class="cart-icon-btn" (click)="addToCart(product)" aria-label="Lisa rendikorvi">
-        <mat-icon>shopping_cart</mat-icon>
+        <mat-icon [class.cart-rotate]="rotatingCartIds.has(product.id)">shopping_cart</mat-icon>
         </button>
         <button mat-icon-button class="details-icon-btn"  routerLink="/rendiseade/{{product.id}}" aria-label="Vaata detaile"><mat-icon>info</mat-icon></button>
 
@@ -76,7 +56,5 @@
 }
 </div>
 
-<!-- <br>
-<div>Hind kokku: {{calculateTotal()}} €</div> -->
 
  

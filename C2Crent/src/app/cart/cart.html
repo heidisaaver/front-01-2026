@@ -23,10 +23,12 @@
     <div>Rendipäevi: {{ rentalDays }}</div>
   } @else {
     <div>Vali algus- ja lõppkuupäev</div>
+    <br>
+    <div>NB! ostukorvi kõik tooted on sama perioodiga. Kui tahad erinevaid perioode, tee uus tellimus!</div>
   }
 
 
-
+<br>
 
 
       <div>Seadmeid valitud {{cart.length}} tükki</div>
@@ -51,7 +53,7 @@
       <!-- <button (click)="increaseQuantity($index)">+</button> -->
       <div class="total">{{cp.product.price * cp.quantity}} €</div>
       <img class="icon" src="/assets/remove.png" alt="" (click)="delete($index)"> 
-      <!-- <button (click)="delete($index)">x</button> -->
+      <button (click)="delete($index)">x</button>
    </div>
 }
 

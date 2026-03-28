@@ -133,3 +133,11 @@
     grid-template-columns: 1fr;
   }
 }
+.cart-total {
+  color: #ffd400;          /* kollane */
+  font-weight: 700;
+  white-space: nowrap;
+
+}
+
+body { padding-top: 70px; } /* kohanda kõrgus */

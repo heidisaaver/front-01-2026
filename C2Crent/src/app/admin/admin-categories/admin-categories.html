@@ -4,8 +4,10 @@
 <br>
 <label>Nimi</label><br>
 <input [(ngModel)]="name" type="text"><br>
-<label>Pilt</label><br>
-<input mat-flat-button class="btn-soft" [(ngModel)]="avatar" type="file"><br>
+<label>Pilt </label><br>
+<input [(ngModel)]="image" type="text" placeholder="Kleebi pildi URL siia">
+<br>
+
 <button mat-flat-button class="btn-soft" (click)="addCategory()">Lisa</button>
 
 

@@ -1,15 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
-/* .icon {
-    height: 30px;
-    width: 30px;
-    margin: 5px;
-}
+@import "ngx-toastr/toastr";
 
-.icon:hover {
-    cursor: pointer;
-    opacity: 70%;
+#toast-container {
+  z-index: 999999 !important;
 }
-
-.icon:active {
-    transform: scale(90%);
-} */
+#toast-container.toast-middle-right {
+  position: fixed !important;
+  top: 50% !important;
+  right: 16px !important;
+  left: auto !important;
+  bottom: auto !important;
+  transform: translateY(-50%) !important;
+  z-index: 999999 !important;
+}

@@ -1,11 +1,10 @@
 
-
-  <nav class="navbar">
+<nav class="navbar">
   <div class="nav-links">
-    
     <span>
-    <img routerLink="/rendiseadmed" class="icon" src="assets/home.png" alt=""/>
-  </span>
+      <img routerLink="/rendiseadmed" class="icon" src="assets/home.png" alt="" />
+    </span>
+
     <button mat-flat-button color="primary" routerLink="rendiseadmed">Rendiseadmed</button>
     <button mat-flat-button color="primary" routerLink="lisa-seade">Lisa oma seade renti</button>
     <button mat-flat-button color="primary" routerLink="rendikorv">Rendikorv</button>
@@ -14,11 +13,14 @@
     @if (isLoggedIn) {
       <button mat-flat-button color="primary" routerLink="seadmete-nimekiri">Kõik seadmed</button>
       <button mat-flat-button color="primary" routerLink="halda-kategooriaid">Halda kategooriaid</button>
-      <!-- <button mat-flat-button color="primary" routerLink="halda-kasutajaid">Halda kasutajaid</button> -->
     }
   </div>
 
-   <div class="nav-auth">
+  <div class="nav-auth">
+    <span class="cart-total">
+      Rendikorvi summa: {{ cartTotal }} €
+    </span>
+
     @if (isLoggedIn) {
       <button mat-stroked-button color="primary" (click)="logout()">Logi välja</button>
     } @else {
@@ -26,6 +28,7 @@
     }
   </div>
 </nav>
+
 
 <router-outlet />
 

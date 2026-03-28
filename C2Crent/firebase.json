@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "c2crent123",
     "public": "dist/c2crent/browser",
     "ignore": [
       "firebase.json",
@@ -13,4 +14,5 @@
       }
     ]
   }
+  
 }
