@@ -38,5 +38,5 @@ export class CartService {
   }
   setCart(cart: CartProduct[]) {
   this.writeCart(cart);
-    }
+  }
 }

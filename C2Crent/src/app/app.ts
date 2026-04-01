@@ -36,5 +36,4 @@ export class App {
   const cart = JSON.parse(localStorage.getItem('cart') || '[]');
   return cart.reduce((sum: number, cp: any) => sum + (cp.product.price * cp.quantity), 0);
   }
-
 }

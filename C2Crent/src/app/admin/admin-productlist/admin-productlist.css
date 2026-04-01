@@ -36,3 +36,10 @@
   width: 100%;
   max-width: 420px;
 }
+.category-float {
+  display: flex;
+  justify-content: center; /* horisontaalselt keskele */
+  gap: 8px;
+  flex-wrap: wrap;         /* kui ei mahu, läheb järgmisele reale */
+  padding: 10px 16px;
+}

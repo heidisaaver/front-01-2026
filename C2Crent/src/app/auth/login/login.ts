@@ -10,10 +10,6 @@ import { Router } from '@angular/router';
 })
 export class Login {
 
-
-  // constructor(private authService: AuthService) {}
-  //private router: Router
-
   private authService = inject(AuthService);
   private router = inject(Router);
 
@@ -22,6 +18,4 @@ export class Login {
     this.router.navigateByUrl("/seadmete-nimekiri");
     sessionStorage.setItem("token", "token123");
   } 
-
-
 }

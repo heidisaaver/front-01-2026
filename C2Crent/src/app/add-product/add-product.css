@@ -60,3 +60,8 @@ input[type="file"] {
   width: 100%;
   max-width: 420px;
 }
+
+.full-width {
+  width: 100%;
+}
+

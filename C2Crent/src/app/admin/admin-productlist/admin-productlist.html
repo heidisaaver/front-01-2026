@@ -2,11 +2,12 @@
 
 <div class="page-center">
   <div class="form-card">
+    <div class="category-float">
 @for (category of categories; track $index) {
   
     <button mat-flat-button class="btn-soft" (click)="filterCategory(category.name)">{{category.name}}</button>
 
-} 
+} </div>
     </div>
 </div>
 

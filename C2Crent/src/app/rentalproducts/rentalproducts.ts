@@ -28,12 +28,9 @@ import { ToastrService } from 'ngx-toastr';
           ],
   templateUrl: './rentalproducts.html',
   styleUrl: './rentalproducts.css',
-
-  
 })
 
 export class Rentalproducts {
-
   
   products: Product [] = [];
   dbproducts: Product[] = [];
@@ -41,14 +38,11 @@ export class Rentalproducts {
   selectedCategory = '';
   searchTerm: string = '';
   rotatingCartIds = new Set<number | string>();
-
   
   private toastr = inject(ToastrService)
   private categoryUrl = "https://69a54208885dcb6bd6a7ca89.mockapi.io/categories";
   private cdr = inject(ChangeDetectorRef);
   private productUrl = "https://69a54208885dcb6bd6a7ca89.mockapi.io/Products"
-
-
 
   ngOnInit() {
 
@@ -68,7 +62,6 @@ export class Rentalproducts {
       })
   }
 
-
   sortAZ() {
     this.products.sort((a, b) => a.title.localeCompare(b.title));
   }
@@ -84,7 +77,6 @@ export class Rentalproducts {
   sortPriceDesc() {
     this.products.sort((a, b) => b.price - a.price);
   }
-
   
   filterCategory(categoryName: string) {
     this.products = this.dbproducts.filter(product => product.category === categoryName)
@@ -109,7 +101,9 @@ export class Rentalproducts {
     setTimeout(() => {
       this.rotatingCartIds.delete(clickedProduct.id);
     }, 500);
-    this.toastr.info('Toode lisati ostukorvi!');
+    this.toastr.info('Toode lisati ostukorvi!', '', {
+    toastClass: 'ngx-toastr toast-info-darkgreen'
+    });
   }
 
   calculateTotal(): number {
@@ -117,8 +111,6 @@ export class Rentalproducts {
     this.products.forEach(product => sum = sum + product.price);
     return sum;
   }
-
-
 
   setCategory(name: string) {
   this.selectedCategory = name;
@@ -128,4 +120,10 @@ export class Rentalproducts {
   this.selectedCategory = '';
   }
 
+  spinLogo(event: MouseEvent) {
+  const el = event.target as HTMLElement;
+  el.classList.remove('spin-once'); // et järjest klikkides alati uuesti käivituks
+  void el.offsetWidth;              // reflow, et animatsioon resetiks
+  el.classList.add('spin-once');
+  }
 }

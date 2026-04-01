@@ -52,10 +52,9 @@ export class AdminProductlist {
     );
   }
 
- filterCategory(categoryName: string) {
+  filterCategory(categoryName: string) {
     this.products = this.dbproducts.filter(product => product.category === categoryName)
     this.cdr.detectChanges();
   }
-
 }
 

@@ -6,32 +6,39 @@
 <div>{{message}}</div>
 <br>
 
-<input  [(ngModel)]="image" type="text" placeholder="Kleebi pildi URL siia">
-<label>Seadme foto </label><br>
+<mat-form-field appearance="fill" class="yellow-field full-width">
+  <mat-label>Seadme foto (URL)</mat-label>
+  <input matInput [(ngModel)]="image" name="image" placeholder="Kleebi pildi URL siia">
+</mat-form-field>
 
+<mat-form-field appearance="fill" class="yellow-field full-width">
+  <mat-label>Seadme nimi</mat-label>
+  <input matInput [(ngModel)]="title" name="title">
+</mat-form-field>
 
-<input [(ngModel)]="title" type="text" >
-<label>Seadme nimi </label><br>
-
-<!-- <input [(ngModel)]="category">
-<option disable value="">Vali kategooria</option> -->
-<select [(ngModel)]="category">
-    <option disable value="">Vali kategooria</option>
-    @for(c of categories; track $index) {
-        <option>{{c.name}}</option>
+<mat-form-field appearance="fill" class="yellow-field full-width">
+  <mat-label>Seadme kategooria</mat-label>
+  <mat-select [(ngModel)]="category" name="category">
+    <mat-option value="">Vali kategooria</mat-option>
+    @for (c of categories; track $index) {
+      <mat-option [value]="c.name">{{ c.name }}</mat-option>
     }
-</select>
-<label>Seadme kategooria </label><br>
+  </mat-select>
+</mat-form-field>
 
+<mat-form-field appearance="fill" class="yellow-field full-width">
+  <mat-label>Päeva hind</mat-label>
+  <input matInput [(ngModel)]="price" name="price" type="number">
+</mat-form-field>
 
-<input [(ngModel)]="price" type="number" >
-<label>Päeva hind </label><br>
+<mat-form-field appearance="fill" class="yellow-field full-width">
+  <mat-label>Seadme info</mat-label>
+  <textarea matInput [(ngModel)]="description" name="description" rows="4"></textarea>
+</mat-form-field>
 
-<input [(ngModel)]="description" type="text" >
-<label>Seadme info </label><br>
-
-<input [(ngModel)]="active" type="checkbox" >
-<label>Aktiivne</label><br>
+<mat-checkbox [(ngModel)]="active" name="active" class="yellow-checkbox">
+  Aktiivne
+</mat-checkbox>
 
 <button mat-flat-button class="btn-soft" (click)="add()">Lisa</button>
   </div>

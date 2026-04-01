@@ -3,7 +3,6 @@ import { AddProduct } from './add-product/add-product';
 import { Login } from './auth/login/login';
 import { Cart } from './cart/cart';
 import { NotFound } from './not-found/not-found';
-import { AdminUsers } from './admin/admin-users/admin-users';
 import { AdminProducts } from './admin/admin-products/admin-products';
 import { Rentalproducts } from './rentalproducts/rentalproducts';
 import { AdminProductlist } from './admin/admin-productlist/admin-productlist';
@@ -23,7 +22,6 @@ export const routes: Routes = [
     {path: "seadmete-nimekiri", component: AdminProductlist, canActivate: [authGuard]},
     {path: "halda-seadmeid/:id", component: AdminProducts, canActivate: [authGuard]},
     {path: "halda-kategooriaid", component: AdminCategories, canActivate: [authGuard]},
-    {path: "halda-kasutajaid", component: AdminUsers, canActivate: [authGuard]},
     {path: "rendikorv", component: Cart},
     {path: "**", component: NotFound},
 

@@ -1,8 +1,56 @@
-@import "ngx-toastr/toastr";
-
-#toast-container {
-  z-index: 999999 !important;
+/* You can add global styles to this file, and also import other style files */
+/* .icon {
+    height: 30px;
+    width: 30px;
+    margin: 5px;
 }
+
+.icon:hover {
+    cursor: pointer;
+    opacity: 70%;
+}
+
+.icon:active {
+    transform: scale(90%);
+} */
+
+.full-width {
+  width: 100%;
+}
+
+/* Angular Material (MDC) fill taust + accent */
+.yellow-field.mat-mdc-form-field {
+  --mdc-filled-text-field-container-color: #fff6bf; /* kollane taust */
+  --mdc-filled-text-field-active-indicator-color: #d4a400;
+  --mdc-filled-text-field-focus-active-indicator-color: #d4a400;
+  --mdc-filled-text-field-label-text-color: #222;
+  --mdc-filled-text-field-input-text-color: #111;
+}
+
+.yellow-field .mdc-text-field {
+  border-radius: 10px;
+}
+
+/* checkbox natuke “soojemaks” */
+.yellow-checkbox .mdc-checkbox__background {
+  border-color: #d4a400;
+}
+/* natuke kollakam hall (soojem toon) */
+mat-form-field.yellow-field .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: #f6f1c3 !important; /* hele kollakas-hall */
+}
+
+/* hover veidi tumedamaks, et “elusam” oleks */
+mat-form-field.yellow-field .mdc-text-field--filled:hover {
+  background-color: #f2eaa8 !important;
+}
+
+/* kui tahad ka selecti dropdown-noolt ja teksti natuke tumedamaks */
+mat-form-field.yellow-field .mdc-text-field__input,
+mat-form-field.yellow-field .mat-mdc-select-value {
+  color: #1a1a1a;
+}
+
 #toast-container.toast-middle-right {
   position: fixed !important;
   top: 50% !important;
@@ -11,4 +59,60 @@
   bottom: auto !important;
   transform: translateY(-50%) !important;
   z-index: 999999 !important;
+}
+.toast-info-darkgreen {
+  background-color: #0f5132 !important; /* tume roheline */
+  color: #ffffff !important;
+}
+
+.toast-info-darkgreen .toast-title,
+.toast-info-darkgreen .toast-message {
+  color: #ffffff !important;
+}
+
+.toast-info-darkgreen .toast-progress {
+  background-color: #7ae0a7 !important; /* heledam roheline progress */
+}
+.warning {
+  margin-top: 8px;
+  color: #c62828;      
+  font-weight: 600;
+}
+
+:host ::ng-deep .yellow-field .mdc-text-field--filled {
+  background-color: #f1e9a6 !important; /* kollane */
+}
+
+
+:host ::ng-deep .date-field .mdc-text-field {
+  height: 45px;   
+  width: 160px;       /* standard ~56px, tee väiksem */
+}
+
+/* Toastr asukoht: paremal, vertikaalselt keskel */
+#toast-container.toast-middle-right {
+  position: fixed !important;
+  top: 50% !important;
+  right: 16px !important;
+  left: auto !important;
+  bottom: auto !important;
+  transform: translateY(-50%) !important;
+  z-index: 999999 !important;
+}
+
+/* Et toast ei “kaoks” parent overflow/transform tõttu */
+#toast-container {
+  pointer-events: none; /* optional: toast ei sega klikke */
+}
+#toast-container .ngx-toastr {
+  pointer-events: auto;
+}
+#toast-container {
+  position: fixed !important;
+  z-index: 2147483647 !important;
+  top: 20px !important;
+  right: 20px !important;
+  left: auto !important;
+  bottom: auto !important;
+  transform: none !important;
 }

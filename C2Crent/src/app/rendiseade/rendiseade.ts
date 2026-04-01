@@ -28,5 +28,4 @@ export class Rendiseade {
         this.cdr.detectChanges();
       }) 
   }
-
 }

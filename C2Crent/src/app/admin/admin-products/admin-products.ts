@@ -16,13 +16,10 @@ export class AdminProducts {
   id!: number;
   productUrl = "https://69a54208885dcb6bd6a7ca89.mockapi.io/Products";
   private categoryUrl = "https://69a54208885dcb6bd6a7ca89.mockapi.io/categories";
-
   private cdr = inject(ChangeDetectorRef);
   constructor(private route: ActivatedRoute,
-    // private productService: ProductService,
-    private router: Router
+  private router: Router
   ) {}
-
 
     //andmebaasist peab ID alusel võtma:
   ngOnInit() {
@@ -37,11 +34,11 @@ export class AdminProducts {
       .then(json => {
         this.product = json;
         this.cdr.detectChanges();
-      }) 
+    }) 
 
     fetch(this.categoryUrl)
       .then(res => res.json())
-     .then(json => {
+      .then(json => {
         this.categories = json;
          this.cdr.detectChanges();
     });
@@ -53,19 +50,14 @@ export class AdminProducts {
       return;
     } 
     
-     
-
-    
-
     fetch(this.productUrl + "/" + this.product.id, {
-        method: "PUT",  //muudab PUT, POST lisab juurde
-        body: JSON.stringify(this.product),
-        headers: {
-          "Content-Type": "application/json"
-         }
-       }).then (() => {
-        this.router.navigateByUrl("/seadmete-nimekiri"); //suunamine tagasi
-       })    
-
+      method: "PUT",  //muudab PUT, POST lisab juurde
+      body: JSON.stringify(this.product),
+      headers: {
+        "Content-Type": "application/json"
       }
+      }).then (() => {
+        this.router.navigateByUrl("/seadmete-nimekiri"); //suunamine tagasi
+   })    
+  }
 }

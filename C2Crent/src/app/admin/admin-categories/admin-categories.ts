@@ -9,7 +9,7 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './admin-categories.css',
 })
 export class AdminCategories {
-categories: Category[] = [];
+  categories: Category[] = [];
   loading = true;
   name = "";
   avatar = "";
